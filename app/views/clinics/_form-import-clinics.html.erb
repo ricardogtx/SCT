@@ -1,0 +1,6 @@
+<%= form_tag import_clinics_path, multipart: true do%>
+    <%= file_field_tag :file%>
+    <%= submit_tag "Importar CSV"%>
+
+
+<%end%>
