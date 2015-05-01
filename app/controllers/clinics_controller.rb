@@ -6,6 +6,10 @@ class ClinicsController < ApplicationController
     @clinics = @search.result
   end
 
+  def show
+    @clinic = Clinic.find(params[:id])
+  end
+
   def new
     @clinics = Clinic.new
   end
