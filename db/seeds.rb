@@ -22,7 +22,7 @@
     drug.dependence_psychological = data["Risco_de_dependencia_psicologica"]
     drug.dependence_phisical = data["Risco_de_dependencia_fisica"]
     drug.tolerance = data["Tolerancia"]
-    drug.high_term = data["Efeitos_a_longo_prazo"]
+    drug.long_effects = data["Efeitos_a_longo_prazo"]
     drug.medical_use = data["Utilizacao_medica"]
     drug.save!
 
