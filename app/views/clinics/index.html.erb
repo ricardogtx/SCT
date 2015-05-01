@@ -22,9 +22,9 @@
 <table class="table table-striped w">
   <thead>
   <tr>
-    <th>Nome</th>
-    <th>Estado</th>
-    <th>Modalidade</th>
+    <th><%= sort_link(@search, :nome, "Nome") %></th>
+    <th><%= sort_link(@search, :estado, "Estado") %></th>
+    <th><%= sort_link(@search, :modalidade, "Modalidade") %></th>
     <th colspan="3"></th>
   </tr>
   </thead>
