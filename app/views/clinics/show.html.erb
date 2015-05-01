@@ -1,0 +1,72 @@
+<div class="img-responsive aspect data_background" ></div>
+<table class="table table-striped w">
+  <thead>
+  <tr>
+    <th colspan="2"><strong>CLINICA: <%= @clinic.nome %></strong></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  	<tr>
+    	<td>Estado</td>
+    	<td><%= @clinic.estado %></td>
+    </tr>
+    <tr>
+    	<td>Modalidade</td>
+    	<td><%= @clinic.modalidade %></td>
+    </tr>
+    <tr>
+    	<td>Endereco</td>
+    	<td>
+    		<%= @clinic.nome_logradouro %>
+    		<%= @clinic.numero_logradouro %>
+    		<%= @clinic.complemento %>
+    	</td>
+    </tr>
+    <tr>
+    	<td>Municipio</td>
+    	<td><%= @clinic.municipio %></td>
+    </tr>
+    <tr>
+    	<td>Cep</td>
+    	<td><%= @clinic.cep %></td>
+    </tr>
+    <tr>
+    	<td>Latitude</td>
+    	<td><%= @clinic.latitude %></td>
+    </tr>
+    <tr>
+    	<td>Longitude</td>
+    	<td><%= @clinic.longitude %></td>
+    </tr>
+    <tr>
+    	<td>Telefone1</td>
+    	<td><%= @clinic.telefone_1 %></td>
+    </tr>
+    <tr>
+    	<td>Telefone2</td>
+    	<td><%= @clinic.telefone_2 %></td>
+    </tr>
+    <tr>
+    	<td>Email</td>
+    	<td><%= @clinic.e_mail %></td>
+    </tr>
+    <tr>
+    	<td>Modalidade</td>
+    	<td><%= @clinic.modalidade %></td>
+    </tr>
+    <tr>
+    	<td>Público Atendido</td>
+    	<td><%= @clinic.publico_atendido %></td>
+    </tr>
+    <tr>
+    	<td>Grupo Específico</td>
+    	<td><%= @clinic.qual_grupo_especifico %>
+    </tr>
+    <tr>
+    	<td>Sexo do Público</td>
+    	<td><%= @clinic.sexo_do_publico %></td>
+    </tr>
+  </tbody>
+</table>
+</div>
