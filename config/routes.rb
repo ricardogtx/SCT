@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'users/new'
+
  resources :clinics do
    collection {post :import}
 end
