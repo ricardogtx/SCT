@@ -15,7 +15,7 @@
     <%= f.label :modalidade_cont, "Modalidade" %>
     <%= f.text_field :modalidade_cont %>
   </div>
-  <div class="actions"><%= f.submit "Search" %></div>
+  <div class="actions"><%= f.submit "Buscar" %></div>
 <% end %>
 
 <div class="img-responsive aspect data_background" ></div>
@@ -32,7 +32,7 @@
   <tbody>
   <% @clinics.each do |clinic| %>
       <tr>
-        <td><%= clinic.nome %></td>
+        <td><%= clinic.nome%></td>
         <td><%= clinic.estado %></td>
         <td><%= clinic.modalidade %></td>
 
