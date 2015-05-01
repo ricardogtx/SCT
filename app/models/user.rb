@@ -18,4 +18,23 @@ class User < ActiveRecord::Base
             :confirmation         =>  true,
             :lenght               =>  { :within => 6..40 }
 
+  before_save :encrypt_password
+
+  def has_password?(submitted_password)
+    encrypt_password == encrypt(submitted_password)
+  end
+
+  private
+    def encrypt_password
+      # generate a unique salt if it's a new user
+      self.salt = Digest::SHA2.hexdigest("#{Time.now.utc}--#{password}") if self.new_record?
+
+      # encrypt the password and store that in the encrypted_password field
+      self.encrypted_password = encrypt(password)
+    end
+
+    def ecrypt(pass)
+      Digest::SHA2.hexdigest("#{self.salt}--#{pass}")
+    end
+
 end
