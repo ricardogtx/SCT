@@ -2,8 +2,8 @@ class ClinicsController < ApplicationController
   before_action :set_clinic, only: [:show, :edit, :update, :destroy]
 
   def index
-    @clinics = Clinic.all
-
+    @search = Clinic.search(params[:q])
+    @clinics = @search.result
   end
 
   def new
