@@ -9,12 +9,17 @@ end
  resources :home
 
  get 'alcool/:id', to: 'drugs#show', as: :alcool
- get 'Alucinógenos/:id', to: 'drugs#show', as: :Alucinógenos
+ get 'Alucinogenos/:id', to: 'drugs#show', as: :Alucinogenos
  get 'Anfetaminas/:id', to: 'drugs#show', as: :Anfetaminas
  get 'Antidepressivos"/:id', to: 'drugs#show', as: :Antidepressivos
- get 'Barbitúricos/:id', to: 'drugs#show', as: :Barbitúricos
- get 'Cafeína/:id', to: 'drugs#show', as: :Cafeína
- get 'Cocaína/:id', to: 'drugs#show', as: :Cocaína
+ get 'Barbituricos/:id', to: 'drugs#show', as: :Barbituricos
+ get 'Cafeina/:id', to: 'drugs#show', as: :Cafeina
+ get 'Cocaina/:id', to: 'drugs#show', as: :Cocaina
+ get 'Inalantes/:id', to: 'drugs#show', as: :Inalantes
+ get 'Maconha/:id', to: 'drugs#show', as: :Maconha
+ get 'Narcoticos/:id', to: 'drugs#show', as: :Narcoticos
+ get 'Nicotina/:id', to: 'drugs#show', as: :Nicotina
+ get 'Tranquilizantes/:id', to: 'drugs#show', as: :Tranquilizantes
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
