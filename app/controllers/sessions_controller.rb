@@ -6,7 +6,7 @@ class SessionController < ApplicationController
 		user = User.authenticate (params[:session][:email], params[:session][:password])
 
 		if user.nil?
-			flash.now[:error] = "Senha/Email invalidos."
+			flash.now[:error] = "Senha ou Email invalidos."
 			render :new
 		else
 			sign_in user
