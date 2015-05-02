@@ -18,3 +18,4 @@
 
 #My ignored files
 coverage/
+Gemfile.lock/r
