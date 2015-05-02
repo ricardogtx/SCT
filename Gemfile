@@ -65,5 +65,5 @@ gem 'ransack'
 # bcrypt and dependencies
 gem 'bcrypt', '~> 3.1.10'
 gem 'rake-compiler', '0.9.2'
-gem 'rdoc', '4.2.0'
 
+gem 'rdoc', '4.2.0'
