@@ -21,6 +21,8 @@ end
  get 'nicotina/:id', to: 'drugs#show', as: :nicotina
  get 'tranquilizante/:id', to: 'drugs#show', as: :tranquilizante
 
+ get 'drogas' => 'drugs#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
