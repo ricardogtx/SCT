@@ -1,0 +1,59 @@
+<h3> QUADRO RESUMO DA DROGA:</h3>
+<table class="table table-bordered">
+ <thead>
+   <tr class="active">
+     <th>
+       Nome:
+     </th>
+     <th>
+       Origem:
+     </th>
+     <th>
+       Quantidade média ingerida:
+     </th>
+     <th>
+       Forma de ingestão:
+     </th>
+     <th>
+       Efeitos a curto prazo (quantidade média):
+     </th>
+     <th>
+       Duração:
+     </th>
+     <th>
+       Efeitos a curto prazo (grandes quantidades):
+     </th>
+     <th>
+       Risco de dependência psicológica:
+     </th>
+     <th>
+       Risco de dependência física:
+     </th>
+     <th>
+       Tolerância:
+     </th>
+     <th>
+       Efeitos a longo prazo:
+     </th>
+     <th>
+       Utilização médica:
+     </th>
+   </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><%= @drug.name %></td>
+    <td><%= @drug.origin %></td>
+    <td><%= @drug.average_ingest %></td>
+    <td><%= @drug.ingestion_form %></td>
+    <td><%= @drug.effect_average %></td>
+    <td><%= @drug.duration %></td>
+    <td><%= @drug.effect_high %></td>
+    <td><%= @drug.dependence_psychological %></td>
+    <td><%= @drug.dependence_phisical %></td>
+    <td><%= @drug.tolerance %></td>
+    <td><%= @drug.long_effects %></td>
+    <td><%= @drug.medical_use %></td>
+  </tr>
+</tbody>
+</table>
