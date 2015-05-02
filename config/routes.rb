@@ -9,17 +9,18 @@ end
  resources :home
 
  get 'alcool/:id', to: 'drugs#show', as: :alcool
- get 'Alucinogenos/:id', to: 'drugs#show', as: :Alucinogenos
- get 'Anfetaminas/:id', to: 'drugs#show', as: :Anfetaminas
- get 'Antidepressivos"/:id', to: 'drugs#show', as: :Antidepressivos
- get 'Barbituricos/:id', to: 'drugs#show', as: :Barbituricos
- get 'Cafeina/:id', to: 'drugs#show', as: :Cafeina
- get 'Cocaina/:id', to: 'drugs#show', as: :Cocaina
- get 'Inalantes/:id', to: 'drugs#show', as: :Inalantes
- get 'Maconha/:id', to: 'drugs#show', as: :Maconha
- get 'Narcoticos/:id', to: 'drugs#show', as: :Narcoticos
- get 'Nicotina/:id', to: 'drugs#show', as: :Nicotina
- get 'Tranquilizantes/:id', to: 'drugs#show', as: :Tranquilizantes
+ get 'alucinogeno/:id', to: 'drugs#show', as: :alucinogeno
+ get 'anfetamina/:id', to: 'drugs#show', as: :anfetamina
+ get 'antidepressivo"/:id', to: 'drugs#show', as: :antidepressivo
+ get 'barbiturico/:id', to: 'drugs#show', as: :barbiturico
+ get 'cafeina/:id', to: 'drugs#show', as: :cafeina
+ get 'cocaina/:id', to: 'drugs#show', as: :cocaina
+ get 'inalante/:id', to: 'drugs#show', as: :inalante
+ get 'maconha/:id', to: 'drugs#show', as: :maconha
+ get 'narcotico/:id', to: 'drugs#show', as: :narcotico
+ get 'nicotina/:id', to: 'drugs#show', as: :nicotina
+ get 'tranquilizante/:id', to: 'drugs#show', as: :tranquilizante
+ get 'drogas', to: 'drugs#index', as: :drogas
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
