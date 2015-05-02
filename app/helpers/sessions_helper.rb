@@ -25,4 +25,8 @@ module SessionsHelper
 	def current_user?(user)
 		user == current_user
 	end
-	
+
+	def deny_access
+		redirect_to signin_path, :notice => "Por favor, faça login para acessar esta pagina."
+	end
+end
