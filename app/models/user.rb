@@ -2,6 +2,8 @@
 
 class User < ActiveRecord::Base
 
+  before_save :encrypt_password
+  
   email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i
 
   validates :name,    :presence   =>  true,
@@ -11,11 +13,11 @@ class User < ActiveRecord::Base
             :format               =>  { :with => email_regex },
             :uniqueness           =>  { :case_sensitive => false }
 
+  has_secure_password
+
   validates :password, :presence  =>  true,
             :confirmation         =>  true,
             :length               =>  { :within => 6..40 }
-
-  before_save :encrypt_password
 
   def has_password?(submitted_password)
     encrypt_password == encrypt(submitted_password)
