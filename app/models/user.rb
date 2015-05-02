@@ -1,9 +1,7 @@
-#require 'bcrypt'
-
 class User < ActiveRecord::Base
 
   before_save :encrypt_password
-  
+
   email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i
 
   validates :name,    :presence   =>  true,
@@ -39,7 +37,7 @@ class User < ActiveRecord::Base
       self.encrypted_password = encrypt(password)
     end
 
-    def ecrypt(pass)
+    def encrypt(pass)
       Digest::SHA2.hexdigest("#{self.salt}--#{pass}")
     end
 
