@@ -1,0 +1,11 @@
+<h1>Sign in</h1>
+
+<% if flash [:error] %>
+	<p><%= flash[:error] %></p>
+<% end %>
+
+<%= bootstrap_form_for(:session, :url = >sessions_path) do |f| %>
+	<%= f.email = :email %>
+	<%= f.password = :password %>
+	<%= f.submit = "Submit" %>
+<% end %>	
