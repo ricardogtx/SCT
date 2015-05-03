@@ -17,8 +17,27 @@ class UsersController < ApplicationController
   end
 
   def destroy
+  end
+
+  def login
+    redirect_to :users unless session[:user_id].nil?
+
+    if !params[:do_login].nil? && request.post?
+      user = User.find_by_email(params[:do_login][:email])
+      if user.nil? || user.authenticate(params[:do_login][:password]).nil?
+        flash.now[:error] = "Senha ou Email invalidos."
+        render :login
+      else
+        #sign_in user
+        session[:user_id] = user.id
+        redirect_to :users, :notice => "Logado!"  
+      end
+    end
+  end
+
+  def logout
     session[:user_id] = nil
-    redirect_to :user
+    redirect_to :users, :notice => "Deslogado!"
   end
 
   def show

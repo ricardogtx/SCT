@@ -28,8 +28,10 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
   get 'signup', to: 'users#new', as: 'signup'
-  get 'login', to: 'sessions#new', as: 'login'
-  get 'logout', to: 'sessions#destroy', as: 'logout'
+
+  get 'logout', to: 'users#logout', as: 'logout'
+  get 'login', to: 'users#login', as: 'login'
+  post 'login', to: 'users#login',  as: 'do_login'
 
   resources :users
 
