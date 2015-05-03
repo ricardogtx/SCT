@@ -1,13 +1,10 @@
-<h3> QUADRO RESUMO DA DROGA:</h3>
+<center><h3> Quadro resumo: <%= @drug.name %> </h3></center><br>
 <div class="container">
 <table class="table table-bordered">
  <thead>
    <tr class="active">
      <th>
-       Nome:
-     </th>
-     <th>
-       Tipo de droga:
+       Tipo(s):
      </th>
      <th>
        Origem:
@@ -46,7 +43,6 @@
 </thead>
 <tbody>
   <tr>
-    <td><%= @drug.name %></td>
     <td><%= @drug.drug_type %></td>
     <td><%= @drug.origin %></td>
     <td><%= @drug.average_ingest %></td>
