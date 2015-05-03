@@ -24,13 +24,16 @@ class UsersController < ApplicationController
 
     if !params[:do_login].nil? && request.post?
       user = User.find_by_email(params[:do_login][:email])
-      if user.nil? || user.authenticate(params[:do_login][:password]).nil?
+      
+      if user.nil?
+        flash.now[:error] = "Insira um email e senha."
+        render :login
+      elsif user.authenticate(params[:do_login][:password])
+        session[:user_id] = user.id
+        redirect_to :users, :notice => "Logado!"
+      else
         flash.now[:error] = "Senha ou Email invalidos."
         render :login
-      else
-        #sign_in user
-        session[:user_id] = user.id
-        redirect_to :users, :notice => "Logado!"  
       end
     end
   end
