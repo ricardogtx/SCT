@@ -4,22 +4,25 @@ class SessionsController < ApplicationController
 	end
 
 	def create 
-		user = User.authenticate(params[:session][:email], params[:session][:password])
+		user = User.find_by_email(params[:email])
 
-		if user.nil?
+		if user.nil? || user.authenticate(params[:password]).nil?
 			flash.now[:error] = "Senha ou Email invalidos."
 			render :new
 		else
-			sign_in user
+			#sign_in user
 			session[:user_id] = user.id
-			redirect_to user, :notice => "Logged in!"
+			redirect_to url_for(:controller => :users, :index => :index), :notice => "Logado!"	
 		end
-
 	end
 
 	def destroy
-		sign_out
 		session[:user_id] = nil
-		redirect_to user, :notice => "Logged out!"
+		redirect_to :users, :notice => "Deslogado!"
 	end
+
+	private
+  def session_params
+   params.require(:session).permit(:email, :password)
+  end
 end

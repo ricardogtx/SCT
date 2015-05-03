@@ -9,10 +9,16 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
   	if @user.save
-      redirect_to @user, notice: 'Usuario cadastrado com sucesso'
+      session[:user_id] = user.id
+      redirect_to :users, notice: 'Usuario cadastrado com sucesso'
   	else
-  		render action: "new"
+  		render :new
   	end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to :user
   end
 
   def show

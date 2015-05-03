@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'users/new'
+  #get 'users/new'
 
   resources :clinics do
-   collection {post :import}
+  collection {post :import}
   end
 
   root 'home#index'
@@ -26,13 +26,23 @@ Rails.application.routes.draw do
 
   get 'drogas' => 'drugs#index'
 
-  get "log_out" => "sessions#destroy", :as => "log_out"
-  get "log_in" => "sessions#new", :as => "log_in"
-  get "sing_up" => "users#new", :as => "sing_up"
-  # :to => "user#new"
+  resources :sessions, only: [:new, :create, :destroy]
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
 
   resources :users
-  resources :sessions
+
+  #get "login" => "sessions#new" #, :as => "log_in"
+  #post "login" => "sessions#create"
+  #get "logout" => "sessions#destroy" #, :as => "log_out"
+
+  #get "singup" => "users#new" #, :as => "sing_up"
+  #post "users" => "users#create"
+
+  # :to => "user#new"
+  #resources :users
+  #resources :sessions
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
