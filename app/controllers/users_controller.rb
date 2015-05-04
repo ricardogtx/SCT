@@ -53,6 +53,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = current_user
+    if session[:user_id].nil?
+      redirect_to :users, notice: 'Voce precisa fazer login!'
+    end
+  end
+
   private
   def user_params
    params.require(:user).permit(:name, :email, :password, :password_confirmation)

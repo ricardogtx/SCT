@@ -1,0 +1,21 @@
+<!-- provavelmente nao eh a melhor maneira de se fazer a pagina de ediçao. -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Meu Perfil</title>
+</head>
+<body>
+
+	<h1 align="center">Editar Perfil</h1>
+	
+	<%= bootstrap_form_for(@user) do |f| %>
+	  <%= f.text_field :name, label: "Nome" %>
+	  <%= f.email_field :email, label:"E-Mail" %>
+	  <%= f.password_field :password, label: "Senha Atual" %>
+	  <%= f.password_field :password, label: "Nova Senha" %>
+	  <%= f.password_field :password_confirmation, label: "Confirmação de Senha" %>
+	  <%= f.submit "Enviar" %>
+	<% end %>	
+	 
+</body>
+</html>
