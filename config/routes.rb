@@ -3,7 +3,25 @@ Rails.application.routes.draw do
  resources :clinics do
    collection {post :import}
 end
- root 'clinics#index'
+ root 'home#index'
+
+ resources :drugs
+ resources :home
+
+ get 'alcool/:id', to: 'drugs#show', as: :alcool
+ get 'alucinogeno/:id', to: 'drugs#show', as: :alucinogeno
+ get 'anfetamina/:id', to: 'drugs#show', as: :anfetamina
+ get 'antidepressivo"/:id', to: 'drugs#show', as: :antidepressivo
+ get 'barbiturico/:id', to: 'drugs#show', as: :barbiturico
+ get 'cafeina/:id', to: 'drugs#show', as: :cafeina
+ get 'cocaina/:id', to: 'drugs#show', as: :cocaina
+ get 'inalantes/:id', to: 'drugs#show', as: :inalantes
+ get 'maconha/:id', to: 'drugs#show', as: :maconha
+ get 'narcotico/:id', to: 'drugs#show', as: :narcotico
+ get 'nicotina/:id', to: 'drugs#show', as: :nicotina
+ get 'tranquilizante/:id', to: 'drugs#show', as: :tranquilizante
+
+ get 'drogas' => 'drugs#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -6,9 +6,50 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
+<body background='<%=image_path "black.jpg"%>'>
+    <nav id= "main_menu" class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/home">
+                    <img id="logo" alt="SCT">
+                </a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse navbar-menubuilder">
+                <ul id= "main_menu_list" class="nav navbar-nav navbar-right">
+                    <li><a href="/home">HOME</a>
+                    </li>
+                    <li><a href="/cad">CAD</a>
+                    </li>
+                    <li><a href="/drogas">DROGAS</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">CLINICAS<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/clinics">PROCURAR CLINICAS</a></li>
+                                <li><a href="/subscription">CADASTRO DE CLINICAS</a></li>
+                            </ul>
+                    </li>
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Procure no site">
+                        </div>
+                            <button type="text" class="btn btn-default">BUSCAR</button>
+                    </form>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<div id="jumbotron_margin" class="jumbotron">
+          <div class="container">
+            <%= yield %>
+            </div>
+        </div>
 </body>
 </html>
+

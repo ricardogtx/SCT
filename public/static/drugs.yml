@@ -1,0 +1,179 @@
+- Droga:
+  Nome: Álcool
+  Tipo_droga: cerveja, destilados e vinhos
+  Origem: grão e frutas
+  Quantidade_media_ingerida: 350 ml, 45 ml, 90 ml
+  Forma_ingestao: oral
+  Efeitos_a_curto_prazo_quantidade_media: relaxamento, quebra das inibições, euforia, depressão, diminuição da consciência
+  Duracao: 2-4 horas
+  Efeitos_a_curto_prazo_grandes_quantidades: estupor, náusea, inconsciência, ressaca, morte
+  Risco_de_dependencia_psicologica: alto
+  Risco_de_dependencia_fisica: moderado
+  Tolerancia: sim
+  Efeitos_a_longo_prazo: obesidade, impotência, psicose, úlceras, subnutrição, danos cerebrais e hepáticos, morte
+  Utilizacao_medica: nenhuma
+
+- Droga:
+  Nome: Alucinógenos
+  Tipo_droga: DMT, escopolamina, LSD, mescalina, noz-moscada, psilocybina, STP
+  Origem: sintética, mimendro (planta), cactus, moscadeira, cogumelo
+  Quantidade_media_ingerida: variável, 5 mg, 150-200 mg, 350 mg, 400 mg, 25 mg
+  Forma_ingestao: oral, inalável, injetável, nasal
+  Efeitos_a_curto_prazo_quantidade_media: alteração da percepção, especialmente visual, aumento da energia, alucinações, pânico
+  Duracao: variável
+  Efeitos_a_curto_prazo_grandes_quantidades: ansiedade, alucinações, exaustão, psicose, tremores, vômito, pânico
+  Risco_de_dependencia_psicologica: baixo
+  Risco_de_dependencia_fisica: nenhum
+  Tolerancia: sim
+  Efeitos_a_longo_prazo: aumento de ilusões e de pânico, psicose
+  Utilizacao_medica: o LSD e a psilocybina foram testados no tratamento do alcoolismo, drogas, doenças mentais e enxaquecas
+
+- Droga:
+  Nome: Anfetaminas
+  Tipo_droga: benzedrina, dexedrina, methedrina, preludin
+  Origem: sintética
+  Quantidade_media_ingerida: 2,5-5 mg
+  Forma_ingestao: oral, injetável
+  Efeitos_a_curto_prazo_quantidade_media: aumento da atenção, excitação, euforia, diminuição do apetite
+  Duracao: 1-8 horas
+  Efeitos_a_curto_prazo_grandes_quantidades: inquietação, discurso apressado, irritabilidade, insônia, desarranjos estomacais, convulções
+  Risco_de_dependencia_psicologica: alto
+  Risco_de_dependencia_fisica: nunhum
+  Tolerancia: sim
+  Efeitos_a_longo_prazo: insônia, excitação, problemas dermatológicos, subnutrição, ilusões, alucinações, psicose
+  Utilizacao_medica: na obesidade, depressão, fadiga excessiva, distúrbios do comportamento infantil
+
+- Droga:
+  Nome: Antidepressivos
+  Tipo_droga: tofranil, ritalina, tryptanol
+  Origem: sintética
+  Quantidade_media_ingerida: 10-25 mg
+  Forma_ingestao: oral, injetável
+  Efeitos_a_curto_prazo_quantidade_media: alívio da ansiedade e da depressão, impotência temporária
+  Duracao: 12-14 horas
+  Efeitos_a_curto_prazo_grandes_quantidades: náusea, hipertensão, perda de peso, insônia
+  Risco_de_dependencia_psicologica: baixo
+  Risco_de_dependencia_fisica: nenhum
+  Tolerancia: sim
+  Efeitos_a_longo_prazo: estupor, coma, convulsões, insuficiência cardíaca congestiva, danos ao fígado e aos glóbulos brancos, morte
+  Utilizacao_medica: na ansiedade ou supersedação, distúrbios do comportamento infantil
+
+- Droga:
+  Nome: Barbitúricos
+  Tipo_droga: doriden, hidrato de cloral, fenobarbital, nembutal, saconal
+  Origem: sintética
+  Quantidade_media_ingerida: 400 mg, 500 mg, 50-100 mg
+  Forma_ingestao: oral
+  Efeitos_a_curto_prazo_quantidade_media: relaxamento, euforia, diminuição da consciência, tontura, coordenção prejudicada, sono
+  Duracao: 4-8 horas
+  Efeitos_a_curto_prazo_grandes_quantidades: discurso "borrado", mal articulado, estupor, ressaca, morte
+  Risco_de_dependencia_psicologica: alto
+  Risco_de_dependencia_fisica: alto
+  Tolerancia: sim
+  Efeitos_a_longo_prazo: sonolência excessiva, confusão, irritabilidade, graves enjôos pela privação
+  Utilizacao_medica: na insônia, tensão e ataque epilético
+
+- Droga:
+  Nome: Cafeína
+  Tipo_droga: café, chá, refrigerantes
+  Origem: grão de café, folhas de chá, castanha
+  Quantidade_media_ingerida: 1-2 xícaras, 300 ml
+  Forma_ingestao: oral
+  Efeitos_a_curto_prazo_quantidade_media: agitação, irritabilidade, insônia, perturbações estomacais
+  Duracao: 2-4 horas
+  Efeitos_a_curto_prazo_grandes_quantidades: agitação, insônia, enjôo
+  Risco_de_dependencia_psicologica: alto
+  Risco_de_dependencia_fisica: alto
+  Tolerancia: não
+  Efeitos_a_longo_prazo: agitação, irritabilidade, insônia, perturbações estomacais
+  Utilizacao_medica: na supersedação e dor de cabeça
+
+- Droga:
+  Nome: Cocaína
+  Tipo_droga: cocaína
+  Origem: folhas de coca
+  Quantidade_media_ingerida: variável
+  Forma_ingestao: nasal, injetável
+  Efeitos_a_curto_prazo_quantidade_media: sensação de auto-confiança, vigor intenso
+  Duracao: 4 horas
+  Efeitos_a_curto_prazo_grandes_quantidades: irritabilidade, depressão, psicose
+  Risco_de_dependencia_psicologica: alto
+  Risco_de_dependencia_fisica: alto
+  Tolerancia: não
+  Efeitos_a_longo_prazo: danos ao septo nasal e vasos sanguíneos, psicose
+  Utilizacao_medica: anestésico local
+
+- Droga:
+  Nome: Inalantes
+  Tipo_droga: aerossóis (éter), colas, nitrato de amido, óxido nitroso
+  Origem: sintética
+  Quantidade_media_ingerida: variável
+  Forma_ingestao: inalável
+  Efeitos_a_curto_prazo_quantidade_media: relaxamento, euforia, coordenação prejudicada
+  Duracao: 1-3 horas
+  Efeitos_a_curto_prazo_grandes_quantidades: estupor, morte
+  Risco_de_dependencia_psicologica: alto
+  Risco_de_dependencia_fisica: nenhum
+  Tolerancia: possível
+  Efeitos_a_longo_prazo: alucinações, danos ao cérebro, aos ossos, rins e fígado, morte
+  Utilizacao_medica: dilatação dos vasos sanguíneos, anestésico leve
+
+- Droga:
+  Nome: Cannabis Sativa
+  Tipo_droga: haxixe, maconha, thc
+  Origem: cannabis, sintética
+  Quantidade_media_ingerida: variável
+  Forma_ingestao: inalável, oral, injetável
+  Efeitos_a_curto_prazo_quantidade_media: relaxamento, quebra das inibições, alteração da percepção, euforia, aumento do apetite
+  Duracao: 2-4 horas
+  Efeitos_a_curto_prazo_grandes_quantidades: pânico, estupor
+  Risco_de_dependencia_psicologica: moderado
+  Risco_de_dependencia_fisica: moderado
+  Tolerancia: não
+  Efeitos_a_longo_prazo: fadiga, psicose
+  Utilizacao_medica: na tensão, depressão, dor de cabeça, falta de apetite
+
+- Droga:
+  Nome: Narcóticos
+  Tipo_droga: codeína, demerol, metadona, morfina, ópio, percodan
+  Origem: papoula de ópio, papoula de ópio sintética
+  Quantidade_media_ingerida: 15-50 mg, 50-150 mg, 05-15 mg, 10 mg
+  Forma_ingestao: oral, injetável, nasal
+  Efeitos_a_curto_prazo_quantidade_media: relaxamento, alívio da dor e da ansiedade, diminuição da consciência, euforia, alucinações
+  Duracao: 4 horas
+  Efeitos_a_curto_prazo_grandes_quantidades: estupor, morte
+  Risco_de_dependencia_psicologica: alto
+  Risco_de_dependencia_fisica: alto
+  Tolerancia: sim
+  Efeitos_a_longo_prazo: latargia, prisão de ventre, perda de peso, esterilidade e impotência temporária, enjôos pela privação
+  Utilizacao_medica: na tosse, na diarréia, analgésico, combate à heroína
+
+- Droga:
+  Nome: Nicotina
+  Tipo_droga: cachimbos, charutos, cigarro, rapé
+  Origem: folhas de tabaco
+  Quantidade_media_ingerida: variável
+  Forma_ingestao: inalável, oral
+  Efeitos_a_curto_prazo_quantidade_media: relaxamento, contração dos vasos sanguíneos
+  Duracao: 1/2-4 horas
+  Efeitos_a_curto_prazo_grandes_quantidades: dor de cabeça, perda de apetite, náusea
+  Risco_de_dependencia_psicologica: alto
+  Risco_de_dependencia_fisica: alto
+  Tolerancia: sim
+  Efeitos_a_longo_prazo: respiração prejudicada, doença pulmonar e cardiológica, câncer, morte
+  Utilizacao_medica: nenhuma (usado em inseticida)
+
+- Droga:
+  Nome: Tranquilizantes
+  Tipo_droga: dienpax, librium, valium
+  Origem: sintética
+  Quantidade_media_ingerida: 5-30 mg, 5-25 mg, 10-40 mg
+  Forma_ingestao: oral
+  Efeitos_a_curto_prazo_quantidade_media: alívio da ansiedade e da tensão. supressão das alucinações e da agressão, sono
+  Duracao: 12-24 horas
+  Efeitos_a_curto_prazo_grandes_quantidades: sonolência, visão perturbada, discurso "borrado", reação alérgica, estupor
+  Risco_de_dependencia_psicologica: moderado
+  Risco_de_dependencia_fisica: moderado
+  Tolerancia: não
+  Efeitos_a_longo_prazo: destruição de células sanguíneas, icterícia, coma, morte
+  Utilizacao_medica: na tensão, ansiedade, psicose, no alcoolismo
