@@ -1,14 +1,20 @@
 <h1>Meu Perfil</h1>
+<br />
+<br />
+Nota temporaria: Clinica ainda nao defindia.
+<br />
+<br />
 <body>
-	Teste/teste/teste/teste<br />
-	Teste: 
-	<select name="Clinica">
-		<option value = "clin1">Clinica1</option>
-		<option value = "clin2">Clinica2</option>
-	</select>	
+	<table width="300px">
+		<tr>
+			<td>Nome:</td>
+			<td><input text = "Name", value = <%= current_user.name %> > </td>
+		</tr>
+		<tr>
+			<td>Email:</td>
+			<td><input text = "Email", value = <%= current_user.email %> readonly = "readonly"></td>		
+		</tr>
 
-
-
-
+	</table>
 </body>
 
