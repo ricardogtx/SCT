@@ -44,10 +44,11 @@ class UsersController < ApplicationController
   end
 
   def show
-  	@user = User.find(params[:id])
+  	@user = User.find(current_user)
   end
 
   def profile
+    @user = current_user
     if session[:user_id].nil?
       redirect_to :users, notice: 'Voce precisa fazer login!'
     end
@@ -57,6 +58,15 @@ class UsersController < ApplicationController
     @user = current_user
     if session[:user_id].nil?
       redirect_to :users, notice: 'Voce precisa fazer login!'
+    end
+  end
+
+  def update
+    @user = current_user
+    if @user.update_attributes(user_params)
+      redirect_to :profile, notice: 'Dados atualizados com sucesso.'
+    else
+      render :edit
     end
   end
 

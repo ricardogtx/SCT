@@ -11,7 +11,6 @@
 	<%= bootstrap_form_for(@user) do |f| %>
 	  <%= f.text_field :name, label: "Nome" %>
 	  <%= f.email_field :email, label:"E-Mail" %>
-	  <%= f.password_field :password, label: "Senha Atual" %>
 	  <%= f.password_field :password, label: "Nova Senha" %>
 	  <%= f.password_field :password_confirmation, label: "Confirmação de Senha" %>
 	  <%= f.submit "Enviar" %>

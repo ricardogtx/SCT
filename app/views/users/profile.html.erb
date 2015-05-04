@@ -7,9 +7,12 @@
 
 <body>
 	<h1 align="center">Meu Perfil</h1>
+	<% flash.each do |name, msg| %>
+  		<%= content_tag :div, msg, :id => "flash_#{name}" %>
+	<% end %>
 	<table align="center">
 		<tr>
-			<td width="200">Editar</td>
+			<td width="200"><%=link_to "Editar", edit_path%></td>
 			<td><%= link_to "Log out", logout_path%></td>
 		</tr>
 	</table>
@@ -17,11 +20,11 @@
 	<table width="300px">
 		<tr>
 			<td>Nome:</td>
-			<td><%= current_user.name %></td>
+			<td><%= @user.name %></td>
 		</tr>
 		<tr>
 			<td>Email:</td>
-			<td><%= current_user.email %></td>		
+			<td><%= @user.email %></td>		
 		</tr>
 	</table>
 </body>
