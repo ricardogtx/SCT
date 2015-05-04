@@ -47,6 +47,12 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
   end
 
+  def profile
+    if session[:user_id].nil?
+      redirect_to :users, notice: 'Voce precisa fazer login!'
+    end
+  end
+
   private
   def user_params
    params.require(:user).permit(:name, :email, :password, :password_confirmation)
