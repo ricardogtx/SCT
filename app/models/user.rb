@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_one :clinic
 
   before_save :encrypt_password
 
