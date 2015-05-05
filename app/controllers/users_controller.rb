@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   def login
-    redirect_to :users unless session[:user_id].nil?
+    redirect_to :users unless is_user_logged?
 
     if !params[:do_login].nil? && request.post?
       user = User.find_by_email(params[:do_login][:email])
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   end
 
   def show
-  	@user = User.find(current_user)
+    @user = current_user
   end
 
   def profile
@@ -55,10 +55,9 @@ class UsersController < ApplicationController
   end
 
   def edit
+    redirect_to :users, notice: 'Voce precisa fazer login!' unless is_user_logged?
+
     @user = current_user
-    if session[:user_id].nil?
-      redirect_to :users, notice: 'Voce precisa fazer login!'
-    end
   end
 
   def update
