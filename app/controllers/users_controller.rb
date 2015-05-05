@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   def login
-    redirect_to :users unless is_user_logged?
+    redirect_to :users if is_user_logged?
 
     if !params[:do_login].nil? && request.post?
       user = User.find_by_email(params[:do_login][:email])
