@@ -29,6 +29,14 @@ class User < ActiveRecord::Base
     return user if user.has_password?(submitted_password)
   end
 
+  def authenticate_clinic_user (user)
+    return user.clinic
+  end
+
+  def authenticate_admin_user (user)
+    return user.level_user
+  end
+
   private
     def encrypt_password
       # generate a unique salt if it's a new user
@@ -41,5 +49,4 @@ class User < ActiveRecord::Base
     def encrypt(pass)
       Digest::SHA2.hexdigest("#{self.salt}--#{pass}")
     end
-
 end

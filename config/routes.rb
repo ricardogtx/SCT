@@ -34,6 +34,10 @@ Rails.application.routes.draw do
   get 'users/profile', to: 'users#profile', as: 'users_profile'
   get 'users/profile/edit', to: 'users#edit', as: 'users_profile_edit'
   post 'login', to: 'users#login',  as: 'do_login'
+  get 'users/admin', to: 'users#admin', as: 'admin'
+  get 'users/clinic/', to: 'users#clinic', as: 'users_clinic'
+  get 'users/clinic/profile', to: 'users#clinic_profile', as: 'users_clinic_profile'
+  get 'users/clinic/profile/edit', to: 'users#clinic_edit', as: 'users_clinic_profile_edit'
 
   resources :users
 
