@@ -8,12 +8,18 @@
         <%= f.text_field :estado_cont, placeholder: "Estado"%>
         <%= f.text_field :modalidade_cont, placeholder: "Modalidade"%>
     </div>
+
     <p></p>
      <%= f.submit "Buscar", :class => "btn btn-primary" %>
   <% end %>
   <p></p> 
 
   <div class="img-responsive aspect data_background" ></div>
+    <% if @search.result.blank? %>
+    <div class="alert alert-danger" role="alert" ><button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Erro!<p></p></strong> Clínica não encontrada.
+    </div>
+    <% else %>
     <table class="table table-hover", border="2">
       <thead>
       <tr>
@@ -34,4 +40,5 @@
       <% end %>
       </tbody>
     </table>
+    <% end %>
 </div>
