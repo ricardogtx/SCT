@@ -12,7 +12,8 @@
 	<% end %>
 	<table align="center">
 		<tr>
-			<td width="200"><%=link_to "Editar", edit_path%></td>
+			<td width="200"><%=link_to "Editar", users_profile_edit_path%></td>
+			<td width="200"><%= link_to "Voltar", users_path%></td>
 			<td><%= link_to "Log out", logout_path%></td>
 		</tr>
 	</table>

@@ -31,8 +31,8 @@ Rails.application.routes.draw do
 
   get 'logout', to: 'users#logout', as: 'logout'
   get 'login', to: 'users#login', as: 'login'
-  get 'profile', to: 'users#profile', as: 'profile'
-  get 'edit', to: 'users#edit', as: 'edit'
+  get 'users/profile', to: 'users#profile', as: 'users_profile'
+  get 'users/profile/edit', to: 'users#edit', as: 'users_profile_edit'
   post 'login', to: 'users#login',  as: 'do_login'
 
   resources :users

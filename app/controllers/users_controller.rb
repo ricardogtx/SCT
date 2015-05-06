@@ -63,9 +63,9 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(user_params)
-      redirect_to :profile, notice: 'Dados atualizados com sucesso.'
+      redirect_to :users_profile, notice: 'Dados atualizados com sucesso.'
     else
-      render :edit
+      render :users_profile_edit
     end
   end
 
