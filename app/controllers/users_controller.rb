@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    authenticate if is_user_logged?
+    return authenticate if is_user_logged?
   end
 
   def login
@@ -95,7 +95,6 @@ class UsersController < ApplicationController
   end
 
   def admin
-    
   end
 
   def clinic
