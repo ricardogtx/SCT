@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
             :length               =>  { :within => 6..40 }
 
   def has_password?(submitted_password)
-    encrypt_password == encrypt(submitted_password)
+    encrypted_password == encrypt(submitted_password)
   end
 
   def self.authenticate (email, submitted_password)
@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
       self.salt = Digest::SHA2.hexdigest("#{Time.now.utc}--#{password}") if self.new_record?
 
       # encrypt the password and store that in the encrypted_password field
-      self.password_digest = encrypt(password)
+      self.encrypted_password = encrypt(password)
     end
 
     def encrypt(pass)
