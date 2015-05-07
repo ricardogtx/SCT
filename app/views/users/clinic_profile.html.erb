@@ -1,15 +1,108 @@
-
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-	<title>Meu Perfil</title>
+<title>Meu Perfil</title>
+<style>
+.lista-abas, .lista-abas * {
+	margin:0;
+	padding:0;
+	outline:none;
+	border:0;
+	background:none
+}
+.lista-abas {
+	position:relative;
+	font-size:0;
+	text-align:left;
+	color:#666
+}
+.lista-abas > input {
+	position:absolute;
+	display:none
+}
+.lista-abas > label {
+	position:relative;
+	z-index:1;
+	display:inline-block;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	padding:1px;
+	padding-top:0;
+	padding-left:0;
+	font-size:13px;
+	line-height:45px;
+	cursor:pointer
+}
+.lista-abas > label span {
+	display:block;
+	padding:5px;
+	background:rgba(255, 255, 255, .9)
+}
+.lista-abas > label span span {
+	padding:0 20px;
+	background:transparent;
+ transition:background .3s, color .4s;
+ -o-transition:background .3s, color .4s;
+ -ms-transition:background .3s, color .4s;
+ -moz-transition:background .3s, color .4s;
+ -webkit-transition:background .3s, color .4s
+}
+.lista-abas > label:hover span span {
+	background:#3498db;
+	color:#fff
+}
+.lista-abas > input:checked + label span span {
+	background:#3498db;
+	color:#fff
+}
+.lista-abas > ul {
+	list-style:none;
+	position:relative;
+	display:block;
+	font-size:13px
+}
+.lista-abas > ul > li {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	overflow:auto;
+	padding:20px 25px 25px;
+	background:rgba(255, 255, 255, .9);
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	opacity:0;
+	-o-transform-origin:0% 0%;
+	-ms-transform-origin:0% 0%;
+	-moz-transform-origin:0% 0%;
+	-webkit-transform-origin:0% 0%;
+	-o-transition:opacity .8s, -o-transform .8s;
+	-ms-transition:opacity .8s, -ms-transform .8s;
+	-moz-transition:opacity .8s, -moz-transform .8s;
+	-webkit-transition:opacity .8s, -webkit-transform .8s
+}
+.lista-abas > .aba-1:checked ~ ul > .aba-1, 
+.lista-abas > .aba-2:checked ~ ul > .aba-2 {
+ position:relative;
+ z-index:1;
+ opacity:1
+}
+.conteudo {
+	width:600px;
+	position:relative;
+	line-height:20px
+}
+.pagina-url {
+	float:right;
+	margin-top:15px
+}
+</style>
 </head>
-
 <body>
+<div>
 	<h1 align="center">Meu Perfil</h1>
-	<% flash.each do |name, msg| %>
-  		<%= content_tag :div, msg, :id => "flash_#{name}" %>
-	<% end %>
+</div>
+<div>
 	<table align="center">
 		<tr>
 			<td width="200"><%=link_to "Editar", users_profile_edit_path%></td>
@@ -17,56 +110,77 @@
 			<td><%= link_to "Log out", logout_path%></td>
 		</tr>
 	</table>
-
-	<table width="300px">
-		<tr>
-			<td>Nome:</td>
-			<td><%= @user.name %></td>
-		</tr>
-		<tr>
-			<td>Email:</td>
-			<td><%= @user.email %></td>		
-		</tr>
-		<tr>
-			<td>Clínica:</td>
-			<td><%= @user.clinica.nome %></td>
-		</tr>
-		<tr>
-			<th>Endereco</th>
-		    <td><%= clinic.nome_logradouro %></td>
-		</tr>
-	    <tr>
-	    	<th>Municipio</th>
-	    	<td><%= clinic.municipio %></td>
-	    </tr>
-	    <tr>
-	    	<th>Cep</th>
-	    	<td><%= clinic.cep %></td>
-	    </tr>
-	    <tr>
-	    	<th>Latitude</th>
-	    	<td><%= clinic.latitude %></td>
-	    </tr>
-	    <tr>
-	    	<th>Longitude</th>
-	    	<td><%= clinic.longitude %></td>
-	    </tr>
-	    <tr>
-	    	<th>Telefone1</th>
-	    	<td><%= clinic.telefone_1 %></td>
-	    </tr>
-	    <tr>
-	    	<th>Telefone2</th>
-	    	<td><%= clinic.telefone_2 %></td>
-	    </tr>
-	    <tr>
-	    	<th>Email</th>
-	    	<td><%= clinic.e_mail %></td>
-	    </tr>
-	    <tr>
-	    	<th>Modalidade</th>	
-	    	<td><%= clinic.modalidade %></td>
-	    </tr>
-	</table>
+	</br>
+</div>	
+<div class="area-total-abas">
+	<div class="lista-abas amimacao-flip">
+		<input type="radio" name="lista-abas" checked id="aba-1" class="aba-1">
+		<label for="aba-1"><span><span>Informações Pessoais</span></span></label>
+		<input type="radio" name="lista-abas" id="aba-2" class="aba-2">
+		<label for="aba-2"><span><span>Informações da Clínica</span></span></label>
+		<ul>
+			<li class="aba-1">
+				<div class="conteudo">
+					<table width="300px">
+						<tr>
+							<th>Nome:</th>
+							<td><%= @user.name %></td>
+						</tr>
+						<tr>
+							<th>Email:</th>
+							<td><%= @user.email %></td>		
+						</tr>
+				</table>
+				</div>
+			</li>
+			<li class="aba-2">
+				<div class="conteudo">
+					<table width="300px">
+						<tr>
+							<td>Clínica:</td>
+							<td><%= @user.clinica.nome %></td>
+						</tr>
+						<tr>
+							<th>Endereco</th>
+						    <td><%= clinic.nome_logradouro %></td>
+						</tr>
+					    <tr>
+					    	<th>Municipio</th>
+					    	<td><%= clinic.municipio %></td>
+					    </tr>
+					    <tr>
+					    	<th>Cep</th>
+					    	<td><%= clinic.cep %></td>
+					    </tr>
+					    <tr>
+					    	<th>Latitude</th>
+					    	<td><%= clinic.latitude %></td>
+					    </tr>
+					    <tr>
+					    	<th>Longitude</th>
+					    	<td><%= clinic.longitude %></td>
+					    </tr>
+					    <tr>
+					    	<th>Telefone1</th>
+					    	<td><%= clinic.telefone_1 %></td>
+					    </tr>
+					    <tr>
+					    	<th>Telefone2</th>
+					    	<td><%= clinic.telefone_2 %></td>
+					    </tr>
+					    <tr>
+					    	<th>Email</th>
+					    	<td><%= clinic.e_mail %></td>
+					    </tr>
+					    <tr>
+					    	<th>Modalidade</th>	
+					    	<td><%= clinic.modalidade %></td>
+					    </tr>
+					</table>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
 </body>
 </html>
