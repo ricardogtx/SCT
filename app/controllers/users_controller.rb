@@ -100,6 +100,27 @@ class UsersController < ApplicationController
   end
 
   def users_clinic
+    @user = current_user
+    if session[:user_id].nil?
+      redirect_to :users, notice: 'Voce precisa fazer login!'
+    end
+  end
+
+  def clinic_profile
+    @user = current_user
+    if session[:user_id].nil?
+      redirect_to :users, notice: 'Voce precisa fazer login!'
+    end
+  end
+
+  def clinic_edit
+    user = current_user
+    @clinic = user.clinic
+    if @clinic.update_attributes(clinic_params)
+      redirect_to :users_clinic_profile, notice: 'Dados atualizados com sucesso.'
+    else
+      render :users_clinic_profile_edit
+    end
   end
 
   def authenticate
@@ -115,7 +136,11 @@ class UsersController < ApplicationController
 
   private
   def user_params
-   params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    #params.require(:clinic).permit(:name, :nome_logradouro, :municipio, :cep, :latitude, :longitude, :telefone_1, :telefone_2, :e_mail, :modalidade)
   end
 
+  def clinic_params
+    params.require(:clinic).permit(:name, :nome_logradouro, :municipio, :cep, :latitude, :longitude, :telefone_1, :telefone_2, :email, :modalidade)
+  end
 end

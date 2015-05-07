@@ -1,8 +1,8 @@
 <div id="user_nav">
   <% if current_user %>
     Logged in as <%= current_user.email %>.<br />
-    <%= link_to "Clinic Profile", users_clinic_profile_path %><br />
-    <%= link_to "Profile", users_clinic_path %><br />
+    <%= link_to "Perfil Usuário", users_profile_path %><br />
+    <%= link_to "Perfil Clínica", users_clinic_profile_path %><br />
     <%= link_to "Log out", logout_path %>
   <% else %>
     <%= link_to "Sign up", signup_path %> or
