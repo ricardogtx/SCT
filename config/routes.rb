@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 end
  root 'home#index'
 
+
  resources :drugs
  resources :home
 
