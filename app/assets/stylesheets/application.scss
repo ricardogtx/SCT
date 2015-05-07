@@ -51,3 +51,10 @@
 .jumbotron {
 background-color :#DDDDDD
 }
+
+.dorgas-image {
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
