@@ -49,8 +49,14 @@ class UsersController < ApplicationController
   end
 
   def logout
+    user_was_logged = is_user_logged?
     session[:user_id] = nil
-    redirect_to :users, :notice => "Deslogado!"
+    
+    if request.xhr?
+      render :json => {user_was_logged: user_was_logged}
+    else
+      redirect_to :users, :notice => "Deslogado!"
+    end
   end
 
   def show
