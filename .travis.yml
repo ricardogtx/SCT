@@ -15,7 +15,6 @@ notifications:
       - tamara-bt@hotmail.com
       - danielhmarinho@gmail.com
       - mdiebr@gmail.com
-
 branches:
   only:
 
