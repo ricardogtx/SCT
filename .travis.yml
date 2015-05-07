@@ -1,0 +1,21 @@
+language: ruby
+
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate 
+  - bundle exec rake db:test:prepare
+  - bundle exec rake
+
+rvm:
+  - 2.1.0 
+notifications:
+  email:
+    recipients:
+      - victorfgcabeceira@gmail.com
+      - ricardocdzg@hotmail.com
+      - tamara-bt@hotmail.com
+      - danielhmarinho@gmail.com
+      - mdiebr@gmail.com
+branches:
+  only:
+
+    - master
