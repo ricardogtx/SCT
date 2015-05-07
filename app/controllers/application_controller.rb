@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  
+  before_filter :default_page_title
 
   def current_user
     User.find(session[:user_id]) if session[:user_id]
@@ -17,5 +19,9 @@ class ApplicationController < ActionController::Base
 
     def is_user_logged?
       not session[:user_id].nil?
+    end
+
+    def default_page_title
+      @page_title = "Sistemas de Comunidades Terapeuticas"
     end
 end

@@ -77,7 +77,6 @@ class UsersController < ApplicationController
     @user = current_user
 
     redirect_to :users, notice: 'Voce precisa fazer login!' unless is_user_logged?
-    
   end
 
   def clinic_edit
@@ -107,6 +106,7 @@ class UsersController < ApplicationController
   end
 
   def clinic_profile
+    @page_title = "Perfil"
     @user = current_user
     if session[:user_id].nil?
       redirect_to :users, notice: 'Voce precisa fazer login!'
@@ -114,13 +114,9 @@ class UsersController < ApplicationController
   end
 
   def clinic_edit
-    user = current_user
-    @clinic = user.clinic
-    if @clinic.update_attributes(clinic_params)
-      redirect_to :users_clinic_profile, notice: 'Dados atualizados com sucesso.'
-    else
-      render :users_clinic_profile_edit
-    end
+    redirect_to :users, notice: 'Voce precisa fazer login!' unless is_user_logged?
+    @user = current_user
+    redirect_to :users_profile_edit if @user.clinic.nil?
   end
 
   def authenticate
@@ -129,18 +125,11 @@ class UsersController < ApplicationController
       redirect_to :admin
     elsif user.authenticate_clinic_user(user)
       redirect_to :users_clinic
-    #else
-    #  redirect_to "/users"
     end
   end
 
   private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
-    #params.require(:clinic).permit(:name, :nome_logradouro, :municipio, :cep, :latitude, :longitude, :telefone_1, :telefone_2, :e_mail, :modalidade)
-  end
-
-  def clinic_params
-    params.require(:clinic).permit(:name, :nome_logradouro, :municipio, :cep, :latitude, :longitude, :telefone_1, :telefone_2, :email, :modalidade)
   end
 end
