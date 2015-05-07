@@ -105,7 +105,8 @@
 <div>
 	<table align="center">
 		<tr>
-			<td width="200"><%=link_to "Editar", users_profile_edit_path%></td>
+			<td width="200"><%=link_to "Editar Informações", users_profile_edit_path%></td>
+			<td width="200"><%=link_to "Editar Clínica", users_clinic_profile_edit_path%></td>
 			<td width="200"><%= link_to "Voltar", users_path%></td>
 			<td><%= link_to "Log out", logout_path%></td>
 		</tr>
@@ -138,43 +139,43 @@
 					<table width="300px">
 						<tr>
 							<td>Clínica:</td>
-							<td><%= @user.clinica.nome %></td>
+							<td><%= @user.clinic.nome %></td>
 						</tr>
 						<tr>
 							<th>Endereco</th>
-						    <td><%= clinic.nome_logradouro %></td>
+						    <td><%= @user.clinic.nome_logradouro %></td>
 						</tr>
 					    <tr>
 					    	<th>Municipio</th>
-					    	<td><%= clinic.municipio %></td>
+					    	<td><%= @user.clinic.municipio %></td>
 					    </tr>
 					    <tr>
 					    	<th>Cep</th>
-					    	<td><%= clinic.cep %></td>
+					    	<td><%= @user.clinic.cep %></td>
 					    </tr>
 					    <tr>
 					    	<th>Latitude</th>
-					    	<td><%= clinic.latitude %></td>
+					    	<td><%= @user.clinic.latitude %></td>
 					    </tr>
 					    <tr>
 					    	<th>Longitude</th>
-					    	<td><%= clinic.longitude %></td>
+					    	<td><%= @user.clinic.longitude %></td>
 					    </tr>
 					    <tr>
 					    	<th>Telefone1</th>
-					    	<td><%= clinic.telefone_1 %></td>
+					    	<td><%= @user.clinic.telefone_1 %></td>
 					    </tr>
 					    <tr>
 					    	<th>Telefone2</th>
-					    	<td><%= clinic.telefone_2 %></td>
+					    	<td><%= @user.clinic.telefone_2 %></td>
 					    </tr>
 					    <tr>
 					    	<th>Email</th>
-					    	<td><%= clinic.e_mail %></td>
+					    	<td><%= @user.clinic.e_mail %></td>
 					    </tr>
 					    <tr>
 					    	<th>Modalidade</th>	
-					    	<td><%= clinic.modalidade %></td>
+					    	<td><%= @user.clinic.modalidade %></td>
 					    </tr>
 					</table>
 				</div>

@@ -62,12 +62,28 @@ class UsersController < ApplicationController
     if session[:user_id].nil?
       redirect_to :users, notice: 'Voce precisa fazer login!'
     end
+    redirect_to :users_clinic_profile unless @user.clinic.nil?
+  end
+
+  def clinic_profile
+    @user = current_user
+    if session[:user_id].nil?
+      redirect_to :users, notice: 'Voce precisa fazer login!'
+    end
+    redirect_to :users_profile unless !@user.clinic.nil?
   end
 
   def edit
-    redirect_to :users, notice: 'Voce precisa fazer login!' unless is_user_logged?
-
     @user = current_user
+
+    redirect_to :users, notice: 'Voce precisa fazer login!' unless is_user_logged?
+    
+  end
+
+  def clinic_edit
+    redirect_to :users, notice: 'Voce precisa fazer login!' unless is_user_logged?
+    @user = current_user
+    redirect_to :users_profile_edit unless !@user.clinic.nil?
   end
 
   def update
