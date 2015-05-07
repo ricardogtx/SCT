@@ -85,12 +85,6 @@ class UsersController < ApplicationController
     redirect_to :users, notice: 'Voce precisa fazer login!' unless is_user_logged?
   end
 
-  def clinic_edit
-    redirect_to :users, notice: 'Voce precisa fazer login!' unless is_user_logged?
-    @user = current_user
-    redirect_to :users_profile_edit unless !@user.clinic.nil?
-  end
-
   def update
     @user = current_user
     if @user.update_attributes(user_params)
@@ -104,15 +98,7 @@ class UsersController < ApplicationController
     
   end
 
-  def users_clinic
-    @user = current_user
-    if session[:user_id].nil?
-      redirect_to :users, notice: 'Voce precisa fazer login!'
-    end
-  end
-
-  def clinic_profile
-    @page_title = "Perfil"
+  def clinic
     @user = current_user
     if session[:user_id].nil?
       redirect_to :users, notice: 'Voce precisa fazer login!'
