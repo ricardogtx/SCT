@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Meu Perfil</title>
+</head>
+<body>
+
+	<h1 align="center">Editar Perfil</h1>
+	
+	<%= bootstrap_form_for(@user) do |f| %>
+	  <%= f.text_field :name, label: "Nome" %>
+	  <%= f.email_field :email, label:"E-Mail" %>
+	  <%= f.password_field :password, label: "Nova Senha" %>
+	  <%= f.password_field :password_confirmation, label: "Confirmação de Senha" %>
+	  <%= f.submit "Enviar" %>
+	<% end %>
+	<%= bootstrap_form_for(@clinic) do |f| %>
+		<%= f.text_field :name, label: "Nome" %>
+		<%= f.text_field :nome_logradouro, label:"Endereço" %>
+		<%= f.text_field :cep, label: "Cep" %>
+		<%= f.text_field :latitude, label: "Latitude" %>
+		<%= f.text_field :longitude, label: "Longitude" %>
+		<%= f.text_field :telefone_1, label: "Telefone 1" %>
+		<%= f.text_field :telefone_2, label: "telefone_2" %>
+		<%= f.email_field :e_mail, label:"E-Mail" %>
+		<%= f.text_field :modalidade, label: "Modalidade" %>
+</body>
+</html>
