@@ -1,17 +1,13 @@
 <div>
-	<h1 align="center">Meu Perfil</h1>
+	<h1 align="left"><strong>Meu Perfil</strong></h1>
 </div>
-<div>
-	<table align="center">
-		<tr>
-			<td width="200"><%=link_to "Editar Informações", users_profile_edit_path%></td>
-			<td width="200"><%=link_to "Editar Clínica", users_clinic_profile_edit_path%></td>
-			<td width="200"><%= link_to "Voltar", users_path%></td>
-			<td><%= link_to "Log out", logout_path%></td>
-		</tr>
-	</table>
-	</br>
-</div>	
+<br>
+	<a href="<%= users_profile_edit_path %>" class="btn btn-default" role="button">Editar Informações</a>
+	<a href="<%= users_clinic_profile_edit_path %>" class="btn btn-success" role="button">Editar Clínica</a>
+	<a href="<%= users_path %>" class="btn btn-warning" role="button">Voltar</a>
+<br>
+<br>
+
 <div class="area-total-abas">
 	<div class="lista-abas amimacao-flip">
 		<input type="radio" name="lista-abas" checked id="aba-1" class="aba-1">
@@ -28,7 +24,7 @@
 						</tr>
 						<tr>
 							<th>Email:</th>
-							<td><%= @user.email %></td>		
+							<td><%= @user.email %></td>
 						</tr>
 				</table>
 				</div>
@@ -73,7 +69,7 @@
 					    	<td><%= @user.clinic.e_mail %></td>
 					    </tr>
 					    <tr>
-					    	<th>Modalidade</th>	
+					    	<th>Modalidade</th>
 					    	<td><%= @user.clinic.modalidade %></td>
 					    </tr>
 					</table>
