@@ -1,0 +1,19 @@
+<center>
+<h2>Login</h2>
+
+<% if flash[:error] %>
+  <p><%= flash[:error] %></p>
+<% end %>
+
+<%= form_for(:do_login) do |f| %>
+  <%= f.email_field :email, :id => "sign_in_text_field", :class=>"form-control", :placeholder=>"Email" %>
+  <%= f.password_field :password, :id => "sign_in_text_field", :class=>"form-control", :placeholder=>"Senha" %>
+  <br>
+  <%= check_box_tag :remember_me %>
+  <%= label_tag :remember_me %>
+  <br>
+  <%= f.submit "Logar", :id => "sign_in_button", :class=>"btn btn-lg btn-primary btn-block" %>
+  <br>
+  <a id="sign_in_button" href="/users" class="btn btn-danger" role="button">voltar</a>
+<% end %>
+</center>

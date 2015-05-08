@@ -1,0 +1,14 @@
+<center>
+<h2>Novo Usuário</h2>
+
+<%= form_for(@user) do |f| %>
+  <%= f.text_field :name, :id => "sign_in_text_field", :class=>"form-control", :placeholder=>"Nome" %>
+  <%= f.email_field :email, :id => "sign_in_text_field", :class=>"form-control", :placeholder=>"Email" %>
+  <%= f.password_field :password, :id => "sign_in_text_field", :class=>"form-control", :placeholder=>"Senha" %>
+  <%= f.password_field :password_confirmation, :id => "sign_in_text_field",:class=>"form-control", :placeholder=>"Confirma a Senha" %>
+  <br>
+  <%= f.submit "Enviar", :id => "sign_in_button", :class=>"btn btn-lg btn-primary btn-block" %>
+<% end %>
+    <br>
+    <a id="sign_in_button" href="/users" class="btn btn-danger" role="button">voltar</a>
+</center>

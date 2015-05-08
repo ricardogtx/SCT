@@ -1,0 +1,80 @@
+<div>
+	<h1 align="left"><strong>Meu Perfil</strong></h1>
+</div>
+<br>
+	<a href="<%= users_profile_edit_path %>" class="btn btn-default" role="button">Editar Informações</a>
+	<a href="<%= users_clinic_profile_edit_path %>" class="btn btn-success" role="button">Editar Clínica</a>
+	<a href="<%= users_path %>" class="btn btn-warning" role="button">Voltar</a>
+<br>
+<br>
+
+<div class="area-total-abas">
+	<div class="lista-abas amimacao-flip">
+		<input type="radio" name="lista-abas" checked id="aba-1" class="aba-1">
+		<label for="aba-1"><span><span>Informações Pessoais</span></span></label>
+		<input type="radio" name="lista-abas" id="aba-2" class="aba-2">
+		<label for="aba-2"><span><span>Informações da Clínica</span></span></label>
+		<ul>
+			<li class="aba-1">
+				<div class="conteudo">
+					<table width="300px">
+						<tr>
+							<th>Nome:</th>
+							<td><%= @user.name %></td>
+						</tr>
+						<tr>
+							<th>Email:</th>
+							<td><%= @user.email %></td>
+						</tr>
+				</table>
+				</div>
+			</li>
+			<li class="aba-2">
+				<div class="conteudo">
+					<table width="300px">
+						<tr>
+							<td>Clínica:</td>
+							<td><%= @user.clinic.nome %></td>
+						</tr>
+						<tr>
+							<th>Endereco</th>
+						    <td><%= @user.clinic.nome_logradouro %></td>
+						</tr>
+					    <tr>
+					    	<th>Municipio</th>
+					    	<td><%= @user.clinic.municipio %></td>
+					    </tr>
+					    <tr>
+					    	<th>Cep</th>
+					    	<td><%= @user.clinic.cep %></td>
+					    </tr>
+					    <tr>
+					    	<th>Latitude</th>
+					    	<td><%= @user.clinic.latitude %></td>
+					    </tr>
+					    <tr>
+					    	<th>Longitude</th>
+					    	<td><%= @user.clinic.longitude %></td>
+					    </tr>
+					    <tr>
+					    	<th>Telefone1</th>
+					    	<td><%= @user.clinic.telefone_1 %></td>
+					    </tr>
+					    <tr>
+					    	<th>Telefone2</th>
+					    	<td><%= @user.clinic.telefone_2 %></td>
+					    </tr>
+					    <tr>
+					    	<th>Email</th>
+					    	<td><%= @user.clinic.e_mail %></td>
+					    </tr>
+					    <tr>
+					    	<th>Modalidade</th>
+					    	<td><%= @user.clinic.modalidade %></td>
+					    </tr>
+					</table>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

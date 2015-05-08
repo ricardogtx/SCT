@@ -21,6 +21,7 @@
 #logo {
     width :50px;
 }
+
 #main_menu {
     height :50px;
 }
@@ -34,6 +35,26 @@
     margin :44px;
 }
 
+#sign_in_button {
+    width :144px;
+}
+
+#sign_in_text_field {
+    width :190px;
+}
+
+#image_home {
+    width :340px;
+    height :300px;
+}
+
 .jumbotron {
 background-color :#DDDDDD
 }
+
+.dorgas-image {
+    &:hover {
+        opacity: 0.5;
+    }
+}
+

@@ -1,0 +1,24 @@
+<div>
+	<h1 align="center">Editar Perfil</h1>
+</div>	
+<div class="area-total-abas">
+	<div class="lista-abas amimacao-flip">
+		<input type="radio" name="lista-abas" checked id="aba-1" class="aba-1">
+		<label for="aba-1"><span><span>Informações da Clínica</span></span></label>
+		<ul>
+			<li class="aba-1">
+				<div class="conteudo">
+					<%= bootstrap_form_for(@user) do |f| %>
+					  <%= f.text_field :name, label: "Nome" %>
+					  <%= f.email_field :email, label:"E-Mail" %>
+					  <%= f.password_field :password, label: "Nova Senha" %>
+					  <%= f.password_field :password_confirmation, label: "Confirmação de Senha"%>
+					  </br>
+					  <%= f.submit "Enviar" %>
+					  <%= link_to "Cancelar", :back, {:class=>"btn btn-default"} %>
+					<% end %>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
