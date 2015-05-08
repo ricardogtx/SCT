@@ -1,10 +1,56 @@
 Rails.application.routes.draw do
 
- resources :clinics do
-   collection {post :import}
-end
- root 'clinics#index'
+  #get 'users/new'
 
+  resources :clinics do
+  collection {post :import}
+  end
+
+  root 'home#index'
+
+  resources :drugs
+  resources :home
+
+  get 'alcool/:id', to: 'drugs#show', as: :alcool
+  get 'alucinogeno/:id', to: 'drugs#show', as: :alucinogeno
+  get 'anfetamina/:id', to: 'drugs#show', as: :anfetamina
+  get 'antidepressivo"/:id', to: 'drugs#show', as: :antidepressivo
+  get 'barbiturico/:id', to: 'drugs#show', as: :barbiturico
+  get 'cafeina/:id', to: 'drugs#show', as: :cafeina
+  get 'cocaina/:id', to: 'drugs#show', as: :cocaina
+  get 'inalantes/:id', to: 'drugs#show', as: :inalantes
+  get 'maconha/:id', to: 'drugs#show', as: :maconha
+  get 'narcotico/:id', to: 'drugs#show', as: :narcotico
+  get 'nicotina/:id', to: 'drugs#show', as: :nicotina
+  get 'tranquilizante/:id', to: 'drugs#show', as: :tranquilizante
+
+  get 'drogas' => 'drugs#index'
+
+  resources :sessions, only: [:new, :create, :destroy]
+  get 'signup', to: 'users#new', as: 'signup'
+
+  get 'logout', to: 'users#logout', as: 'logout'
+  get 'login', to: 'users#login', as: 'login'
+  get 'users/profile', to: 'users#profile', as: 'users_profile'
+  get 'users/profile/edit', to: 'users#edit', as: 'users_profile_edit'
+  post 'login', to: 'users#login',  as: 'do_login'
+  get 'users/admin', to: 'users#admin', as: 'admin'
+  get 'users/clinic/', to: 'users#clinic', as: 'users_clinic'
+  get 'users/clinic/profile', to: 'users#clinic_profile', as: 'users_clinic_profile'
+  get 'users/clinic/profile/edit', to: 'users#clinic_edit', as: 'users_clinic_profile_edit'
+
+  resources :users
+
+  #get "login" => "sessions#new" #, :as => "log_in"
+  #post "login" => "sessions#create"
+  #get "logout" => "sessions#destroy" #, :as => "log_out"
+
+  #get "singup" => "users#new" #, :as => "sing_up"
+  #post "users" => "users#create"
+
+  # :to => "user#new"
+  #resources :users
+  #resources :sessions
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,14 @@
+<div id="user_nav">
+  <% if current_user %>
+    <%= current_user.email %>
+    </p><a href="<%= users_profile_path %>" class="btn btn-primary" role="button">Perfil</a></p>
+    </p><a href="<%= logout_path %>" class="btn btn-danger" role="button">Logout</a></p>
+  <% else %>
+    </p><a href="<%= signup_path %>" class="btn btn-primary" role="button">Cadastrar</a>
+    <a href="<%= login_path %>" class="btn btn-danger" role="button">Login</a></p>
+  <% end %>
+</div>
+
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>

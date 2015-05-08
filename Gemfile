@@ -58,3 +58,12 @@ end
 
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'bootstrap_form'
+
+# filtro
+gem 'ransack'
+
+# bcrypt and dependencies
+gem 'bcrypt', '~> 3.1.10'
+gem 'rake-compiler', '0.9.2'
+
+gem 'rdoc', '4.2.0'

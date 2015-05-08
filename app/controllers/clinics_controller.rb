@@ -2,8 +2,12 @@ class ClinicsController < ApplicationController
   before_action :set_clinic, only: [:show, :edit, :update, :destroy]
 
   def index
-    @clinics = Clinic.all
+    @search = Clinic.search(params[:q])
+    @clinics = @search.result
+  end
 
+  def show
+    @clinic = Clinic.find(params[:id])
   end
 
   def new
@@ -12,6 +16,15 @@ class ClinicsController < ApplicationController
 
   def set_clinic
     @clinics = Clinic.find(params[:id])
+  end
+
+  def update
+    @clinic = current_user.clinic
+    if @clinic.update_attributes(clinic_params)
+      redirect_to :users_profile, notice: 'Dados atualizados com sucesso.'
+    else
+      render :users_profile_edit
+    end
   end
 
   def clinic_params
