@@ -2,15 +2,14 @@ Rails.application.routes.draw do
 
   #get 'users/new'
 
-  resources :clinics do
-  collection {post :import}
-  end
-
+  resources :clinics
   root 'home#index'
 
   resources :drugs
   resources :home
-
+  resources :parsers do
+  collection {post :import}
+end
   get 'alcool/:id', to: 'drugs#show', as: :alcool
   get 'alucinogeno/:id', to: 'drugs#show', as: :alucinogeno
   get 'anfetamina/:id', to: 'drugs#show', as: :anfetamina

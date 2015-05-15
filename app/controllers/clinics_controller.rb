@@ -14,10 +14,6 @@ class ClinicsController < ApplicationController
     @clinics = Clinic.new
   end
 
-  def set_clinic
-    @clinics = Clinic.find(params[:id])
-  end
-
   def update
     @clinic = current_user.clinic
     if @clinic.update_attributes(clinic_params)
@@ -25,6 +21,11 @@ class ClinicsController < ApplicationController
     else
       render :users_profile_edit
     end
+  end
+
+private
+  def set_clinic
+    @clinics = Clinic.find(params[:id])
   end
 
   def clinic_params

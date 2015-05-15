@@ -1,7 +1,7 @@
 class ParsersController < ApplicationController
 
   def import
-    Clinic.import(params[:file])
+    Parser.import(params[:file])
     redirect_to root_path, notice:  "CSV importado com sucesso"
   end
 
