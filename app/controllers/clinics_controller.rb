@@ -33,9 +33,4 @@ class ClinicsController < ApplicationController
                                    :qual_grupo_especifico, :sexo_do_publico, :modalidade)
   end
 
-  def import
-    Clinic.import(params[:file])
-    redirect_to root_path, notice:  "CSV importado com sucesso"
-  end
 end
-
