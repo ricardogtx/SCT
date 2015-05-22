@@ -65,7 +65,7 @@ class UsersController < ApplicationController
   def clinic_profile
     @user = current_user
 
-    redirect_to :users_profile unless !@user.clinic.nil?
+    redirect_to :users_profile if @user.clinic.nil?
   end
 
   def edit
@@ -74,9 +74,12 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
+
     if @user.update_attributes(user_params)
-      redirect_to :users_profile, notice: 'Dados atualizados com sucesso.'
+      redirect_to :users_clinic_profile unless @user.clinic.nil?
+      redirect_to :users_profile
     else
+      render :users_clinic_profile_edit unless @user.clinic.nil?
       render :users_profile_edit
     end
   end
@@ -90,19 +93,12 @@ class UsersController < ApplicationController
 
   def clinic_edit
     @user = current_user
+
     redirect_to :users_profile_edit if @user.clinic.nil?
   end
 
-  def authenticate
-    user = current_user
-    if user.authenticate_admin_user(user)
-      redirect_to :admin
-    elsif user.authenticate_clinic_user(user)
-      redirect_to :users_clinic
-    end
-  end
-
   private
+
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
