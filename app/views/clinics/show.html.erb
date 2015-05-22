@@ -14,7 +14,7 @@
                 <tr>
                     <td>Estado</td>
                     <td><%= @clinic.estado %></td>
-                </tr> 
+                </tr>
                 <tr>
                     <td>Modalidade</td>
                     <td><%= @clinic.modalidade %></td>
@@ -37,11 +37,11 @@
                 </tr>
                 <tr>
                     <td>Latitude</td>
-                    <td><%= @clinic.latitude %></td>
+                    <td id="clinic_latitude"><%= @clinic.latitude %></td>
                 </tr>
                 <tr>
                     <td>Longitude</td>
-                    <td><%= @clinic.longitude %></td>
+                    <td id="clinic_longitude"><%= @clinic.longitude %></td>
                 </tr>
                 <tr>
                     <td>Telefone1</td>
@@ -73,24 +73,10 @@
                 </tr>
             </tbody>
         </table>
-    <p align="right"><a href="/clinics" class="btn btn-warning" role="button">voltar</a></p>
 </div>
-<script src="http://maps.googleapis.com/maps/api/js"></script>
-<script>
-function initialize() {
-  var mapProp = {
-    center:new google.maps.LatLng(51.508742,-0.120850),
-    zoom:5,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-}
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
 </head>
 <body>
 <div id="googleMap" style="width:500px;height:380px;"></div>
+<p align="right"><a href="/clinics" class="btn btn-warning" role="button">voltar</a></p>
 </body>
 </html>
-
-
