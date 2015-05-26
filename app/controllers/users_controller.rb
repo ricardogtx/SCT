@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :authenticate, only: [:index, :login]
   before_action :user_need_to_be_logged, only: [:show, :profile, :clinic_profile, :edit, :update, :clinic]
 
   attr_accessor :password
@@ -59,13 +58,13 @@ class UsersController < ApplicationController
   def profile
     @user = current_user
 
-    redirect_to :users_clinic_profile unless @user.clinic.nil?
+    redirect_to :users_clinic_profile if @user.clinic
   end
 
   def clinic_profile
     @user = current_user
 
-    redirect_to :users_profile if @user.clinic.nil?
+    redirect_to :users_profile unless @user.clinic
   end
 
   def edit
@@ -89,6 +88,8 @@ class UsersController < ApplicationController
 
   def clinic
     @user = current_user
+
+    redirect_to :users unless @user.clinic
   end
 
   def clinic_edit
