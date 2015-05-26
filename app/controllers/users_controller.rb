@@ -21,6 +21,8 @@ class UsersController < ApplicationController
   end
 
   def index
+    user = current_user
+    authenticate if user && user.authenticate_clinic_user(user) && user.authenticate_admin_user(user)
   end
 
   def login
