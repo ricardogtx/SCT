@@ -138,4 +138,27 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to redirect_to(:users_profile)
     end
   end
+
+  describe "GET #edit" do
+    it "Should render edit" do
+      session[:user_id] = User.last.id
+      get :edit
+      expect(response).to render_template(:edit)
+    end
+  end
+
+  describe "GET #clinic_edit" do
+    it "Should render edit" do
+      User.last.clinic = Clinic.last
+      session[:user_id] = User.last.id
+      get :clinic_edit
+      expect(response).to render_template(:clinic_edit)
+    end
+
+    it "Should redirect to edit if user not associated a clinic" do
+      session[:user_id] = User.last.id
+      get :clinic_edit
+      expect(response).to redirect_to(:users_profile_edit)
+    end
+  end
 end
