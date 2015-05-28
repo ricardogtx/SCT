@@ -96,4 +96,12 @@ RSpec.describe UsersController, type: :controller do
       expect(flash[:error]).to be_present
     end
   end
+
+  describe "GET #logout" do
+    it "Should redirect to users if user was logged" do
+      session[:user_id] = User.last.id
+      get :logout
+      expect(response).to redirect_to(:users)
+    end
+  end
 end
