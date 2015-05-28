@@ -78,8 +78,10 @@ RSpec.describe UsersController, type: :controller do
       get :login
       expect(response).to render_template(:login)
     end
+  end
 
-    it "Should show flash if user is missing or wrong email" do
+  describe "POST #login" do
+    it "Should render login and show flash if user is missing or wrong email" do
       post :login, :do_login => { :email => "email@hotmail.com", :password => "123456" }
       expect(response).to render_template(:login)
       expect(flash[:error]).to be_present
@@ -90,7 +92,7 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to redirect_to(:users)
     end
 
-    it "Should show flash if user input a wrong password" do
+    it "Should render login and show flash if user input a wrong password" do
       post :login, :do_login => { :email => "vitor.nere@hotmail.com", :password => "1234569283" }
       expect(response).to render_template(:login)
       expect(flash[:error]).to be_present
@@ -102,6 +104,38 @@ RSpec.describe UsersController, type: :controller do
       session[:user_id] = User.last.id
       get :logout
       expect(response).to redirect_to(:users)
+    end
+    #  xhr :get. :logout
+    #  expect(response).to
+  end
+
+  describe "GET #profile" do
+    it "Should render user's profile" do
+      session[:user_id] = User.last.id
+      get :profile
+      expect(response).to render_template(:profile)
+    end
+
+    it "Should redirect to user's clinic profile" do
+      User.last.clinic = Clinic.last
+      session[:user_id] = User.last.id
+      get :profile
+      expect(response).to redirect_to(:users_clinic_profile)
+    end
+  end
+
+  describe "GET #clinic_profile" do
+    it "Should render user's clinic_profile if user was associated a clinic" do
+      User.last.clinic = Clinic.last
+      session[:user_id] = User.last.id
+      get :clinic_profile
+      expect(response).to render_template(:clinic_profile)
+    end
+
+    it "Should redirect to user's profile if user not associated a clinic" do
+      session[:user_id] = User.last.id
+      get :clinic_profile
+      expect(response).to redirect_to(:users_profile)
     end
   end
 end
