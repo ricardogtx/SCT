@@ -53,10 +53,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    @user = current_user
-  end
-
   def profile
     @user = current_user
 
