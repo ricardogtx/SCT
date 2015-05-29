@@ -12,6 +12,7 @@
   Tolerancia: sim
   Efeitos_a_longo_prazo: obesidade, impotência, psicose, úlceras, subnutrição, danos cerebrais e hepáticos, morte
   Utilizacao_medica: nenhuma
+  Usage_percentage: 0
 
 - Droga:
   Nome: Alucinógenos
@@ -27,6 +28,7 @@
   Tolerancia: sim
   Efeitos_a_longo_prazo: aumento de ilusões e de pânico, psicose
   Utilizacao_medica: o LSD e a psilocybina foram testados no tratamento do alcoolismo, drogas, doenças mentais e enxaquecas
+  Usage_percentage: 0.6
 
 - Droga:
   Nome: Anfetaminas
@@ -42,6 +44,7 @@
   Tolerancia: sim
   Efeitos_a_longo_prazo: insônia, excitação, problemas dermatológicos, subnutrição, ilusões, alucinações, psicose
   Utilizacao_medica: na obesidade, depressão, fadiga excessiva, distúrbios do comportamento infantil
+  Usage_percentage: 0
 
 - Droga:
   Nome: Antidepressivos
@@ -57,6 +60,7 @@
   Tolerancia: sim
   Efeitos_a_longo_prazo: estupor, coma, convulsões, insuficiência cardíaca congestiva, danos ao fígado e aos glóbulos brancos, morte
   Utilizacao_medica: na ansiedade ou supersedação, distúrbios do comportamento infantil
+  Usage_percentage: 0
 
 - Droga:
   Nome: Barbitúricos
@@ -72,6 +76,7 @@
   Tolerancia: sim
   Efeitos_a_longo_prazo: sonolência excessiva, confusão, irritabilidade, graves enjôos pela privação
   Utilizacao_medica: na insônia, tensão e ataque epilético
+  Usage_percentage: 0.5
 
 - Droga:
   Nome: Cafeína
@@ -87,6 +92,7 @@
   Tolerancia: não
   Efeitos_a_longo_prazo: agitação, irritabilidade, insônia, perturbações estomacais
   Utilizacao_medica: na supersedação e dor de cabeça
+  Usage_percentage: 0
 
 - Droga:
   Nome: Cocaína
@@ -102,6 +108,7 @@
   Tolerancia: não
   Efeitos_a_longo_prazo: danos ao septo nasal e vasos sanguíneos, psicose
   Utilizacao_medica: anestésico local
+  Usage_percentage: 2.3
 
 - Droga:
   Nome: Inalantes
@@ -117,6 +124,7 @@
   Tolerancia: possível
   Efeitos_a_longo_prazo: alucinações, danos ao cérebro, aos ossos, rins e fígado, morte
   Utilizacao_medica: dilatação dos vasos sanguíneos, anestésico leve
+  Usage_percentage: 5.8
 
 - Droga:
   Nome: Cannabis Sativa
@@ -132,6 +140,7 @@
   Tolerancia: não
   Efeitos_a_longo_prazo: fadiga, psicose
   Utilizacao_medica: na tensão, depressão, dor de cabeça, falta de apetite
+  Usage_percentage: 6.9
 
 - Droga:
   Nome: Narcóticos
@@ -147,6 +156,7 @@
   Tolerancia: sim
   Efeitos_a_longo_prazo: latargia, prisão de ventre, perda de peso, esterilidade e impotência temporária, enjôos pela privação
   Utilizacao_medica: na tosse, na diarréia, analgésico, combate à heroína
+  Usage_percentage: 0
 
 - Droga:
   Nome: Nicotina
@@ -162,6 +172,7 @@
   Tolerancia: sim
   Efeitos_a_longo_prazo: respiração prejudicada, doença pulmonar e cardiológica, câncer, morte
   Utilizacao_medica: nenhuma (usado em inseticida)
+  Usage_percentage: 0
 
 - Droga:
   Nome: Tranquilizantes
@@ -177,3 +188,4 @@
   Tolerancia: não
   Efeitos_a_longo_prazo: destruição de células sanguíneas, icterícia, coma, morte
   Utilizacao_medica: na tensão, ansiedade, psicose, no alcoolismo
+  Usage_percentage: 0
