@@ -1,17 +1,26 @@
 <div class="row">
     <div class="col-md-12" style="text-align: center">
-         <h3>Gráfico das dorgas</h3>
+        <h3>Gráfico das dorgas</h3>
+        <br>
+        <br>
+        <br>
     </div>
-  <div class="col-md-6">text away
-  </div>
-  <div class="col-md-6">
-      <!--Div that will hold the pie chart-->
+    <div class="col-md-6">
+    <!--Div that will hold the pie chart-->
     <div id="chart_div"></div>
-
-  </div>
-
+    </div>
+    <div class="col-md-6">
+    <br>
+    <br>
+        <p align="justify">
+            &nbsp;&nbsp;&nbsp;&nbsp; A pesquisa foi feita em 107 cidades brasilieras em um periodo de 3 mêses em 2001. A idéia era mapear não apenas o consumo, mas a percepção que a comunidade nas grandes cidades brasileiras tem do uso e da venda de drogas, legais ou ilegais. Aos entrevistados foi perguntado também se consideravam fácil adquirir determinados tipos de drogas, se já haviam sido abordados ou mesmo se haviam procurado vendedores.
+        </p>
+    </div>
 </div>
 
 <% drugs.each do |drug| %>
-    <%= hidden_field_tag "drugs[]", "#{drug.name}|#{drug.usage_percentage}" %>
+<%= hidden_field_tag "drugs[]", "#{drug.name}|#{drug.usage_percentage}" %>
 <% end %>
+
+<br>
+<h6>Fonte: Anti Drogas (http://www.antidrogas.com.br/oquedrogas.php)</h6>

@@ -29,9 +29,16 @@
         data.addRows(drug_list);
 
         // Set chart options
-        var options = {'title':'O uso na vida de drogas de abuso na população brasileira',
-                       'width':600,
-                       'height':400};
+        var options = {
+        width: 600,
+        height: 400,
+        title: 'Ranking de uso na vida das diferentes drogas psicotrópicas',
+        colors: ['#000000', '#C2C2C2', '#8E8E8E', '#525252','#0F0F0F'],
+        is3D: true,
+        'chartArea': {'width': '100%', 'height': '80%'},
+        backgroundColor: { fill:'transparent' }
+        };
+
 
 
         // Instantiate and draw our chart, passing in some options.
