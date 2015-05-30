@@ -161,4 +161,33 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to redirect_to(:users_profile_edit)
     end
   end
+
+  describe "PATCH/PUT #update" do
+    it "Shoud update e_mail and redirect to users_profile" do
+      @user = User.last
+      session[:user_id] = User.last.id
+      expect {
+        patch :update, id: @user.id, user: {:email => "teste@hotmail.com"}
+        @user.reload
+      }.to change(@user, :email).to("teste@hotmail.com")
+      expect(response).to redirect_to(:users_profile)
+    end
+  end
+
+  describe "GET #clinic" do
+    it "Should render clinic if user associated a clinic" do
+      User.last.clinic = Clinic.last
+      session[:user_id] = User.last.id
+      get :clinic
+      expect(response).to render_template(:clinic)
+    end
+
+    it "Should redirect to a users is user not associated a clinic" do
+      session[:user_id] = User.last.id
+      get :clinic
+      expect(response).to redirect_to(:users)
+    end
+  end
 end
+
+

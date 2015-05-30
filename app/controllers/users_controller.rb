@@ -73,10 +73,8 @@ class UsersController < ApplicationController
     @user = current_user
 
     if @user.update_attributes(user_params)
-      redirect_to :users_clinic_profile unless @user.clinic.nil?
       redirect_to :users_profile
     else
-      render :users_clinic_profile_edit unless @user.clinic.nil?
       render :users_profile_edit
     end
   end
