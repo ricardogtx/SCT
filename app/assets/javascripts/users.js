@@ -8,7 +8,7 @@
           alert("Você foi deslogado por 10 minutos de inatividade.");
         }
       });
-    }, 20*60*1000); // 10 minutes
+    }, 20*60*1000); // 20 minutes
   }
 
 
