@@ -13,6 +13,60 @@
 					    Você está logado com o email <%= current_user.email %>, caso queira ver/ou atualizar informações da sua conta clica em Perfil.<br />
 					    </p><a href="<%= users_profile_path %>" class="btn btn-primary" id="sign_in_button" role="button">Perfil</a></p>
 					    </p><a href="<%= logout_path %>" class="btn btn-danger" id="sign_in_button" role="button">Logout</a></p>
+					  	<div class="area-total-abas">
+							<div class="lista-abas amimacao-flip">>
+								<input type="radio" name="lista-abas" id="aba-1" class="aba-1">
+								<label for="aba-1"><span><span>Informações da Clínica</span></span></label>
+								<ul>
+									<li class="aba-1">
+										<div class="conteudo">
+											<table width="300px">
+												<tr>
+													<td>Clínica:</td>
+													<td><%= @user.clinic.nome %></td>
+												</tr>
+												<tr>
+													<th>Endereco</th>
+												    <td><%= @user.clinic.nome_logradouro %></td>
+												</tr>
+											    <tr>
+											    	<th>Municipio</th>
+											    	<td><%= @user.clinic.municipio %></td>
+											    </tr>
+											    <tr>
+											    	<th>Cep</th>
+											    	<td><%= @user.clinic.cep %></td>
+											    </tr>
+											    <tr>
+											    	<th>Latitude</th>
+											    	<td><%= @user.clinic.latitude %></td>
+											    </tr>
+											    <tr>
+											    	<th>Longitude</th>
+											    	<td><%= @user.clinic.longitude %></td>
+											    </tr>
+											    <tr>
+											    	<th>Telefone1</th>
+											    	<td><%= @user.clinic.telefone_1 %></td>
+											    </tr>
+											    <tr>
+											    	<th>Telefone2</th>
+											    	<td><%= @user.clinic.telefone_2 %></td>
+											    </tr>
+											    <tr>
+											    	<th>Email</th>
+											    	<td><%= @user.clinic.e_mail %></td>
+											    </tr>
+											    <tr>
+											    	<th>Modalidade</th>
+											    	<td><%= @user.clinic.modalidade %></td>
+											    </tr>
+											</table>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
 					  <% else %>
 					  	<h2>Bem vindo a página de login/cadastro do SCT</h2>
 					    
