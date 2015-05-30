@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :user_need_to_be_logged, only: [:show, :profile, :clinic_profile, :edit, :update, :clinic]
+  before_action :user_need_to_be_logged, only: [:show, :profile, :edit, :update, :admin, :clinic_edit]
+  before_action :user_need_associated_a_clinic_or_admin, only: [:index, :profile, :edit, :update, :admin, :clinic_edit]
 
   attr_accessor :password
 
@@ -21,8 +22,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    user = current_user
-    authenticate if user && user.authenticate_clinic_user(user) && user.authenticate_admin_user(user)
+    @user = current_user
   end
 
   def login
@@ -55,14 +55,6 @@ class UsersController < ApplicationController
 
   def profile
     @user = current_user
-
-    redirect_to :users_clinic_profile if @user.clinic
-  end
-
-  def clinic_profile
-    @user = current_user
-
-    redirect_to :users_profile unless @user.clinic
   end
 
   def edit
@@ -82,16 +74,8 @@ class UsersController < ApplicationController
   def admin
   end
 
-  def clinic
-    @user = current_user
-
-    redirect_to :users unless @user.clinic
-  end
-
   def clinic_edit
     @user = current_user
-
-    redirect_to :users_profile_edit if @user.clinic.nil?
   end
 
   private
@@ -107,9 +91,19 @@ class UsersController < ApplicationController
       if user.authenticate_admin_user(user)
         redirect_to :admin, :notice => "Logado!"
       elsif user.authenticate_clinic_user(user)
-        redirect_to :users_clinic, :notice => "Logado!"
-      else
         redirect_to :users, :notice => "Logado!"
+      else
+        redirect_to :logout, notice: 'Voce precisa esta associado a uma clínica!'
+      end
+    end
+  end
+
+  def user_need_associated_a_clinic_or_admin
+    user = current_user
+
+    if user
+      unless user.authenticate_clinic_user(user) or user.authenticate_admin_user(user)
+        redirect_to :logout, notice: 'Voce precisa esta associado a uma clínica!'
       end
     end
   end

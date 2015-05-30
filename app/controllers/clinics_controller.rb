@@ -21,9 +21,9 @@ class ClinicsController < ApplicationController
   def update
     @clinic = current_user.clinic
     if @clinic.update_attributes(clinic_params)
-      redirect_to :users_profile, notice: 'Dados atualizados com sucesso.'
+      redirect_to :users, notice: 'Dados atualizados com sucesso.'
     else
-      render :users_profile_edit
+      render :users_clinic_edit
     end
   end
 

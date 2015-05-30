@@ -9,13 +9,13 @@
 		        <div class="panel-body">
 					  <% if current_user %>
 					  	<h2>Olá <%= current_user.name %> </h2>
-					    
+
 					    Você está logado com o email <%= current_user.email %>, caso queira ver/ou atualizar informações da sua conta clica em Perfil.<br />
 					    </p><a href="<%= users_profile_path %>" class="btn btn-primary" id="sign_in_button" role="button">Perfil</a></p>
 					    </p><a href="<%= logout_path %>" class="btn btn-danger" id="sign_in_button" role="button">Logout</a></p>
 					  	<div class="area-total-abas">
 							<div class="lista-abas amimacao-flip">>
-								<input type="radio" name="lista-abas" id="aba-1" class="aba-1">
+								<input type="radio" name="lista-abas" checked id="aba-1" class="aba-1">
 								<label for="aba-1"><span><span>Informações da Clínica</span></span></label>
 								<ul>
 									<li class="aba-1">
@@ -67,9 +67,10 @@
 								</ul>
 							</div>
 						</div>
+						<a href="<%= users_clinic_edit_path %>" class="btn btn-success" role="button">Editar Clínica</a>
 					  <% else %>
 					  	<h2>Bem vindo a página de login/cadastro do SCT</h2>
-					    
+
 					    Para efetuar o login no site clica em Login, se você ainda não possui uma conta registrada nesse site, basta criar uma conta no botão Cadastrar.<br />
 					    </p><a href="<%= login_path %>" class="btn btn-danger" id="sign_in_button" role="button">Login</a></p>
 					    </p><a href="<%= signup_path %>" class="btn btn-primary" id="sign_in_button" role="button">Cadastrar</a></p>
