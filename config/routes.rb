@@ -41,6 +41,10 @@ Rails.application.routes.draw do
 
   resources :users
 
+  get 'depoimentos' => 'testimonials#show'
+  get 'depoimentos/novo' => 'testimonials#new'
+
+
   #get "login" => "sessions#new" #, :as => "log_in"
   #post "login" => "sessions#create"
   #get "logout" => "sessions#destroy" #, :as => "log_out"
