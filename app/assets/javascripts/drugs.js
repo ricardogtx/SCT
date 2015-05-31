@@ -12,6 +12,7 @@
       function main(){
         draw_drug_chart("drugs_usage[]", "Usos ao longo da vida", "chart_div");
         draw_drug_chart("drugs_death[]", "Índice de mortalidade", "chart_div2");
+        draw_drug_chart("drugs_dependency[]", "Índice de dependência", "chart_div3");
 
       }
 
