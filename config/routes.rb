@@ -37,7 +37,12 @@ end
 
   resources :users
 
+
   get 'saiba_mais' => 'home#about'
+  get 'depoimentos' => 'testimonials#show'
+  get 'depoimentos/novo' => 'testimonials#new'
+
+
 
   #get "login" => "sessions#new" #, :as => "log_in"
   #post "login" => "sessions#create"
