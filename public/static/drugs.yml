@@ -13,7 +13,7 @@
   Efeitos_a_longo_prazo: obesidade, impotência, psicose, úlceras, subnutrição, danos cerebrais e hepáticos, morte
   Utilizacao_medica: nenhuma
   Usage_percentage: 0
-  Death_rate: 6109
+  Death_rate: 0
 
 - Droga:
   Nome: Alucinógenos
@@ -166,7 +166,7 @@
   Efeitos_a_longo_prazo: latargia, prisão de ventre, perda de peso, esterilidade e impotência temporária, enjôos pela privação
   Utilizacao_medica: na tosse, na diarréia, analgésico, combate à heroína
   Usage_percentage: 0
-  Death_rate: 0
+  Death_rate: 44
 
 - Droga:
   Nome: Nicotina
@@ -183,7 +183,7 @@
   Efeitos_a_longo_prazo: respiração prejudicada, doença pulmonar e cardiológica, câncer, morte
   Utilizacao_medica: nenhuma (usado em inseticida)
   Usage_percentage: 0
-  Death_rate: 375
+  Death_rate: 0
 
 - Droga:
   Nome: Tranquilizantes
