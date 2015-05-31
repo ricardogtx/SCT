@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12" style="text-align: center">
-        <h3>Gráfico das dorgas</h3>
+        <h3>Gráfico de uso ao longo da vida</h3>
         <br>
         <br>
         <br>
@@ -18,9 +18,33 @@
     </div>
 </div>
 
-<% drugs.each do |drug| %>
-<%= hidden_field_tag "drugs[]", "#{drug.name}|#{drug.usage_percentage}" %>
-<% end %>
-
 <br>
 <h6>Fonte: Anti Drogas (http://www.antidrogas.com.br/oquedrogas.php)</h6>
+<br>
+<br>
+<br>
+
+<div class="row">
+    <div class="col-md-12" style="text-align: center">
+        <h3>Gráfico de óbitos</h3>
+        <br>
+        <br>
+        <br>
+    </div>
+    <div class="col-md-6">
+    <!--Div that will hold the pie chart-->
+    <div id="chart_div2"></div>
+    </div>
+    <div class="col-md-6">
+    <br>
+    <br>
+        <p align="justify">
+            &nbsp;&nbsp;&nbsp;&nbsp; Relação de mortes cuja causa está relacionada ao uso de drogas em um ano.
+        </p>
+    </div>
+</div>
+
+<% drugs.each do |drug| %>
+<%= hidden_field_tag "drugs_usage[]", "#{drug.name}|#{drug.usage_percentage}" %>
+<%= hidden_field_tag "drugs_death[]", "#{drug.name}|#{drug.death_rate}" %>
+<% end %>
