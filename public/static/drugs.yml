@@ -14,6 +14,7 @@
   Utilizacao_medica: nenhuma
   Usage_percentage: 0
   Death_rate: 0
+  Dependency_rate: 12.3
 
 - Droga:
   Nome: Alucinógenos
@@ -31,6 +32,7 @@
   Utilizacao_medica: o LSD e a psilocybina foram testados no tratamento do alcoolismo, drogas, doenças mentais e enxaquecas
   Usage_percentage: 0.6
   Death_rate: 3
+  Dependency_rate: 0
 
 - Droga:
   Nome: Anfetaminas
@@ -48,6 +50,7 @@
   Utilizacao_medica: na obesidade, depressão, fadiga excessiva, distúrbios do comportamento infantil
   Usage_percentage: 0
   Death_rate: 0
+  Dependency_rate: 0.2
 
 - Droga:
   Nome: Antidepressivos
@@ -65,6 +68,7 @@
   Utilizacao_medica: na ansiedade ou supersedação, distúrbios do comportamento infantil
   Usage_percentage: 0
   Death_rate: 0
+  Dependency_rate: 0
 
 - Droga:
   Nome: Barbitúricos
@@ -82,6 +86,7 @@
   Utilizacao_medica: na insônia, tensão e ataque epilético
   Usage_percentage: 0.5
   Death_rate: 0
+  Dependency_rate: 0
 
 - Droga:
   Nome: Cafeína
@@ -99,6 +104,7 @@
   Utilizacao_medica: na supersedação e dor de cabeça
   Usage_percentage: 0
   Death_rate: 0
+  Dependency_rate: 0
 
 - Droga:
   Nome: Cocaína
@@ -116,6 +122,7 @@
   Utilizacao_medica: anestésico local
   Usage_percentage: 2.3
   Death_rate: 24
+  Dependency_rate: 0
 
 - Droga:
   Nome: Inalantes
@@ -133,6 +140,7 @@
   Utilizacao_medica: dilatação dos vasos sanguíneos, anestésico leve
   Usage_percentage: 5.8
   Death_rate: 31
+  Dependency_rate: 0.2
 
 - Droga:
   Nome: Cannabis Sativa
@@ -150,6 +158,7 @@
   Utilizacao_medica: na tensão, depressão, dor de cabeça, falta de apetite
   Usage_percentage: 6.9
   Death_rate: 10
+  Dependency_rate: 1.2
 
 - Droga:
   Nome: Narcóticos
@@ -167,6 +176,7 @@
   Utilizacao_medica: na tosse, na diarréia, analgésico, combate à heroína
   Usage_percentage: 0
   Death_rate: 44
+  Dependency_rate: 0
 
 - Droga:
   Nome: Nicotina
@@ -184,6 +194,7 @@
   Utilizacao_medica: nenhuma (usado em inseticida)
   Usage_percentage: 0
   Death_rate: 0
+  Dependency_rate: 10.1
 
 - Droga:
   Nome: Tranquilizantes
@@ -201,3 +212,4 @@
   Utilizacao_medica: na tensão, ansiedade, psicose, no alcoolismo
   Usage_percentage: 0
   Death_rate: 22
+  Dependency_rate: 0.5
