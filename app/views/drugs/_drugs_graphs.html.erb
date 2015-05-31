@@ -18,12 +18,6 @@
     </div>
 </div>
 
-<br>
-<h6>Fonte: Anti Drogas (http://www.antidrogas.com.br/oquedrogas.php)</h6>
-<br>
-<br>
-<br>
-
 <div class="row">
     <div class="col-md-12" style="text-align: center">
         <h3>Gráfico de óbitos</h3>
@@ -32,15 +26,15 @@
         <br>
     </div>
     <div class="col-md-6">
-    <!--Div that will hold the pie chart-->
-    <div id="chart_div2"></div>
-    </div>
-    <div class="col-md-6">
     <br>
     <br>
         <p align="justify">
-            &nbsp;&nbsp;&nbsp;&nbsp; Relação de mortes cuja causa está relacionada ao uso de drogas em um ano.
+            &nbsp;&nbsp;&nbsp;&nbsp; Relação de mortes cuja causa está relacionada ao uso de drogas de acordo com o levantamento domiciliar sobre uso de drogas Psicotrópicas no Brasil no ano de 2005 excluindo-se da análise o Álcool e o Tabaco, cujos indices de mortalidade são os maiores dentre as drogas citadas na pesquisa, que são causados de forma direta e indireta devido ao uso dessas mesmas substancias.
         </p>
+    </div>
+    <div class="col-md-6">
+    <!--Div that will hold the pie chart-->
+    <div id="chart_div2"></div>
     </div>
 </div>
 
@@ -48,3 +42,9 @@
 <%= hidden_field_tag "drugs_usage[]", "#{drug.name}|#{drug.usage_percentage}" %>
 <%= hidden_field_tag "drugs_death[]", "#{drug.name}|#{drug.death_rate}" %>
 <% end %>
+
+<br>
+<h6>Fonte: Anti Drogas (http://www.antidrogas.com.br/oquedrogas.php)</h6>
+<br>
+<br>
+<br>
