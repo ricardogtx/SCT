@@ -9,6 +9,11 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Novo Usuário</h3>
+                        <% if flash[:error] %>
+                          <div class="alert alert-danger" role="alert" ><button type="button" class="close" data-dismiss="alert">×</button>
+                            <strong>Erro!<p></p></strong> <%= flash[:error] %>.
+                          </div>
+                        <% end %>
                      </div>
                     <div class="panel-body">
 						<%= form_for(@user) do |f| %>

@@ -30,10 +30,9 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new', as: 'signup'
 
   get 'logout', to: 'users#logout', as: 'logout'
-  get 'login', to: 'users#login', as: 'login'
   get 'users/profile', to: 'users#profile', as: 'users_profile'
   get 'users/profile/edit', to: 'users#edit', as: 'users_profile_edit'
-  post 'login', to: 'users#login',  as: 'do_login'
+  post 'index', to: 'users#index',  as: 'do_login'
   get 'users/admin', to: 'users#admin', as: 'admin'
   get 'users/clinic/edit', to: 'users#clinic_edit', as: 'users_clinic_edit'
 

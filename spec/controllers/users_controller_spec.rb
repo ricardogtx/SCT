@@ -73,29 +73,25 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "GET #login" do
-    it "Should render users/login if user has request get" do
-      session[:user_id] = nil
-      get :login
-      expect(response).to render_template(:login)
-    end
+
   end
 
-  describe "POST #login" do
-    it "Should render login and show flash if user is missing or wrong email" do
-      post :login, :do_login => { :email => "email@hotmail.com", :password => "123456" }
-      expect(response).to render_template(:login)
+  describe "POST #index - login" do
+    it "Should render index and show flash if user is missing or wrong email" do
+      post :index, :do_login => { :email => "email@hotmail.com", :password => "123456" }
+      expect(response).to render_template(:index)
       expect(flash[:error]).to be_present
     end
 
     it "Should redirect to users if user gets login" do
       User.last.clinic = Clinic.last
-      post :login, :do_login => { :email => "vitor.nere@hotmail.com", :password => "123456" }
+      post :index, :do_login => { :email => "vitor.nere@hotmail.com", :password => "123456" }
       expect(response).to redirect_to(:users)
     end
 
     it "Should render login and show flash if user input a wrong password" do
-      post :login, :do_login => { :email => "vitor.nere@hotmail.com", :password => "1234569283" }
-      expect(response).to render_template(:login)
+      post :index, :do_login => { :email => "vitor.nere@hotmail.com", :password => "1234569283" }
+      expect(response).to render_template(:index)
       expect(flash[:error]).to be_present
     end
   end

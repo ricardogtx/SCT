@@ -10,12 +10,17 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new(user_params)
-  	if @user.save
-      session[:user_id] = @user.id
-      redirect_to :users, notice: 'Usuario cadastrado com sucesso'
-  	else
-  		render :new
-  	end
+    if @user.password == @user.password_confirmation
+    	if @user.save
+        session[:user_id] = @user.id
+        redirect_to :users, notice: 'Usuario cadastrado com sucesso'
+    	else
+    		render :new
+    	end
+    else
+      flash.now[:error] = "Senhas diferentes"
+      render :new
+    end
   end
 
   def destroy
@@ -23,22 +28,19 @@ class UsersController < ApplicationController
 
   def index
     @user = current_user
-  end
-
-  def login
     if request.post? && !params[:do_login][:email].blank? && !params[:do_login][:password].blank?
       user = User.find_by_email(params[:do_login][:email])
 
       if user.nil?
-        flash.now[:error] = "Usuário não encontrado ou Email invalido."
+        flash.now[:error] = "Usuário não encontrado ou Email invalido"
       elsif user.authenticate(params[:do_login][:password])
         session[:user_id] = user.id
         authenticate
       else
-        flash.now[:error] = "Senha invalida."
+        flash.now[:error] = "Senha invalida"
       end
     elsif request.post?
-      flash.now[:error] = "Insira um Email e Senha."
+      flash.now[:error] = "Insira um Email e Senha"
     end
   end
 

@@ -8,11 +8,11 @@
 		  		<div class="panel panel-default">
 		        <div class="panel-body">
 					  <% if current_user %>
+					  <center>
 					  	<h2>Olá <%= current_user.name %> </h2>
 
 					    Você está logado com o email <%= current_user.email %>, caso queira ver/ou atualizar informações da sua conta clica em Perfil.<br />
-					    </p><a href="<%= users_profile_path %>" class="btn btn-primary" id="sign_in_button" role="button">Perfil</a></p>
-					    </p><a href="<%= logout_path %>" class="btn btn-danger" id="sign_in_button" role="button">Logout</a></p>
+					  </center>
 					  	<div class="area-total-abas">
 							<div class="lista-abas amimacao-flip">>
 								<input type="radio" name="lista-abas" checked id="aba-1" class="aba-1">
@@ -69,21 +69,47 @@
 						</div>
 						<a href="<%= users_clinic_edit_path %>" class="btn btn-success" role="button">Editar Clínica</a>
 					  <% else %>
-					  	<h2>Bem vindo a página de login/cadastro do SCT</h2>
+					    <center>
+					    	<h2>Bem vindo a página de login/cadastro do SCT</h2>
 
-					    Para efetuar o login no site clica em Login, se você ainda não possui uma conta registrada nesse site, basta criar uma conta no botão Cadastrar.<br />
-					    </p><a href="<%= login_path %>" class="btn btn-danger" id="sign_in_button" role="button">Login</a></p>
-					    </p><a href="<%= signup_path %>" class="btn btn-primary" id="sign_in_button" role="button">Cadastrar</a></p>
+						    Para efetuar o login no site clica em Login, se você ainda não possui uma conta registrada nesse site, basta criar uma conta no botão Cadastrar.<br />
+						    <% if flash[:error] %>
+                  <div class="alert alert-danger" role="alert" ><button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Erro!<p></p></strong> <%= flash[:error] %>.
+                  </div>
+                <% end %>
+
+					        <div class="container">
+					            <div class="row vertical-offset-100">
+					              <div class="col-md-4 col-md-offset-4">
+					                <div class="panel panel-default">
+					                    <div class="panel-heading">
+					                        <h3 class="panel-title">Login</h3>
+					                     </div>
+					                    <div class="panel-body">
+					                      <%= form_for(:do_login) do |f| %>
+					                        <%= f.email_field :email, :class=>"form-control", :placeholder=>"Email" %>
+					                        <%= f.password_field :password, :class=>"form-control", :placeholder=>"Senha" %>
+					                        <br>
+					                        <%= check_box_tag :remember_me %>
+					                        <%= label_tag :remember_me %>
+					                        <br>
+					                        <%= f.submit "Logar", :class=>"btn btn-lg btn-primary btn-block" %>
+					                        <br>
+					                        <a href="/users/new" class="btn btn-lg btn-danger btn-block" role="button">Cadastrar</a>
+					                      <% end %>
+					                    </div>
+					                </div>
+					              </div>
+					            </div>
+					        </div>
+					    </center>
 					  <% end %>
 					</div>
 				</div>
 			</div>
 		  </div>
 		</div>
-
-		<% flash.each do |name, msg| %>
-		<%= content_tag :div, msg, :id => "flash_#{name}" %>
-		<% end %>
 	</body>
 </head>
 </html>
