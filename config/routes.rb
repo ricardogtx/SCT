@@ -39,6 +39,7 @@ end
 
 
   get 'saiba_mais' => 'home#about'
+  resources :testimonials
   get 'depoimentos' => 'testimonials#show'
   get 'depoimentos/novo' => 'testimonials#new'
 
