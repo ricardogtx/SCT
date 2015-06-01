@@ -1,6 +1,9 @@
 <div>
 	<h1>Depoimentos</h1>
 </div>
+<div>
+	<p>Incentive os outros a buscarem tratamento, relate sua experiência de superação. Deixe um depoimento clicando <%= link_to 'aqui.', depoimentos_novo_path %></p>
+</div>
 <% @testimonial.each do |t| %>
 	<div>
 		<h2><%= t.title %></h2>

@@ -1,7 +1,8 @@
 <h1>Editar Depoimento</h1>
 
 <%= bootstrap_form_for(@testimonial) do |t| %>
-	<%= t.text_field :title, label: "Título" %>
-	<%= t.text_area :body, label: "Texto", size: "30x10" %>
+	<%= t.text_field :title, label: "Título", required: true %>
+	<%= t.text_area :body, label: "Texto", size: "30x10", required: true %>
 	<%= t.submit "Enviar" %>
+	<%= link_to "Cancelar", :back, {:class=>"btn btn-default"} %>
 	<% end %>

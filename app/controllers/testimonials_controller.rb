@@ -5,8 +5,9 @@ class TestimonialsController < ApplicationController
 
 	def create
 		@testimonial = Testimonial.new(testimonial_params)
-		@testimonial.save
-		redirect_to depoimentos_path
+		if @testimonial.save
+			redirect_to depoimentos_path, notice: "Enviado com sucesso."
+		end
 	end
 
 	def show
@@ -19,8 +20,9 @@ class TestimonialsController < ApplicationController
 
 	def update
 		@testimonial = Testimonial.find_by_id(params[:id])
-		@testimonial.update(testimonial_params)
-		redirect_to depoimentos_path
+		if @testimonial.update(testimonial_params)
+			redirect_to depoimentos_path
+		end
 	end
 	
 
