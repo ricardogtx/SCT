@@ -41,6 +41,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :testimonials
+  
   get 'depoimentos' => 'testimonials#show'
   get 'depoimentos/novo' => 'testimonials#new'
 
