@@ -1,1 +1,15 @@
-<h1>Depoimentos</h1>
+<div>
+	<h1>Depoimentos</h1>
+</div>
+<% @testimonial.each do |t| %>
+	<div>
+		<h2><%= t.title %></h2>
+	</div>
+	<div>
+		<%= t.body %>
+	</div>
+	<%= link_to 'Editar', {:action => "edit", :id => t.id} %>
+	<br>
+	<br>
+	<% end %>
+	

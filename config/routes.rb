@@ -40,8 +40,11 @@ end
 
   get 'saiba_mais' => 'home#about'
   resources :testimonials
-  get 'depoimentos' => 'testimonials#show'
-  get 'depoimentos/novo' => 'testimonials#new'
+
+
+  get 'depoimentos'           =>   'testimonials#show'
+  get 'depoimentos/novo'      =>   'testimonials#new'
+  get 'depoimentos/editar'    =>   'testimonials#edit'
 
 
 
