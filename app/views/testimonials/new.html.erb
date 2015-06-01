@@ -1,4 +1,5 @@
 <h1>Novo Depoimento</h1>
+<p>Não insira nomes ou qualquer outro tipo de informação pessoal.</p>
 <%= bootstrap_form_for(@testimonial) do |t| %>
 	<%= t.text_field :title, label: "Título", required: true %>
 	<%= t.text_area :body, label: "Texto", size: "30x10", required: true %>

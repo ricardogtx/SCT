@@ -54,6 +54,17 @@
             </div>
         </div>
         <hr>
+        <div>
+            <h2 align="center">Últimos Depoimentos</h2>
+             <% @testimonial.each do |t| %>
+               <div>
+               <h2><%= t.title %></h2>
+               </div>
+               <div><%= t.body %></div>
+               <br>
+            <% end %>
+            <p>Leia mais depoimentos clicando <%= link_to 'aqui.', depoimentos_path %></p>
+        </div>
         <footer></footer>
     </div>
 </body>

@@ -21,7 +21,7 @@ class TestimonialsController < ApplicationController
 	def update
 		@testimonial = Testimonial.find_by_id(params[:id])
 		if @testimonial.update(testimonial_params)
-			redirect_to depoimentos_path
+			redirect_to depoimentos_path, notice: "Atualizado com sucesso."
 		end
 	end
 	
