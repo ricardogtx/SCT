@@ -43,8 +43,9 @@ Rails.application.routes.draw do
 
   resources :testimonials
   
-  get 'depoimentos' => 'testimonials#show'
-  get 'depoimentos/novo' => 'testimonials#new'
+  get 'depoimentos'           =>   'testimonials#show'
+  get 'depoimentos/novo'      =>   'testimonials#new'
+  get 'depoimentos/editar'    =>   'testimonials#edit'
 
 
   #get "login" => "sessions#new" #, :as => "log_in"

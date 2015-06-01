@@ -10,10 +10,19 @@ class TestimonialsController < ApplicationController
 	end
 
 	def show
+		@testimonial = Testimonial.all
+	end
+
+	def edit
+		@testimonial = Testimonial.find(params[:id])
+	end
+
+	def update
+		@testimonial = Testimonial.find_by_id(params[:id])
+		@testimonial.update(testimonial_params)
+		redirect_to depoimentos_path
 	end
 	
-	def edit
-	end
 
 	def destroy
 	end
