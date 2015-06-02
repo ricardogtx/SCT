@@ -5,10 +5,10 @@
     window.setTimeout(function() {
       $.get("/logout", function(response) {
         if(response.user_was_logged) {
-          alert("Você foi deslogado por 10 minutos de inatividade.");
+          alert("Você foi deslogado por 20 minutos de inatividade.");
         }
       });
-    }, 20*60*1000); // 10 minutes
+    }, 20*60*1000); // 20 minutes
   }
 
 
