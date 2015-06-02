@@ -7,6 +7,8 @@ class TestimonialsController < ApplicationController
 		@testimonial = Testimonial.new(testimonial_params)
 		if @testimonial.save
 			redirect_to depoimentos_path, notice: "Enviado com sucesso."
+		else
+			redirect_to depoimentos_path
 		end
 	end
 
@@ -22,6 +24,8 @@ class TestimonialsController < ApplicationController
 		@testimonial = Testimonial.find_by_id(params[:id])
 		if @testimonial.update(testimonial_params)
 			redirect_to depoimentos_path, notice: "Atualizado com sucesso."
+		else
+			redirect_to depoimentos_path
 		end
 	end
 	
