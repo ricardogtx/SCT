@@ -11,7 +11,7 @@
 					  <center>
 					  	<h2>Olá <%= current_user.name %> </h2>
 
-					    Você está logado com o email <%= current_user.email %>, caso queira ver/ou atualizar informações da sua conta clica em Perfil.<br />
+					    Você está logado com o email <%= current_user.email %>, caso queira ver/ou atualizar informações da sua clínica, clique no botão editar abaixo. Caso queira alterar as informações da sua conta ou deslogar, clique no botão de usuário no topo da página.<br />
 					  </center>
 					  	<div class="area-total-abas">
 							<div class="lista-abas amimacao-flip">>
@@ -72,7 +72,9 @@
 					    <center>
 					    	<h2>Bem vindo a página de login/cadastro do SCT</h2>
 
-						    Para efetuar o login no site clica em Login, se você ainda não possui uma conta registrada nesse site, basta criar uma conta no botão Cadastrar.<br />
+					    	Esta página é dedicada somente para clínicas que desejam atualizar suas informações.
+
+						    Para efetuar o login no site é necessário que tenha uma conta assossiada a uma clínica, se você ainda não possui uma conta registrada nesse site, basta criar uma conta no botão Cadastrar informando qual clínica deseja assossiar, ou caso sua clínica não exista em nosso banco, solicite a criação de uma nova.<br />
 						    <% if flash[:error] %>
                   <div class="alert alert-danger" role="alert" ><button type="button" class="close" data-dismiss="alert">×</button>
                     <strong>Erro!<p></p></strong> <%= flash[:error] %>.
