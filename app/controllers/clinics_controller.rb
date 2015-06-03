@@ -34,4 +34,7 @@ private
                                    :qual_grupo_especifico, :sexo_do_publico, :modalidade)
   end
 
+def general_maps
+end
+
 end
