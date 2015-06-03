@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get 'tranquilizante/:id', to: 'drugs#show', as: :tranquilizante
 
   get 'drogas' => 'drugs#index'
+  get 'campanhas' => 'campaigns#index'
 
   resources :sessions, only: [:new, :create, :destroy]
   get 'signup', to: 'users#new', as: 'signup'
