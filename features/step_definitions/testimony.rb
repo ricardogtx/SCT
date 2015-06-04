@@ -12,5 +12,5 @@ When(/^I fill the new testimony form$/) do
 end
 
 Then(/^should create a testimony$/) do
- 	have_content('title') 
+ 	have_content('testimonial_title') 
 end

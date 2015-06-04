@@ -9,7 +9,7 @@
                                 Consumo excessivo traz aplicações no sistema digestivo,podendo resultar
                                 em varios tipos de complicações podendo afetar a capacidade intelectual,
                                 memória e destrói a vida social e afetiva do dependente.</p>
-                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), alcool_path(1),class: "btn btn-primary"%>
+                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), alcool_path(1), id: 'btn_alcohol', class: "btn btn-primary"%>
                                 </a></p>
                             </div>
                         </div>
@@ -23,7 +23,7 @@
                                 que na linguagem médica significa "percepções sem objeto", isto é, a pessoa
                                 que está em processo de alucinação percebe coisas sem que elas existam (ouve sons
                                 imaginários, vê objetos que não existem). </p>
-                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), alucinogeno_path(2),class: "btn btn-primary"%>
+                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), alucinogeno_path(2), id: 'btn_hallucinogen',class: "btn btn-primary"%>
                                 </a></p>
                             </div>
                         </div>
@@ -37,7 +37,7 @@
                                 mais depressa, deixando as pessoas com “menos sono”. Um exemplo de uso está entre
                                 os motoristas que precisam dirigir durante várias horas seguidas sem descanso,a fim de cumprir
                                 um prazo.</p>
-                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), anfetamina_path(3),class: "btn btn-primary"%>
+                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), anfetamina_path(3), id: 'btn_amphetamine',class: "btn btn-primary"%>
                                 </a></p>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                                 sintomas característicos da síndrome depressiva em alguns pacientes com
                                 transtorno depressivo. Algumas substâncias com atividade antidepressiva
                                 podem ser eficazes também em transtornos psicóticos</p>
-                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), antidepressivo_path(4),class: "btn btn-primary"%>
+                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), antidepressivo_path(4), id: 'btn_antidepressive',class: "btn btn-primary"%>
                                 </a></p>
                             </div>
                         </div>
@@ -65,7 +65,7 @@
                                 capacidade de raciocínio, concentração e coordenação motora.Quando
                                 ingeridos em excesso, afetam as funções do sistema cardiorespiratório,
                                 podendo levar até mesmo ao coma.</p>
-                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), barbiturico_path(5),class: "btn btn-primary"%>
+                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), barbiturico_path(5), id: 'btn_barbitureites', class: "btn btn-primary"%>
                                 </a></p>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                                 é mais comumente associada ao café e às bebidas à base de cola que
                                 contém cafeína e flavorizantes extraídos de fontes naturais. A cafeína não
                                 produz uma verdadeira euforia, mas causa dependência psicológica. </p>
-                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), cafeina_path(6),class: "btn btn-primary"%>
+                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), cafeina_path(6), id:'btn_caffeine',class: "btn btn-primary"%>
                                 </a></p>
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                                 A cocaína é um psicotrópico, pois age no Sistema Nervoso Central, isto é,
                                 sua atuação é no cérebro e na medula espinhal, exatamente nos órgãos
                                 que comandam os pensamentos e as ações das pessoas.</p>
-                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), cocaina_path(7),class: "btn btn-primary"%>
+                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), cocaina_path(7), id: 'btn_cocaine',class: "btn btn-primary"%>
                                 </a></p>
                             </div>
                         </div>
@@ -107,7 +107,7 @@
                                 auditivas, visuais e até alucinações. A aspiração repetida do solvente pode
                                 resultar na destruição de neurônios, provocando perda de reflexos,
                                 dificuldade de concentração e déficit de memória.</p>
-                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), inalantes_path(8),class: "btn btn-primary"%>
+                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), inalantes_path(8), id: 'btn_inhalants' ,class: "btn btn-primary"%>
                                 </a></p>
                             </div>
                         </div>
@@ -121,7 +121,7 @@
                                 Barata e de fácil acesso, o seu uso continuado interfere tanto na aprendizagem,
                                 memorização quanto na fertilidade. É uma combinação de flores e folhas da
                                 planta conhecida como Cannabis sativa.</p>
-                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), maconha_path(9),class: "btn btn-primary"%>
+                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), maconha_path(9), id: 'btn_cannabis' ,class: "btn btn-primary"%>
                                 </a></p>
                             </div>
                         </div>
@@ -135,7 +135,7 @@
                                 adormecer e reduzem ou eliminam a sensibilidade, em medicina, o termo
                                 designa apenas o ópio, os derivados do ópio e os seus substitutos sintéticos
                                 ou semi-sintéticos, usados como anestésicos.</p>
-                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), narcotico_path(10),class: "btn btn-primary"%>
+                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), narcotico_path(10), id: 'btn_narcotics',class: "btn btn-primary"%>
                                 </a></p>
                             </div>
                         </div>
@@ -149,7 +149,7 @@
                                 É uma substância que ocorre naturalmente no tabaco.  Ao tragar a fumaça do
                                 cigarro, uma grande quantidade vai para os pulmões e passa para o sangue,
                                 atingindo o seu cérebro em apenas alguns segundos.</p>
-                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), nicotina_path(11),class: "btn btn-primary"%>
+                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), nicotina_path(11),id:'btn_nicotine',class: "btn btn-primary"%>
                                 </a></p>
                             </div>
                         </div>
@@ -163,7 +163,7 @@
                                 estado de tensão, insônia e ansiedade. Também conhecidos como calmantes,
                                 esses medicamentos atuam produzindo uma depressão nas regiões do cérebro
                                 responsáveis pela ansiedade e a tensão.</p>
-                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), tranquilizante_path(12),class: "btn btn-primary"%>
+                                <%= link_to raw("<i class=\"fa fa-arrow-circle-left\"> Saiba mais! </i>"), tranquilizante_path(12), id:'tranquilizer',class: "btn btn-primary"%>
                                 </a></p>
                             </div>
                         </div>
