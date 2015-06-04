@@ -37,10 +37,16 @@ google.load('visualization', '1', {'packages': ['geochart']});
         region: 'BR',
         resolution: 'provinces',
         datalessRegionColor:  'transparent',
-        colorAxis: {colors: ['#00853f', '#e31b23']},
+        colorAxis: {colors: ['#FFFF00','#FF4D00']},
         backgroundColor: { fill:'transparent' }
       };
 
-      var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+      var chart = new google.visualization.GeoChart(document.getElementById('geochart_div'));
       chart.draw(data, options);
-    };
+
+      google.visualization.events.addListener(chart, 'regionClick', function (event) {
+        var state = (event.region.split("-")[1]);
+        window.location.href = "/clinics?state=" + state;
+      });
+
+};
