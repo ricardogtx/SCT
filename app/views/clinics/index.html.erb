@@ -5,14 +5,14 @@
   <%= search_form_for @search, :html => {:class => "form-horizontal"} do |f| %>
     <div class="field">
       <%= f.text_field :nome_cont, placeholder: "Nome"%>
-        <%= f.text_field :estado_cont, placeholder: "Estado"%>
+        <%= f.select :state_id, options_for_select(State.all.map{ |e| [e.name, e.id] }) %>
         <%= f.text_field :modalidade_cont, placeholder: "Modalidade"%>
     </div>
 
     <p></p>
      <%= f.submit "Buscar", :class => "btn btn-primary" %>
   <% end %>
-  <p></p> 
+  <p></p>
 
   <div class="img-responsive aspect data_background" ></div>
     <% if @search.result.blank? %>
@@ -26,7 +26,7 @@
         <th><%= sort_link(@search, :nome, "Nome") %></th>
         <th><%= sort_link(@search, :estado, "Estado") %></th>
         <th><%= sort_link(@search, :modalidade, "Modalidade") %></th>
-        
+
       </tr>
       </thead>
       <tbody>
