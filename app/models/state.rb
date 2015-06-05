@@ -2,7 +2,7 @@ class State < ActiveRecord::Base
   has_many :clinics
 
 
-  validates :name,
+  validates :name, :uf,
             :presence => true,
             :uniqueness           =>  { :case_sensitive => false }
 
