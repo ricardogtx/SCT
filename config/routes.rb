@@ -46,6 +46,9 @@ end
   get 'depoimentos/novo'      =>   'testimonials#new'
   get 'depoimentos/editar'    =>   'testimonials#edit'
 
+  get 'clinics/id_of_city' => 'clinics#id_of_city'
+  post 'clinics/id_of_city' => 'clinics#id_of_city'
+
 
 
   #get "login" => "sessions#new" #, :as => "log_in"
