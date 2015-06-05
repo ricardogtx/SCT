@@ -11,7 +11,7 @@ class Parser < ActiveRecord::Base
     dataStates = YAML::load_file(File.join(Rails.root,"public/static/states.yml"))
 
     dataStates.each do |state|
-      State.create! :name => state
+      State.create! :name => state["estado"]["nome"], :uf => state["estado"]["uf"]
     end
   end
 
