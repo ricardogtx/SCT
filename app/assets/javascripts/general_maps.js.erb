@@ -13,7 +13,7 @@ google.load('visualization', '1', {'packages': ['geochart']});
         region: 'BR',
         resolution: 'provinces',
         datalessRegionColor:  'transparent',
-        colorAxis: {colors: ['#FFFF00','#FF4D00']},
+        colorAxis: {colors: ['#00FF7F','#FF4500']},
         backgroundColor: { fill:'transparent' }
       };
 
@@ -27,10 +27,6 @@ google.load('visualization', '1', {'packages': ['geochart']});
             window.location.href = "http://localhost:3000/clinics?utf8=%E2%9C%93&q%5Bnome_cont%5D=&q%5Bstate_id_eq%5D=" + response.city_id + "&q%5Bmodalidade_cont%5D=&commit=Buscar";
           }
         });
-
-        //window.location.href = "http://localhost:3000/clinics?utf8=%E2%9C%93&q%5Bnome_cont%5D=&q%5Bstate_id_eq%5D=" + state_class.id + "&q%5Bmodalidade_cont%5D=&commit=Buscar";
-
-
       });
 
 };
