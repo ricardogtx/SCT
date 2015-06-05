@@ -29,9 +29,9 @@ private
   end
 
   def clinic_params
-    params.require(:clinic).permit(:nome, :tipo_logradouro, :nome_logradouro, :numero_logradouro, :complemento, :bairro, :cep, :estado, :municipio,
+    params.require(:clinic, :state).permit(:nome, :tipo_logradouro, :nome_logradouro, :numero_logradouro, :complemento, :bairro, :cep, :state_id, :municipio,
                                    :latitude, :longitude, :telefone_1, :telefone_2, :e_mail, :publico_atendido, :grupo_especifico,
-                                   :qual_grupo_especifico, :sexo_do_publico, :modalidade)
+                                   :qual_grupo_especifico, :sexo_do_publico, :modalidade, :name)
   end
 
   def general_map
