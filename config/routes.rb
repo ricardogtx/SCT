@@ -24,7 +24,6 @@ end
   get 'tranquilizante/:id', to: 'drugs#show', as: :tranquilizante
 
   get 'drogas' => 'drugs#index'
-  get 'campanhas' => 'campaigns#index'
 
   resources :sessions, only: [:new, :create, :destroy]
   get 'signup', to: 'users#new', as: 'signup'
@@ -47,10 +46,15 @@ end
   get 'depoimentos/novo'      =>   'testimonials#new'
   get 'depoimentos/editar'    =>   'testimonials#edit'
 
+
   get 'clinics/id_of_city' => 'clinics#id_of_city'
   post 'clinics/id_of_city' => 'clinics#id_of_city'
 
+  resources :campaigns
 
+
+  get 'campanhas' => 'campaigns#index'
+  get 'campanhas/nova' => 'campaigns#new'
 
   #get "login" => "sessions#new" #, :as => "log_in"
   #post "login" => "sessions#create"
