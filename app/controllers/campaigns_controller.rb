@@ -7,7 +7,7 @@ class CampaignsController < ApplicationController
 	def create
 		@campaign = Campaign.new(campaign_params)
 		if @campaign.save
-			redirect_to campanhas_path, notice: "Enviado com sucesso."
+			redirect_to campanhas_path, notice: "Criada com sucesso!"
 		end
 	end
 
@@ -16,10 +16,12 @@ class CampaignsController < ApplicationController
 	end
 
 	def destroy
+    	@campaign = Campaign.find(params[:id]).destroy
+    	redirect_to campanhas_path, notice: "Campanha deletada."
 	end
 
 	private
 	def campaign_params
-		 params.require(:campaign).permit(:name, :url, :description)
+		params.require(:campaign).permit(:name, :url, :description)
 	end
 end
