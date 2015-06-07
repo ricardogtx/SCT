@@ -1,30 +1,18 @@
-Given(/^I have accessed the login page$/) do
-  visit '/users'
-end
-
-Given(/^I already have an account$/) do
-  @user = User.create! :name=>"name", :email=>"email@email.com", :password=>"123456", :password_confirmation=>"123456"
-  @clinic = Clinic.create! :nome=>"word", :tipo_logradouro=>"word", :nome_logradouro=>"word", :numero_logradouro=>"word", :complemento=>"word", :bairro=>"word", :cep=>"word", 
-  :estado=>"word", :municipio=>"word", :latitude=>"word",
-  :longitude=>"word", :telefone_1=>"word", :telefone_2=>"word", :e_mail=>"word", :publico_atendido=>"word",
-  :grupo_especifico=>"word", :qual_grupo_especifico=>"word", :sexo_do_publico=>"word", :modalidade=>"word"
-  @user.clinic = @clinic
-end
-
-When(/^I enter my email and password correctly$/) do
-  fill_in "Email", :with => @user.email
-  fill_in "Senha", :with => "654321"
-  page.find('#Logar').click
-end
-
 When(/^I press the 'Editar Clínica' button$/) do
-  pending # express the regexp above with the code you wish you had
+  page.find('#Editar').click
 end
 
 When(/^I edit information in the form$/) do
-  pending # express the regexp above with the code you wish you had
+  fill_in 'nome', :with => "Nome"
+  fill_in 'latitude', :with => "Latitude"
+  fill_in 'longitude', :with => "Longitude"
+  fill_in 'telefone_1', :with => "Telefone_1"
+  fill_in 'telefone_2', :with => "Telefone_2"
+  fill_in 'email_field', :with => "Email"
+  fill_in 'modalidade', :with => "Modalidade"
+  click_button 'Enviar'
 end
 
 Then(/^I am redirected to the users page$/) do
-  pending # express the regexp above with the code you wish you had
+  page.should have_content('Você está logado com o email ' + @user.email)
 end

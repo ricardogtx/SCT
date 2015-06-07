@@ -9,15 +9,15 @@
 			<li class="aba-1">
 				<div class="conteudo">
 					<%= bootstrap_form_for(@user.clinic) do |f| %>
-						<%= f.text_field :nome, label: "Nome" %>
-						<%= f.text_field :nome_logradouro, label:"Endereço" %>
-						<%= f.text_field :cep, label: "Cep" %>
-						<%= f.text_field :latitude, label: "Latitude" %>
-						<%= f.text_field :longitude, label: "Longitude" %>
-						<%= f.text_field :telefone_1, label: "Telefone 1" %>
-						<%= f.text_field :telefone_2, label: "telefone_2" %>
-						<%= f.email_field :e_mail, label:"E-Mail" %>
-						<%= f.text_field :modalidade, label: "Modalidade" %>
+						<%= f.text_field :nome, id:"nome", label: "Nome" %>
+						<%= f.text_field :nome_logradouro,id:"nome_logradouro", label:"Endereço" %>
+						<%= f.text_field :cep, id:"cep", label: "Cep" %>
+						<%= f.text_field :latitude, id:"latitude", label: "Latitude" %>
+						<%= f.text_field :longitude, id:"longitude", label: "Longitude" %>
+						<%= f.text_field :telefone_1, id:"telefone_1", label: "Telefone 1" %>
+						<%= f.text_field :telefone_2, id:"telefone_2", label: "telefone_2" %>
+						<%= f.email_field :e_mail, id:"email_field",label:"E-Mail" %>
+						<%= f.text_field :modalidade,id:"modalidade", label: "Modalidade" %>
 						</br>
 						<%= f.submit "Enviar" %>
 	  				  	<%= link_to "Cancelar", :back, {:class=>"btn btn-default"} %>
