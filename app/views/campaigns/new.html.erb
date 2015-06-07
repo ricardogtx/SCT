@@ -1,0 +1,8 @@
+<h1>Nova Campanha</h1>
+<%= bootstrap_form_for(@campaign) do |t| %>
+	<%= t.text_field :name, label: "Nome", required: true %>
+	<%= t.text_field :url, label: "URL", required: true %>
+	<%= t.text_area :description, label: "Descrição", size: "30x10", required: true %>
+	<%= t.submit "Enviar" %>
+	<%= link_to "Cancelar", :back, {:class=>"btn btn-default"} %>
+<% end %>
