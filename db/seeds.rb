@@ -33,3 +33,65 @@
 
     end
 
+    campaign = Campaign.new
+
+    campaign.name = "Cartilha sobre tabaco"
+    campaign.url = "http://www.obid.senad.gov.br/portais/OBID/biblioteca/documentos/Publicacoes/cartilhas/Sem_Logo/329743.pdf"
+    campaign.description = "Cartilha sobre o tabaco e seus riscos."
+
+    puts "="*80, "Saving: #{campaign.name}", "="*80
+    campaign.save!
+
+    campaign = Campaign.new
+
+    campaign.name = "Cartilha para pais de crianças"
+    campaign.url = "http://www.obid.senad.gov.br/portais/OBID/biblioteca/documentos/Publicacoes/cartilhas/Sem_Logo/329742.pdf"
+    campaign.description = "Cartilha de auxilio aos pais sobre educação infantil."
+
+    puts "="*80, "Saving: #{campaign.name}", "="*80
+    campaign.save!
+
+    campaign = Campaign.new
+
+    campaign.name = "Cartilha sobre álcool e jovens"
+    campaign.url = "http://www.obid.senad.gov.br/portais/OBID/biblioteca/documentos/Publicacoes/cartilhas/Sem_Logo/329744.pdf"
+    campaign.description = "Cartilha educacional sobre o combate ao álcool."
+
+    puts "="*80, "Saving: #{campaign.name}", "="*80
+    campaign.save!
+
+    campaign = Campaign.new
+
+    campaign.name = "Cartilha mudando comportamentos"
+    campaign.url = "http://www.obid.senad.gov.br/portais/OBID/biblioteca/documentos/Publicacoes/cartilhas/Sem_Logo/329740.pdf"
+    campaign.description = "Cartilha de auxilio à mudança de hábito."
+
+    puts "="*80, "Saving: #{campaign.name}", "="*80
+    campaign.save!
+
+    campaign = Campaign.new
+    
+    campaign.name = "Cartilha sobre maconha, cocaína e inalantes"
+    campaign.url = "http://www.obid.senad.gov.br/portais/OBID/biblioteca/documentos/Publicacoes/cartilhas/Sem_Logo/329738.pdf"
+    campaign.description = "Cartilha educacional sobre os perigos de diversas drogas."
+
+    puts "="*80, "Saving: #{campaign.name}", "="*80
+    campaign.save!
+
+    campaign = Campaign.new
+    
+    campaign.name = "Cartilha para educadores"
+    campaign.url = "http://www.obid.senad.gov.br/portais/OBID/biblioteca/documentos/Publicacoes/cartilhas/Sem_Logo/329739.pdf"
+    campaign.description = "Cartilha de auxílio a educadores contra as drogas."
+
+    puts "="*80, "Saving: #{campaign.name}", "="*80
+    campaign.save!
+
+    campaign = Campaign.new
+    
+    campaign.name = "Cartilha para pais de adolescentes"
+    campaign.url = "http://www.obid.senad.gov.br"
+    campaign.description = "Cartilha de auxilio aos pais sobre como lidar com a questão das drogas com adolescentes."
+
+    puts "="*80, "Saving: #{campaign.name}", "="*80
+    campaign.save!
