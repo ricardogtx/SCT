@@ -16,6 +16,7 @@
                  como também fornecerá informações e diversas funcionalidades que levam à divulgação de um problema maior,
                  tão como à conscientização da população por meio de informações relacionadas às drogas, além de funcionar
                  como um alerta ao exibir estatísticas reais relacionados aos problemas envolvendo drogas.</p>
+                 <p align="right"><a href="/saiba_mais" class="btn btn-default" role="button">Saiba mais</a></p>
             </div>
             <div class="col-sm-4">
             <img class="img-responsive img-center" src="<%=image_path "sct.jpg"%>">
@@ -53,6 +54,17 @@
             </div>
         </div>
         <hr>
+        <div>
+            <h2 align="center">Últimos Depoimentos</h2>
+             <% @testimonial.each do |t| %>
+               <div>
+               <h2><%= t.title %></h2>
+               </div>
+               <div><%= t.body %></div>
+               <br>
+            <% end %>
+            <p>Leia mais depoimentos clicando <%= link_to 'aqui.', depoimentos_path %></p>
+        </div>
         <footer></footer>
     </div>
 </body>

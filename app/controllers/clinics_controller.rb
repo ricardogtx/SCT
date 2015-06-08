@@ -14,17 +14,18 @@ class ClinicsController < ApplicationController
     @clinics = Clinic.new
   end
 
-  def set_clinic
-    @clinics = Clinic.find(params[:id])
-  end
-
   def update
     @clinic = current_user.clinic
     if @clinic.update_attributes(clinic_params)
-      redirect_to :users_profile, notice: 'Dados atualizados com sucesso.'
+      redirect_to :users, notice: 'Dados atualizados com sucesso.'
     else
-      render :users_profile_edit
+      render :users_clinic_edit
     end
+  end
+
+private
+  def set_clinic
+    @clinics = Clinic.find(params[:id])
   end
 
   def clinic_params
@@ -33,9 +34,4 @@ class ClinicsController < ApplicationController
                                    :qual_grupo_especifico, :sexo_do_publico, :modalidade)
   end
 
-  def import
-    Clinic.import(params[:file])
-    redirect_to root_path, notice:  "CSV importado com sucesso"
-  end
 end
-

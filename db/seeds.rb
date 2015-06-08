@@ -24,6 +24,12 @@
     drug.tolerance = data["Tolerancia"]
     drug.long_effects = data["Efeitos_a_longo_prazo"]
     drug.medical_use = data["Utilizacao_medica"]
+    drug.usage_percentage = data["Usage_percentage"]
+    drug.death_rate = data["Death_rate"]
+    drug.dependency_rate = data["Dependency_rate"]
+
+    puts "="*80, "Saving: #{drug.name}", "="*80
     drug.save!
 
     end
+

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150501152936) do
+ActiveRecord::Schema.define(version: 20150529203827) do
 
   create_table "clinics", force: :cascade do |t|
     t.string   "nome"
@@ -35,7 +35,10 @@ ActiveRecord::Schema.define(version: 20150501152936) do
     t.string   "modalidade"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.integer  "user_id"
   end
+
+  add_index "clinics", ["user_id"], name: "index_clinics_on_user_id"
 
   create_table "drugs", force: :cascade do |t|
     t.string   "name"
@@ -53,6 +56,18 @@ ActiveRecord::Schema.define(version: 20150501152936) do
     t.string   "medical_use"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.float    "usage_percentage"
+    t.float    "death_rate"
+  end
+
+  create_table "parsers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,6 +75,8 @@ ActiveRecord::Schema.define(version: 20150501152936) do
     t.string   "email"
     t.string   "encrypted_password"
     t.string   "salt"
+    t.string   "password_digest"
+    t.integer  "level_user"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end

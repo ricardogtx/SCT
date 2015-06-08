@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+<head>
 <center><h3> Informações da Clínica </h3><center>
     <div class= "conteiner">
     <div class="img-responsive aspect data_background" ></div>
@@ -7,69 +10,73 @@
                 <th colspan="2"><strong>CLINICA: <%= @clinic.nome %></strong></th>
             </tr>
             </thead>
-
             <tbody>
-              	<tr>
-                	<td>Estado</td>
-                	<td><%= @clinic.estado %></td>
-                </tr> 
                 <tr>
-                	<td>Modalidade</td>
-                	<td><%= @clinic.modalidade %></td>
+                    <td>Estado</td>
+                    <td><%= @clinic.estado %></td>
                 </tr>
                 <tr>
-                	<td>Endereco</td>
-                	<td>
-                		<%= @clinic.nome_logradouro %>
-                		<%= @clinic.numero_logradouro %>
-                		<%= @clinic.complemento %>
-                	</td>
+                    <td>Modalidade</td>
+                    <td><%= @clinic.modalidade %></td>
                 </tr>
                 <tr>
-                	<td>Municipio</td>
-                	<td><%= @clinic.municipio %></td>
+                    <td>Endereco</td>
+                    <td>
+                        <%= @clinic.nome_logradouro %>
+                        <%= @clinic.numero_logradouro %>
+                        <%= @clinic.complemento %>
+                    </td>
                 </tr>
                 <tr>
-                	<td>Cep</td>
-                	<td><%= @clinic.cep %></td>
+                    <td>Municipio</td>
+                    <td><%= @clinic.municipio %></td>
                 </tr>
                 <tr>
-                	<td>Latitude</td>
-                	<td><%= @clinic.latitude %></td>
+                    <td>Cep</td>
+                    <td><%= @clinic.cep %></td>
                 </tr>
                 <tr>
-                	<td>Longitude</td>
-                	<td><%= @clinic.longitude %></td>
+                    <td>Latitude</td>
+                    <td id="clinic_latitude"><%= @clinic.latitude %></td>
                 </tr>
                 <tr>
-                	<td>Telefone1</td>
-                	<td><%= @clinic.telefone_1 %></td>
+                    <td>Longitude</td>
+                    <td id="clinic_longitude"><%= @clinic.longitude %></td>
                 </tr>
                 <tr>
-                	<td>Telefone2</td>
-                	<td><%= @clinic.telefone_2 %></td>
+                    <td>Telefone1</td>
+                    <td><%= @clinic.telefone_1 %></td>
                 </tr>
                 <tr>
-                	<td>Email</td>
-                	<td><%= @clinic.e_mail %></td>
+                    <td>Telefone2</td>
+                    <td><%= @clinic.telefone_2 %></td>
                 </tr>
                 <tr>
-                	<td>Modalidade</td>
-                	<td><%= @clinic.modalidade %></td>
+                    <td>Email</td>
+                    <td><%= @clinic.e_mail %></td>
                 </tr>
                 <tr>
-                	<td>Público Atendido</td>
-                	<td><%= @clinic.publico_atendido %></td>
+                    <td>Modalidade</td>
+                    <td><%= @clinic.modalidade %></td>
                 </tr>
                 <tr>
-                	<td>Grupo Específico</td>
-                	<td><%= @clinic.qual_grupo_especifico %>
+                    <td>Público Atendido</td>
+                    <td><%= @clinic.publico_atendido %></td>
                 </tr>
                 <tr>
-                	<td>Sexo do Público</td>
-                	<td><%= @clinic.sexo_do_publico %></td>
+                    <td>Grupo Específico</td>
+                    <td><%= @clinic.qual_grupo_especifico %>
+                </tr>
+                <tr>
+                    <td>Sexo do Público</td>
+                    <td><%= @clinic.sexo_do_publico %></td>
                 </tr>
             </tbody>
         </table>
-    <p align="right"><a href="/clinics" class="btn btn-warning" role="button">voltar</a></p>
 </div>
+</head>
+<body>
+<div id="googleMap" style="width:1100px;height:600px;"></div>
+<p align="right"><a href="/clinics" class="btn btn-warning" role="button">voltar</a></p>
+</body>
+</html>

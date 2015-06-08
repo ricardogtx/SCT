@@ -2,16 +2,8 @@
 </head>
 <body>
 <div>
-	<h1 align="left"><i> Meu Perfil</i></h1>
-</div>
-<div>
 	<a href="<%= users_profile_edit_path %>" class="btn btn-default" role="button">Editar Informações</a>
 	<a href="<%= users_path %>" class="btn btn-warning" role="button">Voltar</a>
-	</br>
-	<% flash.each do |name, msg| %>
-	  <%= content_tag :div, msg, :id => "flash_#{name}" %>
-	<% end %>
-	</br>
 </div>
 <div class="area-total-abas">
 	<div class="lista-abas amimacao-flip">
@@ -34,4 +26,9 @@
 			</li>
 		</ul>
 	</div>
+	</br>
+	<% flash.each do |name, msg| %>
+	  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+	<% end %>
+	</br>
 </div>

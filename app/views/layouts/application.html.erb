@@ -2,9 +2,10 @@
 <html>
 <head>
   <title>SCT - <%= @page_title %></title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+
+<%= stylesheet_link_tag    'application', media: 'all' %>
+<%= javascript_include_tag 'application' %>
+
 </head>
 <body background='<%=image_path "black.jpg"%>'>
     <nav id= "main_menu" class="navbar navbar-inverse">
@@ -35,12 +36,24 @@
                                 <li><a href="/users">CADASTRO DE CLINICAS</a></li>
                             </ul>
                     </li>
+                    <li><a href="/depoimentos">DEPOIMENTOS</a>
+                    </li>
                     <form class="navbar-form navbar-left" role="search">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Procure no site">
                         </div>
                             <button type="text" class="btn btn-default">BUSCAR</button>
                     </form>
+
+                    <% if current_user %>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"> <span class="glyphicon glyphicon-user" aria-hiden="true"> </span> </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="<%= users_profile_path %>">Perfil</a></li>
+                                    <li><a  href="<%= logout_path %>">Logout</a></li>
+                                </ul>
+                        </li>
+                    <% end %>
                 </ul>
             </div>
         </div>
