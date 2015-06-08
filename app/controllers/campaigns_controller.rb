@@ -7,8 +7,8 @@ class CampaignsController < ApplicationController
 	def create
 		@campaign = Campaign.new(campaign_params)
 		if @campaign.save
-			#redirect_to :action => 'show', :id => @campaign.id
-			redirect_to campanhas_path, notice: "Criada com sucesso!"
+			redirect_to :action => 'show', :id => @campaign.id
+			#redirect_to campanhas_path, notice: "Criada com sucesso!"
 		end
 	end
 
@@ -17,7 +17,7 @@ class CampaignsController < ApplicationController
 	end
 
 	def index
-  		@campaign = Campaign.all
+  		@campaigns = Campaign.all
 	end
 
 	def destroy
