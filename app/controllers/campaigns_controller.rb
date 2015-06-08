@@ -25,6 +25,17 @@ class CampaignsController < ApplicationController
     	redirect_to campanhas_path, notice: "Campanha deletada."
 	end
 
+	def edit
+      @campaign = Campaign.find params[:id]
+    end
+
+    def update
+      @campaign = Campaign.find params[:id]
+      if @campaign.update_attributes(params[:campaign])
+        redirect_to :action => 'show', :id => @campaign.id
+      end
+    end
+
 	private
 	def campaign_params
 		params.require(:campaign).permit(:name, :url, :description, :avatar)
