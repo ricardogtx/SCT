@@ -6,12 +6,15 @@
 			<p>As campanhas fazem parte da primeira linha de defesa contra as drogas. Sejam programas educacionais ou sistemas de apoio ao dependente, elas tem apresentado excelentes resultados na luta contra as drogas. Abaixo, você encontra uma seleção de diferentes campanhas que fazem parte desta luta.</p>
 		</center> 
 		<table border="1", style="width:100%">
-      <% @campaign.each do |campaign| %>
+      <% @campaigns.each do |campaign| %>
         <tr>
-          <td><%= link_to campaign.name, campaign %></td>
+          <td align='center' style='width:50%'><a href="<%= campaign.url %>" target="_blank">
+            <%= image_tag campaign.avatar.url(:medium) %></a></td><br>
           <td><%= campaign.description %></td>
         </tr>
       <% end %>  
     </table>
 	</body>
 </html>
+
+
