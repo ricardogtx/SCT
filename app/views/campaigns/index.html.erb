@@ -8,9 +8,15 @@
 		<table border="1", style="width:100%">
       <% @campaigns.each do |campaign| %>
         <tr>
-          <td align='center' style='width:50%'><a href="<%= campaign.url %>" target="_blank">
+          <td align='center' style='width:30%'><a href="<%= campaign.url %>" target="_blank">
             <%= image_tag campaign.avatar.url(:medium) %></a></td><br>
           <td><%= campaign.description %></td>
+          <td> 
+          <%= link_to "Alterar", "/campaigns/#{campaign.id}/edit", :class=>"btn btn-primary" %><br>
+          <br><%= button_to "Excluir", "/campaigns/#{campaign.id}", :class=>"btn btn-danger", 
+                                                                    :method => :delete,
+                                                                    data: {confirm: "Tem certeza?"}%>
+          </td>
         </tr>
       <% end %>  
     </table>

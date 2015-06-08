@@ -7,8 +7,7 @@ class CampaignsController < ApplicationController
 	def create
 		@campaign = Campaign.new(campaign_params)
 		if @campaign.save
-			redirect_to :action => 'show', :id => @campaign.id
-			#redirect_to campanhas_path, notice: "Criada com sucesso!"
+			redirect_to :action => 'show', :id => @campaign.id, notice: "Criado com sucesso!"
 		end
 	end
 
@@ -27,13 +26,18 @@ class CampaignsController < ApplicationController
 
 	def edit
       @campaign = Campaign.find params[:id]
+
+      redirect_to "/campaigns" unless @campaign
     end
 
     def update
       @campaign = Campaign.find params[:id]
+
       if @campaign.update_attributes(params[:campaign])
-        redirect_to :action => 'show', :id => @campaign.id
-      end
+      	redirect_to campaigns_path, :notice => "Campanha foi atualizada"
+      else
+        render "edit"
+      end  	
     end
 
 	private
@@ -41,3 +45,5 @@ class CampaignsController < ApplicationController
 		params.require(:campaign).permit(:name, :url, :description, :avatar)
 	end
 end
+
+
