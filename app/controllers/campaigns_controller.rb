@@ -11,6 +11,10 @@ class CampaignsController < ApplicationController
 		end
 	end
 
+	def show
+    	@campaign = Campaign.find(params[:id])
+	end
+
 	def index
   		@campaign = Campaign.all
 	end

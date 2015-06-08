@@ -8,9 +8,8 @@
 		<table border="1", style="width:100%">
       <% @campaign.each do |campaign| %>
         <tr>
-          <td><a href="<%= campaign.url %>"  target="_blank"><%= campaign.name %></a></td>
+          <td><%= link_to campaign.name, campaign %></td>
           <td><%= campaign.description %></td>
-          <td><%= button_to "Deletar", (campaign), :method => :delete %></td>
         </tr>
       <% end %>  
     </table>

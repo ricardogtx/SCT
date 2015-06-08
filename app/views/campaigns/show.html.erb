@@ -1,0 +1,11 @@
+<html>
+	<body>
+		<center>
+			<h1><%= @campaign.name %></h1>
+			<p><%= @campaign.description %></p>
+			<a href="<%= @campaign.url %>" target="_blank">Ir ao site da campanha</a>
+			<%= link_to "Voltar", :back, {:class=>"btn btn-default"} %>
+			<%= button_to "Deletar", (@campaign), :method => :delete %>
+		</center>
+	</body>
+</html>
