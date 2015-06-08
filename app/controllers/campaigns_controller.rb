@@ -7,6 +7,7 @@ class CampaignsController < ApplicationController
 	def create
 		@campaign = Campaign.new(campaign_params)
 		if @campaign.save
+			#redirect_to :action => 'show', :id => @campaign.id
 			redirect_to campanhas_path, notice: "Criada com sucesso!"
 		end
 	end
@@ -26,6 +27,6 @@ class CampaignsController < ApplicationController
 
 	private
 	def campaign_params
-		params.require(:campaign).permit(:name, :url, :description)
+		params.require(:campaign).permit(:name, :url, :description, :avatar)
 	end
 end

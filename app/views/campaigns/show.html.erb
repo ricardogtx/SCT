@@ -6,6 +6,7 @@
 			<a href="<%= @campaign.url %>" target="_blank">Ir ao site da campanha</a>
 			<%= link_to "Voltar", :back, {:class=>"btn btn-default"} %>
 			<%= button_to "Deletar", (@campaign), :method => :delete %>
+			<%= image_tag @campaign.avatar.url(:medium) %>
 		</center>
 	</body>
 </html>
