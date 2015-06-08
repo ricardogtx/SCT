@@ -1,15 +1,18 @@
 <html>
-	<body>
-		<center>
-			<h1><%= @campaign.name %></h1>
-			<p><%= @campaign.description %></p>
-            <td align='center' style='width:50%'><a href="<%= @campaign.url %>" target="_blank">
+	<table border="1", style="width:100%">
+        <tr>
+          <td> 
+           <strong><h3><%= @campaign.name %></h3></strong>
+          </td>
+          <td align='center' style='width:30%'><a href="<%= @campaign.url %>" target="_blank">
             <%= image_tag @campaign.avatar.url(:medium) %></a></td><br>
-			<%= link_to "Prosseguir", campaigns_path, {:class=>"btn btn-default"} %> 
-			<%= button_to "Deletar", (@campaign), :method => :delete %>
-			<%= button_to "Deletar", (@campaign), :method => :delete %>
-		</center>
-	</body>
+          <td><%= @campaign.description %></td>
+        </tr> 
+    </table><br>
+    <%= link_to "Prosseguir", campaigns_path, {:class=>"btn btn-primary"} %>
 </html>
+
+
+    
 
 
