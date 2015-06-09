@@ -1,5 +1,5 @@
-google.load('visualization', '1', {'packages': ['geochart']});
-     google.setOnLoadCallback(drawMarkersMap);
+      google.load('visualization', '1', {'packages': ['geochart']});
+      google.setOnLoadCallback(drawMarkersMap);
 
       function drawMarkersMap() {
       var data = google.visualization.arrayToDataTable([
@@ -12,8 +12,8 @@ google.load('visualization', '1', {'packages': ['geochart']});
       var options = {
         region: 'BR',
         resolution: 'provinces',
-        // datalessRegionColor:  'transparent',
-        colorAxis: {colors: ['#FFBF6F','#FF0000']},
+        datalessRegionColor:  'transparent',
+        colorAxis: {colors: ['blue']},
         backgroundColor: { fill:'transparent' }
       };
 
@@ -28,5 +28,4 @@ google.load('visualization', '1', {'packages': ['geochart']});
           }
         });
       });
-
-};
+      };
