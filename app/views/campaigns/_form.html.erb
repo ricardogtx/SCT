@@ -1,4 +1,4 @@
-<%= bootstrap_form_for @campaign, :url => campaigns_path, :html => { :multipart => true } do |t| %>
+<%= bootstrap_form_for @campaign, :html => { :multipart => true } do |t| %>
 	<%= t.text_field :name, label: "Nome", required: true %>
 	<%= t.text_field :url, label: "URL", required: true %>
 	<%= t.text_area :description, label: "Descrição", size: "30x10", required: true %>

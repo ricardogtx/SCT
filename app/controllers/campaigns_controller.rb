@@ -33,7 +33,7 @@ class CampaignsController < ApplicationController
     def update
       @campaign = Campaign.find params[:id]
 
-      if @campaign.update_attributes(params[:campaign])
+      if @campaign.update_attributes(campaign_params)
       	redirect_to campaigns_path, :notice => "Campanha foi atualizada"
       else
         render "edit"
