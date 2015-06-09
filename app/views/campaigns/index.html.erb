@@ -3,13 +3,13 @@
 		<center>
 			<h1>CAMPANHAS ANTI DROGAS</h1>
 			<br>
-			<p>As campanhas fazem parte da primeira linha de defesa contra as drogas. Sejam programas educacionais ou sistemas de apoio ao dependente, elas tem apresentado excelentes resultados na luta contra as drogas. Abaixo, você encontra uma seleção de diferentes campanhas que fazem parte desta luta.</p>
+			<p>As campanhas fazem parte da primeira linha de defesa contra as drogas. Sejam programas educacionais ou sistemas de apoio ao dependente, elas tem apresentado excelentes resultados na luta contra as drogas. Abaixo, você encontra uma seleção de diferentes campanhas que fazem parte desta luta. Clique em alguma imagem para ser redirecionado a campanha (caso ouver).</p>
 		</center> 
 		<table border="1", style="width:100%">
       <% @campaigns.each do |campaign| %>
         <tr>
           <td align='center' style='width:30%'><a href="<%= campaign.url %>" target="_blank">
-            <%= image_tag campaign.avatar.url(:medium) %></a></td><br>
+            <img id="Thumb" <%= image_tag campaign.avatar.url(:medium) %></a></td><br>
           <td><%=campaign.description %></td>
           <td> 
           <%= link_to "Alterar", "/campaigns/#{campaign.id}/edit", :class=>"btn btn-primary" %><br>
@@ -22,5 +22,4 @@
     </table>
 	</body>
 </html>
-
 
