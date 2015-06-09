@@ -10,7 +10,7 @@
         <tr>
           <td align='center' style='width:30%'><a href="<%= campaign.url %>" target="_blank">
             <%= image_tag campaign.avatar.url(:medium) %></a></td><br>
-          <td><%= campaign.description %></td>
+          <td><%=campaign.description %></td>
           <td> 
           <%= link_to "Alterar", "/campaigns/#{campaign.id}/edit", :class=>"btn btn-primary" %><br>
           <br><%= button_to "Excluir", "/campaigns/#{campaign.id}", :class=>"btn btn-danger", 
