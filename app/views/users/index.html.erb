@@ -67,7 +67,7 @@
 								</ul>
 							</div>
 						</div>
-						<a href="<%= users_clinic_edit_path %>" class="btn btn-success" role="button">Editar Clínica</a>
+						<a href="<%= users_clinic_edit_path %>" id = "Editar" class="btn btn-success" role="button">Editar Clínica</a>
 					  <% else %>
 					    <center>
 					    	<h2>Bem vindo a página de login/cadastro do SCT</h2>
@@ -96,7 +96,7 @@
 					                        <%= check_box_tag :remember_me %>
 					                        <%= label_tag :remember_me %>
 					                        <br>
-					                        <%= f.submit "Logar", :class=>"btn btn-lg btn-primary btn-block" %>
+					                        <%= f.submit "Logar", :class=>"btn btn-lg btn-primary btn-block", :id => "Logar" %>
 					                        <br>
 					                        <a href="/users/new" class="btn btn-lg btn-danger btn-block" role="button">Cadastrar</a>
 					                      <% end %>
