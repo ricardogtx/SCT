@@ -5,7 +5,7 @@
       var data = google.visualization.arrayToDataTable([
         ['State',   'Clinicas'],
         <% State.all.each do |state| %>
-        <%= "['BR-#{state.uf}', #{state.clinics.count}], " %>
+        <%= "['BR-#{state.uf}', #{state.clinics.count}]," %>
         <% end %>
       ]);
 
