@@ -61,6 +61,7 @@ gem 'will_paginate', '~> 3.0.7'
 
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'bootstrap_form'
+gem 'bootstrap-material-design'
 
 # filtro
 gem 'ransack'
