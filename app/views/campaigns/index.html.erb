@@ -9,10 +9,10 @@
       <% @campaigns.each do |campaign| %>
         <tr>
           <td align='center' style='width:30%'><a href="<%= campaign.url %>" target="_blank">
-            <img id="Thumb" <%= image_tag campaign.avatar.url(:medium) %></a></td><br>
+            <a href='/campaigns/show/#{campaign.id}'><img id="Thumb" <%= image_tag campaign.avatar.url(:medium) %></a></td><br>
           <td><%=campaign.description %></td>
           <td> 
-          <%= link_to "Alterar", "/campaigns/#{campaign.id}/edit", :class=>"btn btn-primary" %><br>
+          <%= link_to "Alterar", "/campaigns/#{campaign.id}/edit", :class=>"btn btn-primary"%><br>
           <br><%= button_to "Excluir", "/campaigns/#{campaign.id}", :class=>"btn btn-danger", 
                                                                     :method => :delete,
                                                                     data: {confirm: "Tem certeza?"}%>

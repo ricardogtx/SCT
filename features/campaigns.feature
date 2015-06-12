@@ -7,8 +7,3 @@ Feature: access campaign index
 		Given I have accessed the home page
 		When I click on the 'VISUALIZAR CAMPANHAS' button
 		Then I see 'campaigns'
-
-	Scenario: New campaign
-		Given I have accessed the home page
-		When I click on the 'NOVA CAMPANHA' button
-		Then I see 'campaigns/new'
