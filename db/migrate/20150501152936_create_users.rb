@@ -7,6 +7,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :salt
       t.string :password_digest
       t.integer :level_user
+      t.integer :user_authenticate
+      t.string :solicit_association
 
       t.timestamps null: false
     end
