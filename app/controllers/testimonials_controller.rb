@@ -24,10 +24,12 @@ class TestimonialsController < ApplicationController
 			redirect_to depoimentos_path, notice: "Atualizado com sucesso."
 		end
 	end
-	
+
 
 	def destroy
-	end
+  	@testimonial = Testimonial.find(params[:id]).destroy
+  	redirect_to admin, notice: "Depoimento excluido."
+ 	end
 
 	private
 	def testimonial_params

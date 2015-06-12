@@ -1,0 +1,46 @@
+<div id="user_nav">
+  <div class="conteiner">
+    <div class="row vertical-offset-100">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <% if current_user %>
+            <center>
+            <h2>Olá <%= current_user.name %> </h2>
+              Você está logado com o email <%= current_user.email %>, caso queira ver/ou atualizar informações da sua clínica, clique no botão editar abaixo. Caso queira alterar as informações da sua conta ou deslogar, clique no botão de usuário no topo da página.<br />
+            </center>
+            <div class="area-total-abas">
+              <div class="lista-abas amimacao-flip">>
+                <input type="radio" name="lista-abas" checked id="aba-1" class="aba-1">
+                <label for="aba-1"><span><span>Usuários Pendentes</span></span></label>
+                <input type="radio" name="lista-abas" checked id="aba-2" class="aba-2">
+                <label for="aba-2"><span><span>Depoimentos Pendentes</span></span></label>
+                <ul>
+                  <li class="aba-1">
+                    <div class="conteudo">
+                      <table width="300px">
+                          <tr>
+                            <td>Usuários:</td>
+                            <td><%= "Eu estou pendente porra!" %></td>
+                          </tr>
+                      </table>
+                    </div>
+                  </li>
+                  <li class="aba-2">
+                    <div class="conteudo">
+                      <table width="300px">
+                          <tr>
+                            <td>Depoimentos</td>
+                            <td><%= "Eu estou pendente 2 porra!" %></td>
+                          </tr>
+                      </table>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

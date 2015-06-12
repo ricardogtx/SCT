@@ -24,10 +24,12 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    @user = User.find(params[:id]).destroy
+    redirect_to admin, notice: "Usuário excluido."
   end
 
   def index
-    @user = current_user
+    @user = current_userd
     if request.post? && !params[:do_login][:email].blank? && !params[:do_login][:password].blank?
       user = User.find_by_email(params[:do_login][:email])
 
