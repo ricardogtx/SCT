@@ -2,9 +2,9 @@ class ClinicsController < ApplicationController
   before_action :set_clinic, only: [:show, :edit, :update, :destroy]
   skip_before_filter :verify_authenticity_token, :only => [:id_of_city]
 
-  def index
+  def index 
     @search = Clinic.search(params[:q])
-    @clinics = @search.result
+    @clinics = @search.result.paginate(:page => params[:page]).per_page(20)
   end
 
   def show
