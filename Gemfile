@@ -56,6 +56,9 @@ group :development, :test do
 
 end
 
+#pagination
+gem 'will_paginate', '~> 3.0.7'
+
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'bootstrap_form'
 
