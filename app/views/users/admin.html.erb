@@ -10,17 +10,24 @@
             </center>
             <div class="area-total-abas">
               <div class="lista-abas amimacao-flip">>
-                <input type="radio" name="lista-abas" checked id="aba-1" class="aba-1">
-                <label for="aba-1"><span><span>Usuários Pendentes</span></span></label>
                 <input type="radio" name="lista-abas" checked id="aba-2" class="aba-2">
                 <label for="aba-2"><span><span>Depoimentos Pendentes</span></span></label>
+                <input type="radio" name="lista-abas" checked id="aba-1" class="aba-1">
+                <label for="aba-1"><span><span>Usuários Pendentes</span></span></label>
                 <ul>
                   <li class="aba-1">
                     <div class="conteudo">
                       <table width="300px">
                           <tr>
                             <td>Usuários:</td>
-                            <td><%= "Eu estou pendente porra!" %></td>
+                            <% @users.each do |user| %>
+                              <% unless user.user_authenticate %>
+                                <tr>
+                                  <td><%= link_to user.email, admin_path %></td>
+                                  <td><%= user.solicit_association %></td>
+                                </tr>
+                              <% end %>
+                            <% end %>
                           </tr>
                       </table>
                     </div>
@@ -28,9 +35,15 @@
                   <li class="aba-2">
                     <div class="conteudo">
                       <table width="300px">
-                          <tr>
-                            <td>Depoimentos</td>
-                            <td><%= "Eu estou pendente 2 porra!" %></td>
+                           <tr>
+                            <td>Depoimetos:</td>
+                            <% @testimonials.each do |testimonial| %>
+                              <% unless testimonial.testimonial_authenticate %>
+                                <tr>
+                                  <td><%= link_to testimonial.title, admin_path %></td>
+                                </tr>
+                              <% end %>
+                            <% end %>
                           </tr>
                       </table>
                     </div>

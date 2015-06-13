@@ -78,6 +78,8 @@ class UsersController < ApplicationController
   end
 
   def admin
+    @users = User.all
+    @testimonials = Testimonial.all
   end
 
   def clinic_edit
