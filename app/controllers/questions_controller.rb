@@ -19,6 +19,22 @@ class QuestionsController < ApplicationController
   		@questions = Question.all
 	end
 
+	def edit
+      @question = Question.find params[:id]
+
+      redirect_to "/question" unless @question
+    end
+
+    def update
+      @question = Question.find params[:id]
+
+      if @question.update_attributes(question_params)
+      	redirect_to questions_path, :notice => "Questão atualizada."
+      else
+        render "edit"
+      end  	
+    end
+
 	private
 	def question_params
 		params.require(:question).permit(:content, :points)
