@@ -7,7 +7,7 @@ class CampaignsController < ApplicationController
 	def create
 		@campaign = Campaign.new(campaign_params)
 		if @campaign.save
-			redirect_to :action => 'show', :id => @campaign.id, notice: "Criado com sucesso!"
+			redirect_to campanhas_path, notice: "Criado com sucesso!"
 		end
 	end
 
