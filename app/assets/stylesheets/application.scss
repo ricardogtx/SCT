@@ -36,10 +36,17 @@
     margin-top :100px;
     margin-left :100px;
     margin-right :100px;
-    background-color: rgba(0,0,0,0.30);
+    background-color: rgba(0,0,0,0.60);
     color: #fff;
     padding-left:1px;
+}
 
+#conteiner_home{
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: "";
 }
 
 #sign_in_button {
@@ -58,6 +65,7 @@
 #drugs-image {
         height :250px;
         width :350px;
+        border-radius :6px;
 }
 
 

@@ -51,6 +51,10 @@
       height: 400,
       "title": title,
       is3D: true,
+      legend: {
+        textStyle:  {color: 'white', fontSize: 12,bold: true
+      }
+    },
       'chartArea': {'width': '100%', 'height': '80%'},
       backgroundColor: { fill:'transparent' }
     };
