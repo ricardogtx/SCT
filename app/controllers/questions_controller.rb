@@ -35,6 +35,12 @@ class QuestionsController < ApplicationController
       end  	
     end
 
+    def destroy
+    	@question = Question.find(params[:id]).destroy
+    
+    	redirect_to questions_path, notice: "Questão deletada."
+	end
+
 	private
 	def question_params
 		params.require(:question).permit(:content, :points)
