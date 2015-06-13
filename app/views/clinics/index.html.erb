@@ -1,6 +1,9 @@
+
 <div class = "conteiner">
-  <h2>Clínicas</h2>
-  <h4>Busque a clínica desejada: </h4>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+    <h2>Clínicas</h2>
+    <h4>Busque a clínica desejada: </h4>
 
   <%= search_form_for @search, :html => {:class => "form-horizontal"} do |f| %>
     <div class="field">
@@ -36,10 +39,12 @@
             <td><%= clinic.state.name %></td>
             <td><%= clinic.modalidade %></td>
 
-          </tr>
-      <% end %>
+            </tr>
+        <% end %>
       </tbody>
     </table>
     <%= will_paginate @clinics, previous_label: h("<"), next_label: h(">")%>
     <% end %>
+    </div>
+  </div>
 </div>

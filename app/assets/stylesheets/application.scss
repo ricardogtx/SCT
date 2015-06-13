@@ -33,7 +33,13 @@
 }
 
 #container_margin {
-    margin-top :250px;
+    margin-top :100px;
+    margin-left :100px;
+    margin-right :100px;
+    background-color: rgba(0,0,0,0.30);
+    color: #fff;
+    padding-left:1px;
+    
 }
 
 #sign_in_button {
@@ -102,5 +108,8 @@
     background-image :url("backgroundcampo.jpg");
     background-size :cover;
     background-attachment :fixed;
-    font-family: 'sans-serif'
+    font-family: 'sans-serif';
+}
+.table {
+    font-size:14px;
 }
