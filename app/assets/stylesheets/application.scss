@@ -32,8 +32,8 @@
     width :334px;
 }
 
-#jumbotron_margin {
-    margin :44px;
+#container_margin {
+    margin-top :250px;
 }
 
 #sign_in_button {
@@ -47,10 +47,6 @@
 #image_home {
     width :340px;
     height :300px;
-}
-
-.jumbotron {
-background-color :#DDDDDD
 }
 
 .dorgas-image {
@@ -101,4 +97,10 @@ background-color :#DDDDDD
 
 #image_folder {
   width :180px;
+}
+#aplication-body {
+    background-image :url("backgroundcampo.jpg");
+    background-size :cover;
+    background-attachment :fixed;
+    font-family: 'sans-serif'
 }
