@@ -13,7 +13,7 @@ end
   get 'alcool/:id', to: 'drugs#show', as: :alcool
   get 'alucinogeno/:id', to: 'drugs#show', as: :alucinogeno
   get 'anfetamina/:id', to: 'drugs#show', as: :anfetamina
-  get 'antidepressivo"/:id', to: 'drugs#show', as: :antidepressivo
+  get 'antidepressivo/:id', to: 'drugs#show', as: :antidepressivo
   get 'barbiturico/:id', to: 'drugs#show', as: :barbiturico
   get 'cafeina/:id', to: 'drugs#show', as: :cafeina
   get 'cocaina/:id', to: 'drugs#show', as: :cocaina

@@ -1,8 +1,8 @@
 
 <div class = "conteiner">
-  <div class="panel panel-default">
+  <div class="panel panel-default" style="margin-right: -15;">
     <div class="panel-heading">
-    <h2>Clínicas</h2>
+    <h2>Clínicas<span class="mdi-action-search"></span></h2>
     <h4>Busque a clínica desejada: </h4>
 
   <%= search_form_for @search, :html => {:class => "form-horizontal"} do |f| %>
@@ -12,32 +12,33 @@
         <%= f.text_field :modalidade_cont, placeholder: "Modalidade"%>
     </div>
 
+      <p></p>
+       <%= f.submit "Buscar", :class => "btn btn-primary" %>
+    <% end %>
     <p></p>
-     <%= f.submit "Buscar", :class => "btn btn-primary" %>
-  <% end %>
-  <p></p>
 
-  <div class="img-responsive aspect data_background" ></div>
-    <% if @search.result.blank? %>
-    <div class="alert alert-danger" role="alert" ><button type="button" class="close" data-dismiss="alert">×</button>
-        <strong>Erro!<p></p></strong> Clínica não encontrada.
-    </div>
-    <% else %>
-    <table class="table table-hover", border="2">
-      <thead>
-      <tr>
-        <th><%= sort_link(@search, :nome, "Nome") %></th>
-        <th><%= sort_link(@search, :state_id, "Estado") %></th>
-        <th><%= sort_link(@search, :modalidade, "Modalidade") %></th>
+    <div class="img-responsive aspect data_background" ></div>
+      <% if @search.result.blank? %>
+      <div class="alert alert-danger" role="alert" ><button type="button" class="close" data-dismiss="alert">×</button>
+          <strong>Erro!<p></p></strong> Clínica não encontrada.
+      </div>
+      <% else %>
+      <table class="table table-hover", border="1">
+        <thead>
+        <tr class= "info">
+          <th><%= sort_link(@search, :nome, "Nome") %></th>
+          <th><%= sort_link(@search, :estado, "Estado") %></th>
+          <th><%= sort_link(@search, :modalidade, "Modalidade") %></th>
 
-      </tr>
-      </thead>
-      <tbody>
-      <% @clinics.each do |clinic| %>
-          <tr>
-            <td><%= link_to clinic.nome, clinic %></td>
-            <td><%= clinic.state.name %></td>
-            <td><%= clinic.modalidade %></td>
+        </tr>
+        </thead>
+        <tbody>
+        <% @clinics.each do |clinic| %>
+            <tr class= "info">
+              <td><%= link_to clinic.nome, clinic %></td>
+              <td><%= clinic.estado %></td>
+              <td><%= clinic.modalidade %></td>
+
 
             </tr>
         <% end %>
