@@ -1,5 +1,5 @@
-When(/^I press the imagem in 'informações'$/) do
-  page.find('#image_home_drugs').click
+When(/^I press the button 'SAIBA MAIS!' in 'Drogas'$/) do
+  page.find('#btn_drugs').click
 end
 
 Then(/^I am redirected to the drugs page$/) do
