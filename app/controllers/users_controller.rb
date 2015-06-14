@@ -87,6 +87,20 @@ class UsersController < ApplicationController
     @clinic = Clinic.find_by_e_mail(params[:user_email])
   end
 
+  def users_approval_confirm
+    user = User.find(params[:id])
+    user_email = user.email
+    clinic = Clinic.find_by_e_mail(params[user_email])
+    user.update_attributes(:clinic => clinic)
+    user.update_attributes(:user_authenticate => 1)
+    redirect_to :admin, notice: "Usuário associado e aprovado"
+  end
+
+  def users_approval_decline
+    User.destroy(params[:id])
+    redirect_to :admin, notice: "Usuário deletado"
+  end
+
   def clinic_edit
     @user = current_user
   end
