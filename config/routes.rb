@@ -40,11 +40,11 @@ end
   get 'saiba_mais' => 'home#about'
   get 'mapa_geral' => 'clinics#general_maps'
   resources :testimonials
-  get 'mapa_geral' => 'clinics#general_maps'
 
   get 'depoimentos'           =>   'testimonials#show'
   get 'depoimentos/novo'      =>   'testimonials#new'
   get 'depoimentos/editar'    =>   'testimonials#edit'
+
 
   get 'clinics/id_of_city' => 'clinics#id_of_city'
   post 'clinics/id_of_city' => 'clinics#id_of_city'
@@ -53,6 +53,12 @@ end
 
   get 'campanhas' => 'campaigns#index'
   get 'campanhas/nova' => 'campaigns#new'
+
+  resources :questions
+
+  get 'quiz' => 'questions#index'
+
+
 
   #get "login" => "sessions#new" #, :as => "log_in"
   #post "login" => "sessions#create"
