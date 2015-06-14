@@ -1,10 +1,10 @@
-<div id="container_margin" class="container">
-<h1>Editar Depoimento</h1>
-<p>Não insira nomes ou qualquer outro tipo de informação pessoal.</p>
-<%= bootstrap_form_for(@testimonial) do |t| %>
-	<%= t.text_field :title, label: "Título", required: true %>
-	<%= t.text_area :body, label: "Texto", size: "30x10", required: true %>
-	<%= t.submit "Enviar" %>
-	<%= link_to "Cancelar", :back, {:class=>"btn btn-default"} %>
-	<% end %>
-    </div>
+<div id="container_margin" class="container testimonials_color_label">
+    <h1 align="center">Editar Depoimento</h1>
+    <p id="margin_correction"><b>ATENÇÃO: </b>Não insira nomes ou qualquer outro tipo de informação pessoal.</p>
+    <%= bootstrap_form_for(@testimonial) do |t| %>
+    	<%= t.text_field :title, label: "Título", required: true, :class=>"testimonials_margin" %>
+    	<%= t.text_area :body, label: "Texto", size: "30x10", required: true,:class=>"testimonials_margin" %>
+    	<%= t.submit "Enviar", :class=>"btn btn-warning" %>
+    	<%= link_to "Cancelar", :back, {:class=>"btn btn-warning"} %>
+    	<% end %>
+</div>

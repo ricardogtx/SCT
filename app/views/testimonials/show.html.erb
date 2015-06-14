@@ -13,8 +13,7 @@
 			<br>
 			<h5 id="margin_correction"><%= t.body %></h5>
 			<br>
-			<a id="margin_correction" href="#"class="btn btn-info" role="button">Editar</a>
-			<%= link_to 'Editar', {:action => "edit", :id => t.id} %>
+			<%= link_to 'Editar', {:action => "edit", :id => t.id}, :class=>"btn btn-info" %>
 			<hr>
 		</div>
 	<% end %>
