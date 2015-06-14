@@ -29,6 +29,8 @@ end
   get 'users/clinic/edit', to: 'users#clinic_edit', as: 'users_clinic_edit'
 
   get 'users/admin/testimonials_approval_confirm', to: 'users#testimonials_approval_confirm', as: 'testimonials_approval_confirm'
+  get 'users/admin/testimonials_approval_decline', to: 'users#testimonials_approval_decline', as: 'testimonials_approval_decline'
+  get 'users/admin/testimonials_approval_edit', to: 'users#testimonials_approval_edit', as: 'testimonials_approval_edit'
 
   resources :users
 
