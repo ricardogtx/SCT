@@ -1,0 +1,30 @@
+<div>
+  <a href="<%= admin_path %>" class="btn btn-warning" role="button">Voltar</a>
+</div>
+<div class="area-total-abas">
+  <div class="lista-abas amimacao-flip">
+    <input type="radio" name="lista-abas" checked id="aba-1" class="aba-1">
+    <label for="aba-1"><span><span>Informações do depoimento</span></span></label>
+    <ul>
+      <li class="aba-1">
+        <div class="conteudo">
+            <table width="300px">
+            <h3> Depoimento </h3>
+            <tr>
+              <th>Título: </th>
+              <td><%= @testimonial.title %></td>
+            </tr>
+            <tr>
+              <th>Corpo: </th>
+              <td><%= @testimonial.body %></td>
+            </tr>
+        </table>
+        </div>
+      </li>
+      <a href="#" class="btn btn-success" role="button">Aceitar</a>
+      <a href="#" class="btn btn-primary" role="button">Editar</a>
+      <a href="#" class="btn btn-danger" role="button">Recusar</a>
+    </ul>
+  </div>
+  </br>
+</div>

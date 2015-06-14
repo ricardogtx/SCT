@@ -38,11 +38,11 @@
                     <div class="conteudo">
                       <table width="300px">
                            <tr>
-                            <td>Depoimetos:</td>
+                            <td>Depoimentos:</td>
                             <% @testimonials.each do |testimonial| %>
                               <% unless testimonial.testimonial_authenticate %>
                                 <tr>
-                                  <td><%= link_to testimonial.title, testimonial_approval_path %></td>
+                                  <td><%= link_to testimonial.title, testimonial_approval_path(:testimonial_id => testimonial.id ) %></td>
                                 </tr>
                               <% end %>
                             <% end %>
