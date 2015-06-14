@@ -39,14 +39,11 @@
     background-color: rgba(0,0,0,0.60);
     color: #fff;
     padding-left:1px;
+    border-radius :6px;
 }
 
 #conteiner_home{
-    margin-top: 200px;
-    margin-left: auto;
-    margin-right: auto;
-    color: white;
-    font-size: "";
+    margin-top:10px;
 }
 
 #sign_in_button {
@@ -58,8 +55,7 @@
 }
 
 #image_home {
-    width :340px;
-    height :300px;
+    width :650px;
 }
 
 #drugs-image {
@@ -116,6 +112,15 @@
     background-size :cover;
     background-attachment :fixed;
     font-family: 'sans-serif';
+}
+
+#margin_correction {
+    margin: 10px;
+}
+
+#brand_aplication {
+    height :65px;
+    margin :-23px;
 }
 
 .table {
