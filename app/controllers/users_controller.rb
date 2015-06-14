@@ -112,6 +112,17 @@ class UsersController < ApplicationController
     redirect_to :admin, notice: "Depoimento deletado"
   end
 
+  def testimonials_approval_edit
+    @testimonial = Testimonial.find(params[:id])
+  end
+
+  def update
+    @testimonial = Testimonial.find_by_id(params[:id])
+    if @testimonial.update(testimonial_params)
+      redirect_to :admin, notice: "Atualizado com sucesso."
+    end
+  end
+
   def testimonial_approval
     @testimonial = Testimonial.find(params[:testimonial_id])
   end  
@@ -165,4 +176,9 @@ class UsersController < ApplicationController
       redirect_to :users, notice: 'Voce precisa fazer login!'
     end
   end
+  
+  def testimonial_params
+     params.require(:testimonial).permit(:title, :body)
+  end
+
 end
