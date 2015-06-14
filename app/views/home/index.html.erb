@@ -17,15 +17,10 @@
                 <p id="margin_correction" align="justify">
                     &nbsp;&nbsp;&nbsp;&nbsp;Em suma e um site que direciona, na forma de ajudar, um usuário de drogas a um determinado tipo de tratamento e que ao mesmo tempo possua artifícios para conscientizar a população e até mesmo o próprio usuário sobre a consequência do uso dessas substâncias.</p>
                 </p>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
             </div>
         <h2><span class="glyphicon glyphicon-thumbs-up"></span><b>&nbsp;Depoimentos</b></h2>
             <% @testimonial.each do |t|%>
-                <div class="col-md-4">
+                <div class="col-md-offset-8">
                     <h3><b><%= simple_format(t.title) %></b></h3>
                     <br>
                     <h5><%= simple_format(t.body) %></b></h5>
