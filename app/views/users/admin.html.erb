@@ -6,7 +6,7 @@
           <% if current_user %>
             <center>
             <h2>Olá <%= current_user.name %> </h2>
-              Você está logado com o email <%= current_user.email %>, caso queira ver/ou atualizar informações da sua clínica, clique no botão editar abaixo. Caso queira alterar as informações da sua conta ou deslogar, clique no botão de usuário no topo da página.<br />
+              Você está logado em uma conta de administrador <%= current_user.email %>, abaixo ficam os usuários pendentes de aprovação e associação com as clínicas, junto aos depoimentos pendentes, clique nas abas abaixo para visualizar. Caso queira alterar as informações da sua conta ou deslogar, clique no botão de usuário no topo da página.<br />
             </center>
             <div class="area-total-abas">
               <div class="lista-abas amimacao-flip">>
@@ -23,7 +23,7 @@
                             <% @users.each do |user| %>
                               <% unless user.user_authenticate %>
                                 <tr>
-                                  <td><%= link_to user.email, admin_path %></td>
+                                  <td><%= link_to user.email, users_approval_path(:user_id => user.id, :user_email => user.email) %></td>
                                   <td><%= user.solicit_association %></td>
                                 </tr>
                               <% end %>
@@ -40,7 +40,7 @@
                             <% @testimonials.each do |testimonial| %>
                               <% unless testimonial.testimonial_authenticate %>
                                 <tr>
-                                  <td><%= link_to testimonial.title, admin_path %></td>
+                                  <td><%= link_to testimonial.title, testimonial_approval_path %></td>
                                 </tr>
                               <% end %>
                             <% end %>

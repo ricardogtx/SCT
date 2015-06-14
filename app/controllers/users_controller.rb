@@ -82,6 +82,11 @@ class UsersController < ApplicationController
     @testimonials = Testimonial.all
   end
 
+  def users_approval
+    @user = User.find(params[:user_id])
+    @clinic = Clinic.find_by_e_mail(params[:user_email])
+  end
+
   def clinic_edit
     @user = current_user
   end

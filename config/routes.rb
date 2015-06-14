@@ -22,7 +22,8 @@ end
   post 'index', to: 'users#index',  as: 'do_login'
   get 'users/admin', to: 'users#admin', as: 'admin'
   post 'users/admin', to: 'users#admin',  as: 'post_admin'
-  get 'users/admin/user_approval', to: 'users#users_approval', as: 'users_approval'
+  get 'users/admin/testimonial_approval', to: 'users#testimonial_approval', as: 'testimonial_approval'
+  get 'users/admin/users_approval', to: 'users#users_approval', as: 'users_approval'
   get 'users/clinic/edit', to: 'users#clinic_edit', as: 'users_clinic_edit'
 
   resources :users

@@ -1,0 +1,57 @@
+<div>
+  <a href="<%= admin_path %>" class="btn btn-warning" role="button">Voltar</a>
+</div>
+<div class="area-total-abas">
+  <div class="lista-abas amimacao-flip">
+    <input type="radio" name="lista-abas" checked id="aba-1" class="aba-1">
+    <label for="aba-1"><span><span>Informações do Usuário</span></span></label>
+    <ul>
+      <li class="aba-1">
+        <div class="conteudo">
+          <table width="300px">
+            <h3> Usuário </h3>
+            <tr>
+              <th>Nome:</th>
+              <td><%= @user.name %></td>
+            </tr>
+            <tr>
+              <th>Email:</th>
+              <td><%= @user.email %></td>
+            </tr>
+            <tr>
+              <th>Pedido de Associação:</th>
+              <td><%= @user.solicit_association %></td>
+            </tr>
+            </table>
+            </br>
+            <table width="300px">
+            <h3> Clínica a ser associada </h3>
+            <tr>
+              <th>Clínica:</th>
+              <td><%= @clinic.nome %></td>
+            </tr>
+            <tr>
+              <th>Endereco:</th>
+              <td><%= @clinic.nome_logradouro %></td>
+            </tr>
+            <tr>
+              <th>Telefone1:</th>
+              <td><%= @clinic.telefone_1 %></td>
+            </tr>
+            <tr>
+              <th>Telefone2:</th>
+              <td><%= @clinic.telefone_2 %></td>
+            </tr>
+            <tr>
+              <th>Email:</th>
+              <td><%= @clinic.e_mail %></td>
+            </tr>
+        </table>
+        </div>
+      </li>
+      <a href="#" class="btn btn-success" role="button">Associar e Liberar</a>
+      <a href="#" class="btn btn-danger" role="button">Recusar e Deletar</a>
+    </ul>
+  </div>
+  </br>
+</div>
