@@ -36,6 +36,8 @@ end
   post 'users/admin', to: 'users#admin',  as: 'post_admin'
   get 'users/admin/testimonial_approval', to: 'users#testimonial_approval', as: 'testimonial_approval'
   get 'users/admin/users_approval', to: 'users#users_approval', as: 'users_approval'
+  get 'users/admin/users_approval_confirm', to: 'users#users_approval_confirm', as: 'users_approval_confirm'
+  get 'users/admin/users_approval_decline', to: 'users#users_approval_decline', as: 'users_approval_decline'
   get 'users/clinic/edit', to: 'users#clinic_edit', as: 'users_clinic_edit'
 
   resources :users

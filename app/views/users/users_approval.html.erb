@@ -26,31 +26,33 @@
             </br>
             <table width="300px">
             <h3> Clínica a ser associada </h3>
-            <tr>
-              <th>Clínica:</th>
-              <td><%= @clinic.nome %></td>
-            </tr>
-            <tr>
-              <th>Endereco:</th>
-              <td><%= @clinic.nome_logradouro %></td>
-            </tr>
-            <tr>
-              <th>Telefone1:</th>
-              <td><%= @clinic.telefone_1 %></td>
-            </tr>
-            <tr>
-              <th>Telefone2:</th>
-              <td><%= @clinic.telefone_2 %></td>
-            </tr>
-            <tr>
-              <th>Email:</th>
-              <td><%= @clinic.e_mail %></td>
-            </tr>
+            <% if @clinic %>
+              <tr>
+                <th>Clínica:</th>
+                <td><%= @clinic.nome %></td>
+              </tr>
+              <tr>
+                <th>Endereco:</th>
+                <td><%= @clinic.nome_logradouro %></td>
+              </tr>
+              <tr>
+                <th>Telefone1:</th>
+                <td><%= @clinic.telefone_1 %></td>
+              </tr>
+              <tr>
+                <th>Telefone2:</th>
+                <td><%= @clinic.telefone_2 %></td>
+              </tr>
+              <tr>
+                <th>Email:</th>
+                <td><%= @clinic.e_mail %></td>
+              </tr>
+            <% end %>
         </table>
         </div>
       </li>
-      <a href="#" class="btn btn-success" role="button">Associar e Liberar</a>
-      <a href="#" class="btn btn-danger" role="button">Recusar e Deletar</a>
+      <a href="users_approval_confirm?id=<%=@user.id%>" class="btn btn-success" role="button">Associar e Liberar</a>
+      <a href="users_approval_decline?id=<%=@user.id%>" class="btn btn-danger" role="button">Recusar e Deletar</a>
     </ul>
   </div>
   </br>
