@@ -101,6 +101,10 @@ class UsersController < ApplicationController
     redirect_to :admin, notice: "Usuário deletado"
   end
 
+  def testimonial_approval
+    @testimonial = Testimonial.find(params[:testimonial_id])
+  end  
+
   def clinic_edit
     @user = current_user
   end
