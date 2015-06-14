@@ -101,6 +101,17 @@ class UsersController < ApplicationController
     redirect_to :admin, notice: "Usuário deletado"
   end
 
+  def testimonials_approval_confirm
+    testimonial = Testimonial.find(params[:id])
+    testimonial.update_attributes(:testimonial_authenticate => 1)
+    redirect_to :admin, notice: "Depoimento aprovado"
+  end
+
+  def testimonials_approval_decline
+    Testimonial.destroy(params[:id])
+    redirect_to :admin, notice: "Depoimento deletado"
+  end
+
   def testimonial_approval
     @testimonial = Testimonial.find(params[:testimonial_id])
   end  

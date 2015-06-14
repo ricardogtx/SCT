@@ -28,6 +28,8 @@ end
   get 'users/admin/users_approval_decline', to: 'users#users_approval_decline', as: 'users_approval_decline'
   get 'users/clinic/edit', to: 'users#clinic_edit', as: 'users_clinic_edit'
 
+  get 'users/admin/testimonials_approval_confirm', to: 'users#testimonials_approval_confirm', as: 'testimonials_approval_confirm'
+
   resources :users
 
   get 'saiba_mais' => 'home#about'
