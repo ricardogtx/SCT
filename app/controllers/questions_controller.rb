@@ -12,28 +12,26 @@ class QuestionsController < ApplicationController
 	end
 
 	def show
-    	@question = Question.find(params[:id])
+  	@question = Question.find(params[:id])
 	end
 
 	def index
-  		@questions = Question.all
+		@question = Question.all
 	end
 
 	def edit
-      @question = Question.find params[:id]
+	  @question = Question.find params[:id]
+    redirect_to "/question" unless @question
+  end	
 
-      redirect_to "/question" unless @question
-    end
-
-    def update
-      @question = Question.find params[:id]
-
-      if @question.update_attributes(question_params)
-      	redirect_to questions_path, :notice => "Questão atualizada."
-      else
-        render "edit"
-      end  	
-    end
+  def update
+    @question = Question.find params[:id]
+    if @question.update_attributes(question_params)
+			redirect_to question_path(@question), :notice => "Questão atualizada."
+    else
+      render "edit"
+    end  	
+  end
 
     def destroy
     	@question = Question.find(params[:id]).destroy
