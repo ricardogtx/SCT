@@ -46,7 +46,10 @@ end
   get 'depoimentos/novo'      =>   'testimonials#new'
   get 'depoimentos/editar'    =>   'testimonials#edit'
 
+  resources :campaigns
 
+  get 'campanhas' => 'campaigns#index'
+  get 'campanhas/nova' => 'campaigns#new'
 
   #get "login" => "sessions#new" #, :as => "log_in"
   #post "login" => "sessions#create"
