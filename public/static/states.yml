@@ -1,0 +1,107 @@
+- estado:
+    nome: Acre
+    uf: AC
+
+- estado:
+    nome: Alagoas
+    uf: AL
+
+- estado:
+    nome: Amapá
+    uf: AP
+
+- estado:
+    nome: Amazonas
+    uf: AM
+
+- estado:
+    nome: Bahia
+    uf: BA
+
+- estado:
+    nome: Ceará
+    uf: CE
+
+- estado:
+    nome: Distrito Federal
+    uf: DF
+
+- estado:
+    nome: Espírito Santo
+    uf: ES
+
+- estado:
+    nome: Goiás
+    uf: GO
+
+- estado:
+    nome: Maranhão
+    uf: MA
+
+- estado:
+    nome: Mato Grosso
+    uf: MT
+
+- estado:
+    nome: Mato Grosso do Sul
+    uf: MS
+
+- estado:
+    nome: Minas Gerais
+    uf: MG
+
+- estado:
+    nome: Pará
+    uf: PA
+
+- estado:
+    nome: Paraíba
+    uf: PB
+
+- estado:
+    nome: Paraná
+    uf: PR
+
+- estado:
+    nome: Pernambuco
+    uf: PE
+
+- estado:
+    nome: Piauí
+    uf: PI
+
+- estado:
+    nome: Rio de Janeiro
+    uf: RJ
+
+- estado:
+    nome: Rio Grande do Norte
+    uf: RN
+
+- estado:
+    nome: Rio Grande do Sul
+    uf: RS
+
+- estado:
+    nome: Rondônia
+    uf: RO
+
+- estado:
+    nome: Roraima
+    uf: RR
+
+- estado:
+    nome: Santa Catarina
+    uf: SC
+
+- estado:
+    nome: São Paulo
+    uf: SP
+
+- estado:
+    nome: Sergipe
+    uf: SE
+
+- estado:
+    nome: Tocantins
+    uf: TO

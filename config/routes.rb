@@ -37,14 +37,17 @@ end
 
   resources :users
 
-
   get 'saiba_mais' => 'home#about'
+  get 'mapa_geral' => 'clinics#general_maps'
   resources :testimonials
-
+  get 'mapa_geral' => 'clinics#general_maps'
 
   get 'depoimentos'           =>   'testimonials#show'
   get 'depoimentos/novo'      =>   'testimonials#new'
   get 'depoimentos/editar'    =>   'testimonials#edit'
+
+  get 'clinics/id_of_city' => 'clinics#id_of_city'
+  post 'clinics/id_of_city' => 'clinics#id_of_city'
 
 
 
