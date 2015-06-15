@@ -113,14 +113,7 @@ class UsersController < ApplicationController
   end
 
   def testimonials_approval_edit
-    @testimonial = Testimonial.find(params[:id])
-  end
-
-  def update
     @testimonial = Testimonial.find_by_id(params[:id])
-    if @testimonial.update(testimonial_params)
-      redirect_to :admin, notice: "Atualizado com sucesso."
-    end
   end
 
   def testimonial_approval
@@ -180,5 +173,4 @@ class UsersController < ApplicationController
   def testimonial_params
      params.require(:testimonial).permit(:title, :body)
   end
-
 end
