@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :user_need_to_be_logged, only: [:show, :profile, :edit, :update, :admin, :clinic_edit]
   before_action :user_need_associated_a_clinic_or_admin, only: [:index, :profile, :edit, :update, :admin, :clinic_edit]
   before_action :user_need_is_approved_by_admin, only: [:index, :profile, :edit, :update, :admin, :clinic_edit]
+  before_action :need_be_admin, only: [:admin, :users_approval, :users_approval_confirm, :users_approval_decline, :testimonial_approval, :testimonials_approval_confirm, :testimonials_approval_decline, :testimonials_approval_edit]
 
 
   attr_accessor :password
@@ -25,11 +26,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
-    @user = User.find(params[:id]).destroy
-    redirect_to admin, notice: "Usuário excluido."
-  end
-
   def index
     @user = current_user
     if request.post? && !params[:do_login][:email].blank? && !params[:do_login][:password].blank?
@@ -45,6 +41,10 @@ class UsersController < ApplicationController
       end
     elsif request.post?
       flash.now[:error] = "Insira um Email e Senha"
+    end
+
+    if @user && @user.level_user
+      redirect_to :admin
     end
   end
 
@@ -90,10 +90,14 @@ class UsersController < ApplicationController
   def users_approval_confirm
     user = User.find(params[:id])
     user_email = user.email
-    clinic = Clinic.find_by_e_mail(params[user_email])
-    user.update_attributes(:clinic => clinic)
-    user.update_attributes(:user_authenticate => 1)
-    redirect_to :admin, notice: "Usuário associado e aprovado"
+    clinic = Clinic.find_by_e_mail(user_email)
+    if clinic.e_mail == user.email
+      user.update_attributes(:clinic => clinic)
+      user.update_attributes(:user_authenticate => 1)
+      redirect_to :admin, notice: "Usuário associado e aprovado"
+    else
+      redirect_to :admin, notice: "Não foi possível associar"
+    end
   end
 
   def users_approval_decline
@@ -113,12 +117,16 @@ class UsersController < ApplicationController
   end
 
   def testimonials_approval_edit
-    @testimonial = Testimonial.find_by_id(params[:id])
+    @testimonial = Testimonial.find(params[:id])
+
+    if @testimonial.testimonial_authenticate
+      redirect_to :admin, notice: "Esse depoimento já foi aprovado"
+    end
   end
 
   def testimonial_approval
     @testimonial = Testimonial.find(params[:testimonial_id])
-  end  
+  end
 
   def clinic_edit
     @user = current_user
@@ -169,7 +177,15 @@ class UsersController < ApplicationController
       redirect_to :users, notice: 'Voce precisa fazer login!'
     end
   end
-  
+
+  def need_be_admin
+    user = current_user
+
+    unless user and user.level_user
+      redirect_to :logout, notice: 'Área não permitida!'
+    end
+  end
+
   def testimonial_params
      params.require(:testimonial).permit(:title, :body)
   end

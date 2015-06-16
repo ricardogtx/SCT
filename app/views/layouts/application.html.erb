@@ -29,7 +29,9 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">CAD<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="/campanhas" id="cad_index">VISUALIZAR CAMPANHA</a></li>
-                                <li><a href="/campanhas/nova" id="cad_new">NOVA CAMPANHA</a></li>
+                                <% if current_user && current_user.level_user %>
+                                    <li><a href="/campanhas/nova" id="cad_new">NOVA CAMPANHA</a></li>
+                                <% end %>
                             </ul>
                     </li>
                     <li><a href="/drogas">DROGAS</a>

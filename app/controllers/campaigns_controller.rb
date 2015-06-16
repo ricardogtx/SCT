@@ -16,6 +16,7 @@ class CampaignsController < ApplicationController
 	end
 
 	def index
+      @user = current_user
   		@campaigns = Campaign.all
 	end
 
@@ -37,7 +38,7 @@ class CampaignsController < ApplicationController
       	redirect_to campaigns_path, :notice => "Campanha foi atualizada"
       else
         render "edit"
-      end  	
+      end
     end
 
 	private
