@@ -20,13 +20,15 @@
             </div>
         <h2><span class="glyphicon glyphicon-thumbs-up"></span><b>&nbsp;Depoimentos</b></h2>
             <% @testimonial.each do |t|%>
-                <div class="col-md-offset-8">
-                    <h3><b><%= simple_format(t.title) %></b></h3>
-                    <br>
-                    <h5><%= simple_format(t.body) %></b></h5>
-                    <br>
-                    <hr>
-                </div>
+                <% if t.testimonial_authenticate %>
+                    <div class="col-md-offset-8">
+                        <h3><b><%= simple_format(t.title) %></b></h3>
+                        <br>
+                        <h5><%= simple_format(t.body) %></b></h5>
+                        <br>
+                        <hr>
+                    </div>
+                <% end %>
             <%end%>
         </div>
         </div>
