@@ -9,7 +9,10 @@
       <% @campaigns.each do |campaign| %>
         <tr>
           <td align='center' style='width:30%'><a href="<%= campaign.url %>" target="_blank">
-            <a href='/campaigns/show/#{campaign.id}'><img id="Thumb" <%= image_tag campaign.avatar.url(:medium) %></a></td><br>
+            <%= link_to campaign do %>
+            <img id="Thumb" <%= image_tag campaign.avatar.url(:medium) %>
+          <% end %>
+          </td><br>
           <td><%=campaign.description %></td>
           <td> 
           <%= link_to "Alterar", "/campaigns/#{campaign.id}/edit", :class=>"btn btn-primary"%><br>
@@ -23,3 +26,4 @@
 	</body>
 </html>
 
+          
