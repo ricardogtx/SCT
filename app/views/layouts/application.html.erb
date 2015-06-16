@@ -25,7 +25,12 @@
                 <ul id= "main_menu_list" class="nav navbar-nav navbar-right">
                     <li><a href="/home">HOME</a>
                     </li>
-                    <li><a href="#">CAD</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">CAD<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/campanhas" id="cad_index">VISUALIZAR CAMPANHA</a></li>
+                                <li><a href="/campanhas/nova" id="cad_new">NOVA CAMPANHA</a></li>
+                            </ul>
                     </li>
                     <li><a href="/drogas">DROGAS</a>
                     </li>
@@ -33,6 +38,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">CLINICAS<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="/clinics">PROCURAR CLINICAS</a></li>
+                                <li><a href="/mapa_geral">MAPA GERAL DE CLINICAS</a></li>
                                 <li><a href="/users">CADASTRO DE CLINICAS</a></li>
                             </ul>
                     </li>
