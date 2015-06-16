@@ -7,7 +7,7 @@ RSpec.describe UsersController, type: :controller do
     User.create! id: 1, :name=>"vitor", :email=>"vitor.nere@hotmail.com", :password=>"123456", :password_confirmation=>"123456", :user_authenticate=>1
     Clinic.create! :nome=>"rspec", :tipo_logradouro=>"rspec", :nome_logradouro=>"rspec", :numero_logradouro=>"rspec",
                    :complemento=>"rspec", :bairro=>"rspec", :cep=>"rspec", :estado=>"rspec", :municipio=>"rspec", :latitude=>"rspec",
-                   :longitude=>"rspec", :telefone_1=>"rspec", :telefone_2=>"rspec", :e_mail=>"rspec", :publico_atendido=>"rspec",
+                   :longitude=>"rspec", :telefone_1=>"rspec", :telefone_2=>"rspec", :e_mail=>"vitor.nere@hotmail.com", :publico_atendido=>"rspec",
                    :grupo_especifico=>"rspec", :qual_grupo_especifico=>"rspec", :sexo_do_publico=>"rspec", :modalidade=>"rspec"
   end
 
@@ -163,6 +163,15 @@ RSpec.describe UsersController, type: :controller do
 
       expect(response).to render_template(:admin)
     end
+
+    it "Should redirect to logout if admin not logged" do
+      user = User.last
+      session[:user_id] = User.last.id
+
+      get :admin
+
+      expect(response).to redirect_to(:logout)
+    end
   end
 
   describe "Get #users_approval" do
@@ -176,6 +185,32 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to render_template(:users_approval)
     end
   end
+
+  describe "Get #users_approval_confirm" do
+    it "Should be authenticate and clinic's associate a user" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
+
+      get :users_approval_confirm, :id => 1
+
+      expect(response).to redirect_to(:admin)
+    end
+  end
+
+  describe "Get #users_approval_decline" do
+    it "Should be deleted user" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
+
+      get :users_approval_decline, id: 1
+
+      expect(response).to redirect_to(:admin)
+    end
+  end
+
+
 end
 
 
