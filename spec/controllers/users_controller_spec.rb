@@ -4,7 +4,7 @@ RSpec.describe UsersController, type: :controller do
 
   before :all do
     User.destroy_all
-    User.create! :name=>"vitor", :email=>"vitor.nere@hotmail.com", :password=>"123456", :password_confirmation=>"123456"
+    User.create! id: 1, :name=>"vitor", :email=>"vitor.nere@hotmail.com", :password=>"123456", :password_confirmation=>"123456", :user_authenticate=>1
     Clinic.create! :nome=>"rspec", :tipo_logradouro=>"rspec", :nome_logradouro=>"rspec", :numero_logradouro=>"rspec",
                    :complemento=>"rspec", :bairro=>"rspec", :cep=>"rspec", :estado=>"rspec", :municipio=>"rspec", :latitude=>"rspec",
                    :longitude=>"rspec", :telefone_1=>"rspec", :telefone_2=>"rspec", :e_mail=>"rspec", :publico_atendido=>"rspec",
@@ -150,6 +150,30 @@ RSpec.describe UsersController, type: :controller do
         @user.reload
       }.to change(@user, :email).to("teste@hotmail.com")
       expect(response).to redirect_to(:users_profile)
+    end
+  end
+
+  describe "GET #Admin" do
+    it "Should be render admin if admin logged" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
+
+      get :admin
+
+      expect(response).to render_template(:admin)
+    end
+  end
+
+  describe "Get #users_approval" do
+    it "Should be render users_approval if admin logged" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
+
+      get :users_approval, :user_id => 1
+
+      expect(response).to render_template(:users_approval)
     end
   end
 end
