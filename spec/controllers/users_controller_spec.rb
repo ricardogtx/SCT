@@ -4,7 +4,7 @@ RSpec.describe UsersController, type: :controller do
 
   before :all do
     User.destroy_all
-    User.create! id: 1, :name=>"vitor", :email=>"vitor.nere@hotmail.com", :password=>"123456", :password_confirmation=>"123456", :user_authenticate=>1
+    User.create! :id=>1, :name=>"vitor", :email=>"vitor.nere@hotmail.com", :password=>"123456", :password_confirmation=>"123456", :user_authenticate=>1
     Clinic.create! :nome=>"rspec", :tipo_logradouro=>"rspec", :nome_logradouro=>"rspec", :numero_logradouro=>"rspec",
                    :complemento=>"rspec", :bairro=>"rspec", :cep=>"rspec", :estado=>"rspec", :municipio=>"rspec", :latitude=>"rspec",
                    :longitude=>"rspec", :telefone_1=>"rspec", :telefone_2=>"rspec", :e_mail=>"vitor.nere@hotmail.com", :publico_atendido=>"rspec",
@@ -210,6 +210,42 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
+  describe "Get #testimonials_approval_edit" do
+    it "Should be " do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
+      Testimonial.create! :id=>1, :title=>"abc", :body=>"abc"
+
+      get :testimonials_approval_edit, id: 1
+
+      expect(response).to render_template(:testimonials_approval_edit)
+    end
+
+    it "" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
+      Testimonial.create! :id=>1, :title=>"abc", :body=>"abc", :testimonial_authenticate=>1
+
+      get :testimonials_approval_edit, id: 1
+
+      expect(response).to redirect_to(:admin)
+    end
+  end
+
+  describe "Get #testimonial_approval" do
+    it "" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
+      testimonial = Testimonial.create! :id=>1, :title=>"abc", :body=>"abc"
+
+      get :testimonial_approval, testimonial_id: 1
+
+      expect(response).to render_template(:testimonial_approval)
+    end
+  end
 
 end
 
