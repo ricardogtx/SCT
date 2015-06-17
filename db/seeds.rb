@@ -234,3 +234,5 @@
     campaign.save!
 
     campaign = Campaign.new
+
+    User.create! :name=>"Admin", :email=>"admin@email.com", :password=>"123456", :password_confirmation=>"123456", :level_user=>1, :user_authenticate=>1

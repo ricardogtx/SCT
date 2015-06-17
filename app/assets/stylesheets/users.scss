@@ -5,7 +5,7 @@
 .margin-table{
   margin-right: -14px;
   margin-left: -16px;
-  margin-top: -30px; 
+  margin-top: -30px;
 }
 .lista-abas, .lista-abas * {
   margin:0;
@@ -86,7 +86,8 @@
   -webkit-transition:opacity .8s, -webkit-transform .8s
 }
 .lista-abas > .aba-1:checked ~ ul > .aba-1,
-.lista-abas > .aba-2:checked ~ ul > .aba-2 {
+.lista-abas > .aba-2:checked ~ ul > .aba-2,
+.lista-abas > .aba-3:checked ~ ul > .aba-3 {
  position:relative;
  z-index:1;
  opacity:1

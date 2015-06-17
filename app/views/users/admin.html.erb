@@ -3,7 +3,7 @@
     <div class="row vertical-offset-100">
       <div class="panel panel-default">
         <div class="panel-body">
-          <% if current_user %>
+          <% if current_user and current_user.level_user %>
             <center>
             <% if flash[:notice] %>
               <div class="notice"><%= flash[:notice] %></div>
@@ -12,11 +12,13 @@
               Você está logado em uma conta de administrador <%= current_user.email %>, abaixo ficam os usuários pendentes de aprovação e associação com as clínicas, junto aos depoimentos pendentes, clique nas abas abaixo para visualizar. Caso queira alterar as informações da sua conta ou deslogar, clique no botão de usuário no topo da página.<br />
             </center>
             <div class="area-total-abas">
-              <div class="lista-abas amimacao-flip">>
-                <input type="radio" name="lista-abas" checked id="aba-2" class="aba-2">
-                <label for="aba-2"><span><span>Depoimentos Pendentes</span></span></label>
+              <div class="lista-abas amimacao-flip">
                 <input type="radio" name="lista-abas" checked id="aba-1" class="aba-1">
                 <label for="aba-1"><span><span>Usuários Pendentes</span></span></label>
+                <input type="radio" name="lista-abas" id="aba-2" class="aba-2">
+                <label for="aba-2"><span><span>Depoimentos Pendentes</span></span></label>
+                <input type="radio" name="lista-abas" id="aba-3" class="aba-3">
+                <label for="aba-3"><span><span>Atribuir Level Admin</span></span></label>
                 <ul>
                   <li class="aba-1">
                     <div class="conteudo">
@@ -47,6 +49,19 @@
                               <% end %>
                             <% end %>
                           </tr>
+                      </table>
+                    </div>
+                  </li>
+                  <li class="aba-3">
+                    <div class="conteudo">
+                      <table width="300px">
+                        <tr>
+                          <center> <h3> Informe o email da conta que deseje atribuir level de administrador: </h3> </center>
+                          <%= bootstrap_form_for(:user_email) do |f| %>
+                            <%= f.email_field :email, :class=>"form-control", :placeholder=>"Email" %>
+                            <%= f.submit "Buscar", :class=>"btn btn-lg btn-primary btn-block" %>
+                          <% end %>
+                        </tr>
                       </table>
                     </div>
                   </li>
