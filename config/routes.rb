@@ -47,7 +47,7 @@ end
 
   resources :questions
 
-  get 'quiz' => 'questions#index'
+  resources :quizzes
   
 
   #get "login" => "sessions#new" #, :as => "log_in"
