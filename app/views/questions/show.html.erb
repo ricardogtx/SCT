@@ -3,10 +3,14 @@
 		<h3 class="panel-title">Questão nº <%= @question.id %></h3>
 	</div>
 	<div class="panel-body">
-		<p><%=@question.content%></p>
-		<h5><b>Pontos:</b> <%=@question.points%></h5>
-		<div>
-			<%=link_to 'Editar', edit_question_path(@question)%>
-		</div>
+		<h1><%= @question.content %></h1>
+		<P><%= @question.answer %></p>
+		<%= bootstrap_form_for (@question) do |t| %>
+			<%= t.form_group :answer, labe: { text: "resposta" } do %>
+				<%= t.radio_button :answer, true, label: "SIM", checked: true %>
+				<%= t.radio_button :answer, false, label: "NÃO" %>
+			<% end %>
+		<%= t.submit "Enviar" %>
+		<% end %>
 	</div>
 </div>

@@ -56,8 +56,6 @@ end
 
   resources :questions
 
-  get 'quiz' => 'questions#index'
-
 
 
   #get "login" => "sessions#new" #, :as => "log_in"
