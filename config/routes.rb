@@ -39,6 +39,9 @@ end
   get 'users/admin/users_approval_confirm', to: 'users#users_approval_confirm', as: 'users_approval_confirm'
   get 'users/admin/users_approval_decline', to: 'users#users_approval_decline', as: 'users_approval_decline'
   get 'users/clinic/edit', to: 'users#clinic_edit', as: 'users_clinic_edit'
+  get "users/admin/user_admin_applying", to: "users#user_admin_applying", as: "user_admin_applying"
+  get "users/admin/user_admin_applying_confirm", to: "users#user_admin_applying_confirm", as: "user_admin_applying_confirm"
+  get "users/admin/user_admin_applying_decline", to: "users#user_admin_applying_decline", as: "user_admin_applying_decline"
 
   get 'users/admin/testimonials_approval_confirm', to: 'users#testimonials_approval_confirm', as: 'testimonials_approval_confirm'
   get 'users/admin/testimonials_approval_decline', to: 'users#testimonials_approval_decline', as: 'testimonials_approval_decline'

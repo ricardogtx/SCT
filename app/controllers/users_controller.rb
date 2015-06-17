@@ -80,6 +80,38 @@ class UsersController < ApplicationController
   def admin
     @users = User.all
     @testimonials = Testimonial.all
+
+    if request.post? && !params[:user_email][:email].blank?
+      user = User.find_by_email(params[:user_email][:email])
+      if !user.nil?
+        id = user.id
+        redirect_to "/users/admin/user_admin_applying?id=#{user.id}"
+      else
+        redirect_to :admin, notice: "Usuário não encontrado"
+      end
+    end
+  end
+
+  def user_admin_applying
+    @user = User.find(params[:id])
+  end
+
+  def user_admin_applying_confirm
+    user = User.find(params[:id])
+
+    user.update_attributes(:user_authenticate => 1)
+    user.update_attributes(:level_user => 1)
+
+    redirect_to :admin, notice: "Foi dado permissões de Administrador ao Usuário"
+  end
+
+  def user_admin_applying_decline
+    user = User.find(params[:id])
+
+    user.update_attributes(:user_authenticate => nil)
+    user.update_attributes(:level_user => nil)
+
+    redirect_to :admin, notice: "Foi retirado as permissões de Administrador do Usuário"
   end
 
   def users_approval
