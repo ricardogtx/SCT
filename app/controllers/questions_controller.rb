@@ -11,8 +11,25 @@ class QuestionsController < ApplicationController
 		end
 	end
 
+	def counter_total
+		@question = Question.all
+		@question.each do |question|
+			@total += question.points
+		end
+	end
+
+	def counter_user
+		@user_points = @user_points + @question.points
+	end
+
 	def show
-  	@question = Question.find(params[:id])
+  		@question = Question.find(params[:id])
+  	#	if @question.update_attributes(question_params)
+  			redirect_to "/questions/#{@question.id + 1}" unless @question == Question.last
+  			if @question == Question.last
+  			#	redirect_to "/quizzes/counter"
+  			end
+	#	end
 	end
 
 	def index
@@ -20,18 +37,18 @@ class QuestionsController < ApplicationController
 	end
 
 	def edit
-	  @question = Question.find params[:id]
-    redirect_to "/question" unless @question
-  end	
+		@question = Question.find params[:id]
+   		redirect_to "/question" unless @question
+  	end	
 
-  def update
-    @question = Question.find params[:id]
-    if @question.update_attributes(question_params)
+	def update
+	    @question = Question.find params[:id]
+    	if @question.update_attributes(question_params)
 			redirect_to question_path(@question), :notice => "Questão atualizada."
-    else
-      render "edit"
-    end  	
-  end
+    	else
+    	  render "edit"
+    	end  	
+	end
 
     def destroy
     	@question = Question.find(params[:id]).destroy
@@ -39,8 +56,18 @@ class QuestionsController < ApplicationController
     	redirect_to questions_path, notice: "Questão deletada."
 	end
 
+	def match_answer
+		@question = Question.find(params[:id])
+		if @question.update(question.answer)
+			@question.counter_total
+			if @question.answer
+				@question.counter_user
+			end
+		end
+	end
+
 	private
 	def question_params
-		params.require(:question).permit(:content, :points)
+		params.require(:question).permit(:content, :points, :answer)
 	end
 end
