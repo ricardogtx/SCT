@@ -19,17 +19,25 @@ class QuestionsController < ApplicationController
 	end
 
 	def counter_user
+		@question = Question.find(params[:id])
+		@pquestion = Question.find(@question.id - 1)
 		@user_points = @user_points + @question.points
 	end
 
 	def show
   		@question = Question.find(params[:id])
-  	#	if @question.update_attributes(question_params)
+  		if !@question.answer.nil?
+  			@question.update_attribute(:answer, nil)
   			redirect_to "/questions/#{@question.id + 1}" unless @question == Question.last
   			if @question == Question.last
-  			#	redirect_to "/quizzes/counter"
+  				@questions = Question.all
+  				@questions.each do |q|
+  					if q.answer
+  					end
+  					q.update_attribute(:answer, nil)
+  				end
   			end
-	#	end
+		end
 	end
 
 	def index

@@ -56,8 +56,6 @@ end
 
   resources :questions
 
-
-
   #get "login" => "sessions#new" #, :as => "log_in"
   #post "login" => "sessions#create"
   #get "logout" => "sessions#destroy" #, :as => "log_out"
