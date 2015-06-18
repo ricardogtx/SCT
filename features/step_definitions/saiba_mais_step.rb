@@ -1,7 +1,3 @@
-Given(/^I have accessed the home page$/) do
-  visit('/home')
-end
-
 When(/^I press the Saiba mais button$/) do
   page.find('#btn_saiba_mais').click
 end

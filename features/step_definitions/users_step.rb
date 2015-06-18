@@ -9,10 +9,6 @@ When(/^I fill the new user form$/) do
   fill_in "Senha", :with => @passworld_confirmation
 end
 
-When(/^click on the 'Enviar' button$/) do
-  click_button 'Enviar'
-end
-
 Then(/^I should me register$/) do
 	have_content(@nome)
 end

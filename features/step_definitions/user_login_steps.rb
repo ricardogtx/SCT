@@ -3,7 +3,7 @@ Given(/^I have accessed the login page$/) do
 end
 
 Given(/^I already have an account$/) do
-  @user = User.create! :name=>"cucumber", :email=>"cucumber@test.com", :password=>"123456", :password_confirmation=>"123456"
+  @user = User.create! :name=>"cucumber", :email=>"cucumber@test.com", :password=>"123456", :password_confirmation=>"123456", :user_authenticate => 1
   @clinic = Clinic.create! :nome=>"string", :tipo_logradouro=>"string", :nome_logradouro=>"string", :numero_logradouro=>"string",
                    :complemento=>"string", :bairro=>"string", :cep=>"string", :estado=>"string", :municipio=>"string", :latitude=>"string",
                    :longitude=>"string", :telefone_1=>"string", :telefone_2=>"string", :e_mail=>"string", :publico_atendido=>"string",
