@@ -1,4 +1,4 @@
-require 'rails_helper'
+    require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
 
@@ -211,7 +211,7 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "Get #testimonials_approval_edit" do
-    it "Should be " do
+    it "Should be redirect to page for edit testimonial" do
       user = User.last
       user.update_attributes(:level_user => 1)
       session[:user_id] = User.last.id
@@ -222,7 +222,7 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to render_template(:testimonials_approval_edit)
     end
 
-    it "" do
+    it "It does not allow editing of a testimony already authenticated " do
       user = User.last
       user.update_attributes(:level_user => 1)
       session[:user_id] = User.last.id
@@ -235,7 +235,7 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "Get #testimonial_approval" do
-    it "" do
+    it "Should be show a testimonial for approval" do
       user = User.last
       user.update_attributes(:level_user => 1)
       session[:user_id] = User.last.id
@@ -247,6 +247,67 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
+  describe "Get #testimonials_approval_confirm" do
+    it "Should be confirm a testimonial" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
+      testimonial = Testimonial.create! :id=>1, :title=>"abc", :body=>"abc"
+
+      get :testimonials_approval_confirm, :id=>1
+
+      expect(response).to redirect_to(:admin)
+    end
+  end
+
+  describe "Get #testimonials_approval_decline" do
+    it "Should be reject a testimonial and delete" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
+      testimonial = Testimonial.create! :id=>1, :title=>"abc", :body=>"abc"
+
+      get :testimonials_approval_decline, :id=>1
+
+      expect(response).to redirect_to(:admin)
+    end
+  end
+
+  describe "Get #user_admin_applying" do
+    it "Should be show user to be assigned level administrator" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
+
+      get :user_admin_applying, :id=>1
+
+      expect(response).to render_template(:user_admin_applying)
+    end
+  end
+
+  describe "Get #user_admin_applying_confirm" do
+    it "Should be assign administrator level to a user" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
+
+      get :user_admin_applying_confirm, :id=>1
+
+      expect(response).to redirect_to(:admin)
+    end
+  end
+
+  describe "Get #user_admin_applying_decline" do
+    it "Should be removing administrator level to a user" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
+
+      get :user_admin_applying_decline, :id=>1
+
+      expect(response).to redirect_to(:admin)
+    end
+  end
 end
 
 
