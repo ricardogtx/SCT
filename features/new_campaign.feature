@@ -4,7 +4,7 @@ Feature: create new campaign
 	In order to keep the application always up to date
 
 	Scenario: Campaign new
-		Given I'm logged with a admin account
+		Given I'm logged with an admin account
 		And I have accessed the home page
 		When I click on the 'NOVA CAMPANHA' button
 		Then I see 'campaigns/new'
