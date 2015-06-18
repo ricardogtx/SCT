@@ -46,8 +46,6 @@ end
   get 'depoimentos/editar'    =>   'testimonials#edit'
 
   resources :questions
-
-  resources :quizzes
   
 
   #get "login" => "sessions#new" #, :as => "log_in"
