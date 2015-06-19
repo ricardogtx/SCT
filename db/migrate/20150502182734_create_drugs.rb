@@ -2,6 +2,7 @@ class CreateDrugs < ActiveRecord::Migration
   def change
     create_table :drugs do |t|
       t.string :name
+      t.string :description
       t.string :drug_type
       t.string :origin
       t.string :average_ingest

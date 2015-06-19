@@ -11,7 +11,9 @@
 
     drug = Drug.new
 
+    drug.avatar = File.open(File.join(Rails.root, "app/assets/images/#{data["Avatar"]}"), "r")
     drug.name = data["Nome"]
+    drug.description = data["Descricao"]
     drug.drug_type = data["Tipo_droga"]
     drug.origin = data["Origem"]
     drug.average_ingest = data["Quantidade_media_ingerida"]

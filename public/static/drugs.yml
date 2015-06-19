@@ -1,5 +1,7 @@
 - Droga:
   Nome: Álcool
+  Descricao: Sem descrição
+  Avatar: alcool.jpg
   Tipo_droga: cerveja, destilados e vinhos
   Origem: grão e frutas
   Quantidade_media_ingerida: 350 ml, 45 ml, 90 ml
@@ -17,6 +19,8 @@
 
 - Droga:
   Nome: Alucinógenos
+  Descricao: Sem descrição
+  Avatar: cogumelo.jpg
   Tipo_droga: DMT, escopolamina, LSD, mescalina, noz-moscada, psilocybina, STP
   Origem: sintética, mimendro (planta), cactus, moscadeira, cogumelo
   Quantidade_media_ingerida: variável, 5 mg, 150-200 mg, 350 mg, 400 mg, 25 mg
@@ -34,6 +38,8 @@
 
 - Droga:
   Nome: Anfetaminas
+  Descricao: Sem descrição
+  Avatar: anfetaminas.jpg
   Tipo_droga: benzedrina, dexedrina, methedrina, preludin
   Origem: sintética
   Quantidade_media_ingerida: 2,5-5 mg
@@ -51,6 +57,8 @@
 
 - Droga:
   Nome: Antidepressivos
+  Descricao: Sem descrição
+  Avatar: antidepressivo.jpg
   Tipo_droga: tofranil, ritalina, tryptanol
   Origem: sintética
   Quantidade_media_ingerida: 10-25 mg
@@ -68,6 +76,8 @@
 
 - Droga:
   Nome: Barbitúricos
+  Descricao: Sem descrição
+  Avatar: doriden.jpg
   Tipo_droga: doriden, hidrato de cloral, fenobarbital, nembutal, saconal
   Origem: sintética
   Quantidade_media_ingerida: 400 mg, 500 mg, 50-100 mg
@@ -85,6 +95,8 @@
 
 - Droga:
   Nome: Cafeína
+  Descricao: Sem descrição
+  Avatar: cafe.jpg
   Tipo_droga: café, chá, refrigerantes
   Origem: grão de café, folhas de chá, castanha
   Quantidade_media_ingerida: 1-2 xícaras, 300 ml
@@ -102,6 +114,8 @@
 
 - Droga:
   Nome: Cocaína
+  Descricao: Sem descrição
+  Avatar: cocaina.jpg
   Tipo_droga: cocaína
   Origem: folhas de coca
   Quantidade_media_ingerida: variável
@@ -119,6 +133,8 @@
 
 - Droga:
   Nome: Inalantes
+  Descricao: Sem descrição
+  Avatar: inalantes.jpg
   Tipo_droga: aerossóis (éter), colas, nitrato de amido, óxido nitroso
   Origem: sintética
   Quantidade_media_ingerida: variável
@@ -136,6 +152,8 @@
 
 - Droga:
   Nome: Cannabis Sativa
+  Descricao: Sem descrição
+  Avatar: maconha.jpg
   Tipo_droga: haxixe, maconha, thc
   Origem: cannabis, sintética
   Quantidade_media_ingerida: variável
@@ -153,6 +171,8 @@
 
 - Droga:
   Nome: Narcóticos
+  Descricao: Sem descrição
+  Avatar: narcoticos.jpg
   Tipo_droga: codeína, demerol, metadona, morfina, ópio, percodan
   Origem: papoula de ópio, papoula de ópio sintética
   Quantidade_media_ingerida: 15-50 mg, 50-150 mg, 05-15 mg, 10 mg
@@ -170,6 +190,8 @@
 
 - Droga:
   Nome: Nicotina
+  Descricao: Sem descrição
+  Avatar: nicotina.jpg
   Tipo_droga: cachimbos, charutos, cigarro, rapé
   Origem: folhas de tabaco
   Quantidade_media_ingerida: variável
@@ -187,6 +209,8 @@
 
 - Droga:
   Nome: Tranquilizantes
+  Descricao: Sem descrição
+  Avatar: tranquilizantes.jpg
   Tipo_droga: dienpax, librium, valium
   Origem: sintética
   Quantidade_media_ingerida: 5-30 mg, 5-25 mg, 10-40 mg
