@@ -42,7 +42,7 @@ class DrugsController < ApplicationController
 
 	private
 	def drug_params
-		params.require(:drug).permit(:name, :drug_type, :description, :effect, :dependence_physicological, :dependence_phisical)
+		params.require(:drug).permit(:name, :drug_type, :description, :effect, :dependence_physicological, :dependence_phisical, :avatar)
 	end
 end
 
