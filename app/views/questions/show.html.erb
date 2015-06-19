@@ -4,7 +4,6 @@
 	</div>
 	<div class="panel-body">
 		<h1><%= @question.content %></h1>
-		<h1><%= @question.counter.to_s %></h1>
 		<%= bootstrap_form_for (@question) do |t| %>
 			<%= t.form_group :answer, labe: { text: "resposta" } do %>
 				<%= t.radio_button :answer, true, label: "SIM" %>

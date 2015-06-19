@@ -11,31 +11,24 @@ class QuestionsController < ApplicationController
 		end
 	end
 
-	def counter_total
-		@question = Question.all
-		@question.each do |question|
-			@total += question.points
-		end
-	end
-
-	def counter_user
-		@question = Question.find(params[:id])
-		@pquestion = Question.find(@question.id - 1)
-		@user_points = @user_points + @question.points
+	def result
+		@question = Question.last
 	end
 
 	def show
   		@question = Question.find(params[:id])
   		if !@question.answer.nil?
-  			@question.update_attribute(:answer, nil)
   			redirect_to "/questions/#{@question.id + 1}" unless @question == Question.last
   			if @question == Question.last
+  				@question.update_attribute(:counter, nil)
   				@questions = Question.all
-  				@questions.each do |q|
-  					if q.answer
+  				@questions.each do |question|
+  					if question.answer
+  						@question.increment!(:counter, by = 1)
   					end
-  					q.update_attribute(:answer, nil)
+  					question.update_attribute(:answer, nil)
   				end
+  				redirect_to "/resultados"
   			end
 		end
 	end
@@ -64,18 +57,8 @@ class QuestionsController < ApplicationController
     	redirect_to questions_path, notice: "Questão deletada."
 	end
 
-	def match_answer
-		@question = Question.find(params[:id])
-		if @question.update(question.answer)
-			@question.counter_total
-			if @question.answer
-				@question.counter_user
-			end
-		end
-	end
-
 	private
 	def question_params
-		params.require(:question).permit(:content, :points, :answer)
+		params.require(:question).permit(:content, :answer)
 	end
 end

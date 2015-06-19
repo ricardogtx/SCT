@@ -9,9 +9,9 @@
 
     dataDrug = YAML::load_file(File.join(Rails.root,"public/static/drugs.yml"))
     dataDrug.each do |data|
-        
-    drug = Drug.new      
-        
+
+    drug = Drug.new
+
     drug.avatar = File.open(File.join(Rails.root, "app/assets/images/#{cont}.jpg"), "r")
     drug.name = data["Nome"]
     drug.description = data["Descricao"]
@@ -32,9 +32,10 @@
 
     puts "="*80, "Saving: #{drug.name}", "="*80
     drug.save!
-       
+
     cont = cont + 1
     end
+
 
     campaign = Campaign.new
 
@@ -236,3 +237,33 @@
     campaign = Campaign.new
 
     User.create! :name=>"Admin", :email=>"admin@email.com", :password=>"123456", :password_confirmation=>"123456", :level_user=>1, :user_authenticate=>1
+
+    question = Question.new
+
+    question.content = "Pergunta 1"
+
+    question.save!
+
+    question = Question.new
+
+    question.content = "Pergunta 2"
+
+    question.save!
+
+    question = Question.new
+
+    question.content = "Pergunta 3"
+
+    question.save!
+
+    question = Question.new
+
+    question.content = "Pergunta 4"
+
+    question.save!
+
+    question = Question.new
+
+    question.content = "Pergunta 5"
+
+    question.save!
