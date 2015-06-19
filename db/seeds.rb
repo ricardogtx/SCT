@@ -33,3 +33,32 @@
 
     end
 
+    question = Question.new
+
+    question.content = "Pergunta 1"
+
+    question.save!
+
+    question = Question.new
+
+    question.content = "Pergunta 2"
+
+    question.save!
+
+    question = Question.new
+
+    question.content = "Pergunta 3"
+
+    question.save!
+
+    question = Question.new
+
+    question.content = "Pergunta 4"
+
+    question.save!
+
+    question = Question.new
+
+    question.content = "Pergunta 5"
+
+    question.save!
