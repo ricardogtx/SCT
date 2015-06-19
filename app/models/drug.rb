@@ -1,6 +1,5 @@
 class Drug < ActiveRecord::Base
-      validates :drug_type, :origin, :average_ingest, :ingestion_form, :effect_average, :duration, :effect_high,
-            :dependence_psychological, :dependence_phisical, :tolerance, :medical_use,
+      validates :drug_type, :effect, :description, :dependence_phisical, :dependence_physicological,
             :presence => true
       validates :name,
       		:presence => true,
