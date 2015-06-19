@@ -13,6 +13,11 @@ class QuestionsController < ApplicationController
 
 	def result
 		@question = Question.last
+		if @question.counter < 0.5 * @question.id 
+		  flash[:notice] = "Constatou-se que o usúario avaliado não é um possível usuário de drogas"
+		else
+		  flash[:notice] = "Constatou-se que o usúario avaliado é um possível usuário drogas"
+		end
 	end
 
 	def show
@@ -61,4 +66,5 @@ class QuestionsController < ApplicationController
 	def question_params
 		params.require(:question).permit(:content, :answer)
 	end
+	
 end

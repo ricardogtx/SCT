@@ -4,16 +4,20 @@
 	</div>
 	<div class="panel-body">
 		<h4>Responda as perguntas a seguir. Elas ajudam a identificar um possível usuário de drogas.</h4><br>
-		<%= @question.each do |question| %>
-		<%= bootstrap_form_for (question) do |t| %>
+		<% @question.each do |question| %>
+		  <%= bootstrap_form_for (question) do |t| %>
 			<%= t.form_group :answer, labe: { text: "resposta" } do %>
 				<%= t.radio_button :answer, true, label: "SIM", checked: true %>
 				<%= t.radio_button :answer, false, label: "NÃO" %>
 			
-		<%= t.submit "Enviar" %>
+		        <button type="submit" class="btn btn-success">Enviar</button>
+		    <% end %>
+		  <% end %>
 		<% end %>
-		<% end %>
-		<% end %>
-		<a class="btn btn-default" href="#">Cancelar</a>
+		<a href="/questions/1" class="btn btn-success" role="presentation">Avançar</a>
+		</button>
+		<a href="/home" class="btn btn-danger" role="presentation">Cancelar</a>
+		</button>
+
 	</div>
 </div>
