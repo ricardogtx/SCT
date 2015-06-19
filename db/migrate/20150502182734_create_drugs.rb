@@ -6,7 +6,6 @@ class CreateDrugs < ActiveRecord::Migration
       t.string :origin
       t.string :average_ingest
       t.string :ingestion_form
-      t.string :effect_average
       t.string :duration
       t.string :effect_high
       t.string :dependence_psychological
