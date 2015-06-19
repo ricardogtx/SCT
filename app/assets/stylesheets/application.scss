@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require rails_bootstrap_forms
+ *= require bootstrap-material-design
  *= require_tree .
  *= require_self
  */
@@ -31,8 +32,19 @@
     width :334px;
 }
 
-#jumbotron_margin {
-    margin :44px;
+#container_margin {
+    margin-top :100px;
+    margin-left :100px;
+    margin-right :100px;
+    margin-bottom :100px;
+    background-color: rgba(0,0,0,0.60);
+    color: #fff;
+    padding-left:1px;
+    border-radius :6px;
+}
+
+#conteiner_home{
+    margin-top:10px;
 }
 
 #sign_in_button {
@@ -44,17 +56,152 @@
 }
 
 #image_home {
-    width :340px;
-    height :300px;
+    width :650px;
 }
 
-.jumbotron {
-background-color :#DDDDDD
+#drugs-image {
+        height :250px;
+        width :350px;
+        border-radius :6px;
 }
 
-.dorgas-image {
-    &:hover {
-        opacity: 0.5;
-    }
+
+.pagination {
+ background:transparent;
+ cursor:default;
+ height:10px;
+ a, spam, em{
+    padding: 0.2em 0.5em;
+        margin-right: 2px;
+ }
+ .current{
+    font-style: normal;
+    font-weight: bold;
+    background: #2e6ab1;
+    color: white;
+    border: 1px solid #2e6ab1;
+ }
+ a{
+   text-decoration: none;
+   color: #105cb6;
+   border: 1px solid #9aafe5;
+   &:hover, &.focus{
+    color: #000033;
+    border-color: #000033;
+   }
+ }
+ .page_info{
+    background: #2e6ab1;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom:0.3em;
+    text-align:center;
+ }
+}
+#image_campaign {
+  width :180px;
+  height :180px;
+
 }
 
+#image_folder {
+  width :180px;
+}
+#aplication-body {
+    background-image :url("backgroundcampo.jpg");
+    background-size :cover;
+    background-attachment :fixed;
+    font-family: 'sans-serif';
+}
+
+#margin_correction {
+    margin: 10px;
+}
+
+#margin_correction_new {
+    margin: 10px;
+}
+
+#brand_aplication {
+    height :65px;
+    margin :-23px;
+}
+
+.table {
+    font-size:14px;
+}
+
+caption {
+    background-color :#FF5E00;
+}
+
+.hoverzoom {
+    position: relative;
+    height: 285px;
+    width: 350px;
+    overflow: hidden;
+}
+.hoverzoom > img {
+   width: 100%;
+    border-radius: 2px;
+    -webkit-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+        -moz-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+         -ms-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+          -o-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+             transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+}
+.hoverzoom:hover > img {
+    -webkit-transform: scale(1.5);
+       -moz-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+         -o-transform: scale(1.5);
+            transform: scale(1.5);
+}
+.hoverzoom .retina{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    text-align: center;
+    padding: 30px;
+
+    -webkit-transition:  all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+        -moz-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+         -ms-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+          -o-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+             transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+}
+.hoverzoom:hover .retina {
+    opacity: 1;
+    box-shadow: inset 0 0 100px 50px rgba(0,0,0,.5);
+
+}
+.hoverzoom .retina p {
+    color: #fff;
+}
+.hoverzoom .retina a {
+    display: block;
+    width: 150px;
+    background: #6fc5e9;
+    border: 1px solid #59afd4;
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 15px;
+    margin: 16px auto 0;
+}
+
+.testimonials_margin {
+        margin: 0px 7px;
+}
+
+.testimonials_color_label label {
+    color :#FFF !important;
+    margin: 0px 7px;
+}

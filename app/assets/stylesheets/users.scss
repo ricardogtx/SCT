@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.margin-table{
+  margin-right: -14px;
+  margin-left: -16px;
+  margin-top: -30px; 
+}
 .lista-abas, .lista-abas * {
   margin:0;
   padding:0;
@@ -80,7 +85,7 @@
   -moz-transition:opacity .8s, -moz-transform .8s;
   -webkit-transition:opacity .8s, -webkit-transform .8s
 }
-.lista-abas > .aba-1:checked ~ ul > .aba-1, 
+.lista-abas > .aba-1:checked ~ ul > .aba-1,
 .lista-abas > .aba-2:checked ~ ul > .aba-2 {
  position:relative;
  z-index:1;
@@ -94,4 +99,10 @@
 .pagina-url {
   float:right;
   margin-top:15px
+}
+
+.panel-body {
+  label{
+    color :darkgrey;
+  }
 }

@@ -1,6 +1,7 @@
-<center><h3> Quadro resumo: <%= @drug.name %> </h3></center><br>
-<div class="container">
-<table class="table table-bordered">
+<div id="container_margin" class="container">
+<center><h3> Quadro resumo: <%= @drug.name %> </h3></center>
+<br>
+<table class="table table-bordered drugs-table">
  <thead>
    <tr class="active">
      <th>
@@ -16,13 +17,7 @@
        Forma de ingestão:
      </th>
      <th>
-       Efeitos a curto prazo (quantidade média):
-     </th>
-     <th>
-       Duração:
-     </th>
-     <th>
-       Efeitos a curto prazo (grandes quantidades):
+       Efeitos a curto prazo:
      </th>
      <th>
        Risco de dependência psicológica:
@@ -47,8 +42,6 @@
     <td><%= @drug.origin %></td>
     <td><%= @drug.average_ingest %></td>
     <td><%= @drug.ingestion_form %></td>
-    <td><%= @drug.effect_average %></td>
-    <td><%= @drug.duration %></td>
     <td><%= @drug.effect_high %></td>
     <td><%= @drug.dependence_psychological %></td>
     <td><%= @drug.dependence_phisical %></td>
@@ -61,3 +54,4 @@
 <p align="right"><a href="/drogas" class="btn btn-warning" role="button">voltar</a></p>
 <h6>Fonte: Anti Drogas (http://www.antidrogas.com.br/resumo.php)</h6>
 </div>
+

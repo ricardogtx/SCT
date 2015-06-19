@@ -1,44 +1,52 @@
+<div id="container_margin" class="container">
 <div class = "conteiner">
-  <h2>Clínicas</h2>
-  <h4>Busque a clínica desejada: </h4>
+  <div class="panel panel-default" style="margin-right: -15;">
+    <div class="panel-heading">
+    <h2>Clínicas<span class="mdi-action-search"></span></h2>
+    <h4>Busque a clínica desejada: </h4>
 
   <%= search_form_for @search, :html => {:class => "form-horizontal"} do |f| %>
     <div class="field">
       <%= f.text_field :nome_cont, placeholder: "Nome"%>
-        <%= f.text_field :estado_cont, placeholder: "Estado"%>
+        <%= f.select :state_id_eq, options_for_select(State.all.map{ |e| [e.name, e.id] }) %>
         <%= f.text_field :modalidade_cont, placeholder: "Modalidade"%>
     </div>
 
+      <p></p>
+       <%= f.submit "Buscar", :class => "btn btn-primary" %>
+    <% end %>
     <p></p>
-     <%= f.submit "Buscar", :class => "btn btn-primary" %>
-  <% end %>
-  <p></p> 
 
-  <div class="img-responsive aspect data_background" ></div>
-    <% if @search.result.blank? %>
-    <div class="alert alert-danger" role="alert" ><button type="button" class="close" data-dismiss="alert">×</button>
-        <strong>Erro!<p></p></strong> Clínica não encontrada.
-    </div>
-    <% else %>
-    <table class="table table-hover", border="2">
-      <thead>
-      <tr>
-        <th><%= sort_link(@search, :nome, "Nome") %></th>
-        <th><%= sort_link(@search, :estado, "Estado") %></th>
-        <th><%= sort_link(@search, :modalidade, "Modalidade") %></th>
-        
-      </tr>
-      </thead>
-      <tbody>
-      <% @clinics.each do |clinic| %>
-          <tr>
-            <td><%= link_to clinic.nome, clinic %></td>
-            <td><%= clinic.estado %></td>
-            <td><%= clinic.modalidade %></td>
+    <div class="img-responsive aspect data_background" ></div>
+      <% if @search.result.blank? %>
+      <div class="alert alert-danger" role="alert" ><button type="button" class="close" data-dismiss="alert">×</button>
+          <strong>Erro!<p></p></strong> Clínica não encontrada.
+      </div>
+      <% else %>
+      <table class="table table-hover", border="1">
+        <thead>
+        <tr class= "info">
+          <th><%= sort_link(@search, :nome, "Nome") %></th>
+          <th><%= sort_link(@search, :estado, "Estado") %></th>
+          <th><%= sort_link(@search, :modalidade, "Modalidade") %></th>
 
-          </tr>
-      <% end %>
+        </tr>
+        </thead>
+        <tbody>
+        <% @clinics.each do |clinic| %>
+            <tr class= "info">
+              <td><%= link_to clinic.nome, clinic %></td>
+              <td><%= clinic.estado %></td>
+              <td><%= clinic.modalidade %></td>
+
+
+            </tr>
+        <% end %>
       </tbody>
     </table>
+    <%= will_paginate @clinics, previous_label: h("<"), next_label: h(">")%>
     <% end %>
+    </div>
+  </div>
+</div>
 </div>

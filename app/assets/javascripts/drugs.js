@@ -13,9 +13,9 @@
 
   // Initialize the graphs
   function main(){
-    draw_drug_chart("drugs_usage[]", "Usos ao longo da vida", "chart_div");
-    draw_drug_chart("drugs_death[]", "Índice de mortalidade", "chart_div2");
-    draw_drug_chart("drugs_dependency[]", "Índice de dependência", "chart_div3");
+    draw_drug_chart("drugs_usage[]", "", "chart_div");
+    draw_drug_chart("drugs_death[]", "", "chart_div2");
+    draw_drug_chart("drugs_dependency[]", "", "chart_div3");
   }
 
 
@@ -51,6 +51,10 @@
       height: 400,
       "title": title,
       is3D: true,
+      legend: {
+        textStyle:  {color: 'white', fontSize: 12,bold: true
+      }
+    },
       'chartArea': {'width': '100%', 'height': '80%'},
       backgroundColor: { fill:'transparent' }
     };

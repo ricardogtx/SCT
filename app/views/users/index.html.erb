@@ -1,117 +1,118 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-	<body>
-		<div id="user_nav">
-		  <div class="conteiner">
-		  	<div class="row vertical-offset-100">
-		  		<div class="panel panel-default">
-		        <div class="panel-body">
-					  <% if current_user %>
-					  <center>
-					  	<h2>Olá <%= current_user.name %> </h2>
+<div id="container_margin" class="container">
+ <div class="container">
+  <div id="user_nav">
+   <div class="row vertical-offset-100">
+    <div class="panel-body">
+    <% if current_user %>
+	 <div class="panel panel-default margin-table " style="margin-bottom: -15px;	">
+		<div class="panel-heading">
+			<center>
+			<h2>Olá <%= current_user.name %> </h2>
 
-					    Você está logado com o email <%= current_user.email %>, caso queira ver/ou atualizar informações da sua clínica, clique no botão editar abaixo. Caso queira alterar as informações da sua conta ou deslogar, clique no botão de usuário no topo da página.<br />
-					  </center>
-					  	<div class="area-total-abas">
-							<div class="lista-abas amimacao-flip">>
-								<input type="radio" name="lista-abas" checked id="aba-1" class="aba-1">
-								<label for="aba-1"><span><span>Informações da Clínica</span></span></label>
-								<ul>
-									<li class="aba-1">
-										<div class="conteudo">
-											<table width="300px">
-												<tr>
-													<td>Clínica:</td>
-													<td><%= @user.clinic.nome %></td>
-												</tr>
-												<tr>
-													<th>Endereco</th>
-												    <td><%= @user.clinic.nome_logradouro %></td>
-												</tr>
-											    <tr>
-											    	<th>Municipio</th>
-											    	<td><%= @user.clinic.municipio %></td>
-											    </tr>
-											    <tr>
-											    	<th>Cep</th>
-											    	<td><%= @user.clinic.cep %></td>
-											    </tr>
-											    <tr>
-											    	<th>Latitude</th>
-											    	<td><%= @user.clinic.latitude %></td>
-											    </tr>
-											    <tr>
-											    	<th>Longitude</th>
-											    	<td><%= @user.clinic.longitude %></td>
-											    </tr>
-											    <tr>
-											    	<th>Telefone1</th>
-											    	<td><%= @user.clinic.telefone_1 %></td>
-											    </tr>
-											    <tr>
-											    	<th>Telefone2</th>
-											    	<td><%= @user.clinic.telefone_2 %></td>
-											    </tr>
-											    <tr>
-											    	<th>Email</th>
-											    	<td><%= @user.clinic.e_mail %></td>
-											    </tr>
-											    <tr>
-											    	<th>Modalidade</th>
-											    	<td><%= @user.clinic.modalidade %></td>
-											    </tr>
-											</table>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<a href="<%= users_clinic_edit_path %>" class="btn btn-success" role="button">Editar Clínica</a>
-					  <% else %>
-					    <center>
-					    	<h2>Bem vindo a página de login/cadastro do SCT</h2>
-
-					    	Esta página é dedicada somente para clínicas que desejam atualizar suas informações.
-
-						    Para efetuar o login no site é necessário que tenha uma conta assossiada a uma clínica, se você ainda não possui uma conta registrada nesse site, basta criar uma conta no botão Cadastrar informando qual clínica deseja assossiar, ou caso sua clínica não exista em nosso banco, solicite a criação de uma nova.<br />
-						    <% if flash[:error] %>
-                  <div class="alert alert-danger" role="alert" ><button type="button" class="close" data-dismiss="alert">×</button>
-                    <strong>Erro!<p></p></strong> <%= flash[:error] %>.
-                  </div>
-                <% end %>
-
-					        <div class="container">
-					            <div class="row vertical-offset-100">
-					              <div class="col-md-4 col-md-offset-4">
-					                <div class="panel panel-default">
-					                    <div class="panel-heading">
-					                        <h3 class="panel-title">Login</h3>
-					                     </div>
-					                    <div class="panel-body">
-					                      <%= form_for(:do_login) do |f| %>
-					                        <%= f.email_field :email, :class=>"form-control", :placeholder=>"Email" %>
-					                        <%= f.password_field :password, :class=>"form-control", :placeholder=>"Senha" %>
-					                        <br>
-					                        <%= check_box_tag :remember_me %>
-					                        <%= label_tag :remember_me %>
-					                        <br>
-					                        <%= f.submit "Logar", :class=>"btn btn-lg btn-primary btn-block" %>
-					                        <br>
-					                        <a href="/users/new" class="btn btn-lg btn-danger btn-block" role="button">Cadastrar</a>
-					                      <% end %>
-					                    </div>
-					                </div>
-					              </div>
-					            </div>
-					        </div>
-					    </center>
-					  <% end %>
-					</div>
+			Você está logado com o email <%= current_user.email %>, caso queira ver/ou atualizar informações da sua clínica, clique no botão editar abaixo. Caso queira alterar as informações da sua conta ou deslogar, clique no botão de usuário no topo da página.<br />
+			</center>
+			<center><h3>Informações da Clínica</h3></center>
+			<table class="table table-hover" border="1">
+                        <thead>
+                        <tr class= "info">
+                            <th colspan="2"><strong>CLINICA: <%= @user.clinic.nome %></strong></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr class= "info">
+                                <td>Estado</td>
+                                <td><%= @user.clinic.estado %></td>
+                            </tr>
+                            <tr class= "info">
+                                <td>Modalidade</td>
+                                <td><%= @user.clinic.modalidade %></td>
+                            </tr>
+                            <tr class= "info">
+                                <td>Endereco</td>
+                                <td>
+                                    <%= @user.clinic.nome_logradouro %>
+                                    <%= @user.clinic.numero_logradouro %>
+                                    <%= @user.clinic.complemento %>
+                                </td>
+                            </tr class= "info">
+                            <tr class= "info">
+                                <td>Municipio</td>
+                                <td><%= @user.clinic.municipio %></td>
+                            </tr>
+                            <tr class= "info">
+                                <td>Cep</td>
+                                <td><%= @user.clinic.cep %></td>
+                            </tr>
+                            <tr class= "info">
+                                <td>Latitude</td>
+                                <td id="clinic_latitude"><%= @user.clinic.latitude %></td>
+                            </tr>
+                            <tr class= "info">
+                                <td>Longitude</td>
+                                <td id="clinic_longitude"><%= @user.clinic.longitude %></td>
+                            </tr>
+                            <tr class= "info">
+                                <td>Telefone1</td>
+                                <td><%= @user.clinic.telefone_1 %></td>
+                            </tr>
+                            <tr class= "info">
+                                <td>Telefone2</td>
+                                <td><%= @user.clinic.telefone_2 %></td>
+                            </tr>
+                            <tr class= "info">
+                                <td>Email</td>
+                                <td><%= @user.clinic.e_mail %></td>
+                            </tr>
+                            <tr class= "info">
+                                <td>Modalidade</td>
+                                <td><%= @user.clinic.modalidade %></td>
+                            </tr>
+                        </tbody>
+                    </table>
 				</div>
-			</div>
-		  </div>
-		</div>
-	</body>
-</head>
-</html>
+			<p align="right"><a href="<%= users_clinic_edit_path %>" id = "Editar" class="btn btn-warning" role="button" >Editar Clínica</a></p>
+	   </div>
+      </div>
+     <% else %>
+      <center>
+         <h2>Bem vindo a página de login/cadastro do SCT</h2>
+
+        Esta página é dedicada somente para clínicas que desejam atualizar suas informações.
+
+        Para efetuar o login no site é necessário que tenha uma conta assossiada a uma clínica, se você ainda não possui uma conta registrada nesse site, basta criar uma conta no botão Cadastrar informando qual clínica deseja    assossiar, ou caso sua clínica não exista em nosso banco, solicite a criação de uma nova.<br />
+     <% if flash[:error] %>
+      <div class="alert alert-danger" role="alert" ><button type="button" class="close" data-dismiss="alert">×</button>
+      <strong>Erro!<p></p></strong> <%= flash[:error] %>.
+      </div>
+     <% end %>
+     <div class="container">
+        <div class="row vertical-offset-100">
+          <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Login</h3>
+                 </div>
+                <div class="panel-body">
+                  <%= form_for(:do_login) do |f| %>
+                    <%= f.email_field :email, :class=>"form-control", :placeholder=>"Email" %>
+                    <%= f.password_field :password, :class=>"form-control", :placeholder=>"Senha" %>
+                    <br>
+                    <%= check_box_tag :remember_me %>
+                    <%= label_tag :remember_me%>
+                    <br>
+                    <%= f.submit "Logar", :class=>"btn btn-lg btn-primary btn-block", :id => "Logar" %>
+                    <br>
+                    <a href="/users/new" class="btn btn-lg btn-danger btn-block" role="button">Cadastrar</a>
+                  <% end %>
+                </div>
+            </div>
+          </div>
+        </div>
+     </div>
+     </center>
+     <% end %>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
