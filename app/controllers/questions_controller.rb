@@ -7,7 +7,8 @@ class QuestionsController < ApplicationController
 	def create
 		@question = Question.new(question_params)
 		if @question.save
-			redirect_to :action => 'index', notice: "Criado com sucesso!"
+			flash[:notice] = "Criado com sucesso!"
+			redirect_to :action => 'index'
 		end
 	end
 
@@ -57,9 +58,10 @@ class QuestionsController < ApplicationController
 	end
 
     def destroy
-    	@question = Question.find(params[:id]).destroy
-    
-    	redirect_to questions_path, notice: "Questão deletada."
+    	@question = Question.find params[:id]
+    	@question.delete
+    	flash[:notice] = "Questão deletada."
+    	redirect_to questions_path
 	end
 
 	private

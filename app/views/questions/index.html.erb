@@ -2,8 +2,8 @@
 	<div class="panel-heading">
 		<h1 class="panel-title">Quiz </h1>
 	</div>
-	<% flash.each do |name, msg| %>
-		<%= content_tag :div, msg, :id => "flash_#{name}" %>
+	<% if flash[:notice] %>
+		<div class="alert alert-success" role="alert" ><%= flash[:notice] %></div>
 	<% end %>
 	<div class="panel-body">
 		<center>
@@ -16,6 +16,9 @@
 					<td><%= link_to "Excluir", "/questions/#{question.id}", :method => :delete, data: {confirm: "Tem Certeza?"} %></td>
 				</tr>
 		    <% end %>
+		    <tr>
+		    	<td colspan="3" align="center"><%= link_to "Nova Questão", {:action => "new"} %></td>
+		    </tr>
 		</table>
 		<a href="/home" class="btn btn-danger" role="presentation">Cancelar</a>
 		</button>
