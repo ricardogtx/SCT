@@ -5,9 +5,9 @@
 	<div class="panel-body">
 		<h1><%= @question.content %></h1>
 		<%= bootstrap_form_for (@question) do |t| %>
-			<%= t.form_group :answer, labe: { text: "resposta" } do %>
+			<%= t.form_group :answer, label: { text: "resposta" } do %>
 				<%= t.radio_button :answer, true, label: "SIM" %>
-				<%= t.radio_button :answer, false, label: "NÃO" %>
+				<%= t.radio_button :answer, false, checked: true, label: "NÃO" %>
 			<% end %>
 		<%= t.submit "Enviar", :class => "btn btn-success"  %>
 		<% end %> 
