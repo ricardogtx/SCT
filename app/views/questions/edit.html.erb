@@ -1,6 +1,8 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h3 class="panel-title">Questão nº <%= @question.id %></h3>
+		<h1 class="panel-title">Editar questão nº <%= @question.id %></h1>
+		<br>
+		<p>Tenha em mente que respostas verdadeiras devem indicar o possível uso de drogas pelo usuário que responder o questionário.</p>
 	</div>
 	<div class="panel-body">
 		<%= form_for(@question) do |q| %>
