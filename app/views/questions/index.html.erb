@@ -2,6 +2,9 @@
 	<div class="panel-heading">
 		<h1 class="panel-title">Quiz </h1>
 	</div>
+	<% flash.each do |name, msg| %>
+		<%= content_tag :div, msg, :id => "flash_#{name}" %>
+	<% end %>
 	<div class="panel-body">
 		<h4>Responda as perguntas a seguir. Elas ajudam a identificar um possível usuário de drogas.</h4><br>
 		<table>
