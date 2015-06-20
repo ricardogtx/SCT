@@ -1,4 +1,15 @@
 <div id="container_margin" class="container">
+<div class="row">
+  <div class="col-md-8">
+   <h3 align="center"><b><%= @drug.name %></b></h3>
+    <br>
+    <p id="margin_correction" align="justify"><%= @drug.description %></p>
+    <br>
+  </div>
+  <div class="col-md-4">
+    <img id="drugs-image-margin" <%= image_tag @drug.avatar.url%>
+  </div>
+</div>
 <center><h3> Quadro resumo: <%= @drug.name %> </h3></center>
 <br>
 <table class="table table-bordered drugs-table">
