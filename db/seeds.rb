@@ -5,13 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+    cont = 1
 
     dataDrug = YAML::load_file(File.join(Rails.root,"public/static/drugs.yml"))
     dataDrug.each do |data|
-
-    drug = Drug.new
-
-    drug.avatar = File.open(File.join(Rails.root, "app/assets/images/#{data["Avatar"]}"), "r")
+        
+    drug = Drug.new      
+        
+    drug.avatar = File.open(File.join(Rails.root, "app/assets/images/#{cont}.jpg"), "r")
     drug.name = data["Nome"]
     drug.description = data["Descricao"]
     drug.drug_type = data["Tipo_droga"]
@@ -31,7 +32,8 @@
 
     puts "="*80, "Saving: #{drug.name}", "="*80
     drug.save!
-
+       
+    cont = cont + 1
     end
 
     campaign = Campaign.new
