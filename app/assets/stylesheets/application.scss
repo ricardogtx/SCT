@@ -161,7 +161,7 @@ caption {
 .hoverzoom .retina{
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 250px;
     top: 0;
     left: 0;
     opacity: 0;
@@ -197,11 +197,11 @@ caption {
     margin: 16px auto 0;
 }
 
-.testimonials_margin {
+.margin_field {
         margin: 0px 7px;
 }
 
-.testimonials_color_label label {
+.color_label label {
     color :#FFF !important;
     margin: 0px 7px;
 }

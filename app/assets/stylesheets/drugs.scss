@@ -9,3 +9,26 @@
         background-color: lightblue;
     }
 }
+
+.drugs-inline a {
+    width: auto !important;
+    padding: 10px !important;
+    font-size: 12px;
+}
+
+#drugs-image-margin {
+        height :250px;
+        width :350px;
+        border-radius :6px;
+        margin :15px;
+}
+
+.drugs-limited-characters {
+        height :170px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+}
+
+#message_area {
+    height :250px;
+}
