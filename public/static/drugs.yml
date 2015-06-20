@@ -1,6 +1,6 @@
 - Droga:
   Nome: Álcool
-  Descricao: Sem descrição
+  Descricao: É a substância psicoativa mais antiga da humanidade. Consumo excessivo traz aplicações no sistema digestivo,podendo resultar em    varios tipos de complicações, afetar a capacidade intelectual, memória e destroir a vida social e afetiva do dependente.
   Avatar: alcool.jpg
   Tipo_droga: cerveja, destilados e vinhos
   Origem: grão e frutas
@@ -19,7 +19,7 @@
 
 - Droga:
   Nome: Alucinógenos
-  Descricao: Sem descrição
+  Descricao: Chamam-se alucinógenas porque provocam "alucinações", que na linguagem médica significa "percepções sem objeto", isto é, a pessoa que está em processo de alucinação percebe coisas sem que elas existam (ouve sons imaginários, vê objetos que não existem).
   Avatar: cogumelo.jpg
   Tipo_droga: DMT, escopolamina, LSD, mescalina, noz-moscada, psilocybina, STP
   Origem: sintética, mimendro (planta), cactus, moscadeira, cogumelo
@@ -38,7 +38,7 @@
 
 - Droga:
   Nome: Anfetaminas
-  Descricao: Sem descrição
+  Descricao: As anfetaminas são drogas estimulantes, isto é, fazem o cérebro trabalhar mais depressa, deixando as pessoas com “menos sono”. Um exemplo de uso está entre os motoristas que precisam dirigir durante várias horas seguidas sem descanso,a fim de cumprir um prazo.
   Avatar: anfetaminas.jpg
   Tipo_droga: benzedrina, dexedrina, methedrina, preludin
   Origem: sintética
@@ -57,7 +57,7 @@
 
 - Droga:
   Nome: Antidepressivos
-  Descricao: Sem descrição
+  Descricao: É uma substância considerada eficaz na remissão de sintomas característicos da síndrome depressiva em alguns pacientes com transtorno depressivo. Algumas substâncias com atividade antidepressiva podem ser eficazes também em transtornos psicóticos.
   Avatar: antidepressivo.jpg
   Tipo_droga: tofranil, ritalina, tryptanol
   Origem: sintética
@@ -76,7 +76,7 @@
 
 - Droga:
   Nome: Barbitúricos
-  Descricao: Sem descrição
+  Descricao: São os calmantes e sedativos, provocam alterações na capacidade de raciocínio, concentração e coordenação motora.Quando ingeridos em excesso, afetam as funções do sistema cardiorespiratório, podendo levar até mesmo ao coma.
   Avatar: doriden.jpg
   Tipo_droga: doriden, hidrato de cloral, fenobarbital, nembutal, saconal
   Origem: sintética
@@ -95,7 +95,7 @@
 
 - Droga:
   Nome: Cafeína
-  Descricao: Sem descrição
+  Descricao: É o estimulante legal mais usado no mundo. A cafeína é mais comumente associada ao café e às bebidas à base de cola que contém cafeína e flavorizantes extraídos de fontes naturais. A cafeína não produz uma verdadeira euforia, mas causa dependência psicológica.
   Avatar: cafe.jpg
   Tipo_droga: café, chá, refrigerantes
   Origem: grão de café, folhas de chá, castanha
@@ -114,7 +114,7 @@
 
 - Droga:
   Nome: Cocaína
-  Descricao: Sem descrição
+  Descricao: É uma das drogas ilegais mais consumidas no mundo. A cocaína é um psicotrópico, pois age no Sistema Nervoso Central, isto é, sua atuação é no cérebro e na medula espinhal, exatamente nos órgãos que comandam os pensamentos e as ações das pessoas.
   Avatar: cocaina.jpg
   Tipo_droga: cocaína
   Origem: folhas de coca
@@ -133,7 +133,7 @@
 
 - Droga:
   Nome: Inalantes
-  Descricao: Sem descrição
+  Descricao: Produz sensação de euforia e exitação, pertubaçãoes auditivas, visuais e até alucinações. A aspiração repetida do solvente pode resultar na destruição de neurônios, provocando perda de reflexos, dificuldade de concentração e déficit de memória.
   Avatar: inalantes.jpg
   Tipo_droga: aerossóis (éter), colas, nitrato de amido, óxido nitroso
   Origem: sintética
@@ -152,7 +152,7 @@
 
 - Droga:
   Nome: Cannabis Sativa
-  Descricao: Sem descrição
+  Descricao: É a droga de entrada para consumo das outras drogas. Barata e de fácil acesso, o seu uso continuado interfere tanto na aprendizagem, memorização quanto na fertilidade. É uma combinação de flores e folhas da planta conhecida como Cannabis sativa.
   Avatar: maconha.jpg
   Tipo_droga: haxixe, maconha, thc
   Origem: cannabis, sintética
@@ -171,7 +171,7 @@
 
 - Droga:
   Nome: Narcóticos
-  Descricao: Sem descrição
+  Descricao: Refere-se a uma variedade de substâncias que fazem adormecer e reduzem ou eliminam a sensibilidade, em medicina, o termo designa apenas o ópio, os derivados do ópio e os seus substitutos sintéticos ou semi-sintéticos, usados como anestésicos.
   Avatar: narcoticos.jpg
   Tipo_droga: codeína, demerol, metadona, morfina, ópio, percodan
   Origem: papoula de ópio, papoula de ópio sintética
@@ -190,7 +190,7 @@
 
 - Droga:
   Nome: Nicotina
-  Descricao: Sem descrição
+  Descricao: A nicotina causa dependência ao cigarro e o torna agradável. É uma substância que ocorre naturalmente no tabaco.  Ao tragar a fumaça do cigarro, uma grande quantidade vai para os pulmões e passa para o sangue, atingindo o seu cérebro em apenas alguns segundos.
   Avatar: nicotina.jpg
   Tipo_droga: cachimbos, charutos, cigarro, rapé
   Origem: folhas de tabaco
@@ -209,7 +209,7 @@
 
 - Droga:
   Nome: Tranquilizantes
-  Descricao: Sem descrição
+  Descricao: Tranquilizantes são medicamentos utilizados em pessoas em estado de tensão, insônia e ansiedade. Também conhecidos como calmantes, esses medicamentos responsáveis pela ansiedade e a tensão.
   Avatar: tranquilizantes.jpg
   Tipo_droga: dienpax, librium, valium
   Origem: sintética
