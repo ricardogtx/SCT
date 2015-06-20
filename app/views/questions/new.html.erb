@@ -1,7 +1,6 @@
 <h1>Nova Pergunta</h1>
 <%= bootstrap_form_for(@question) do |t| %>
 	<%= t.text_field :content, label: "Pergunta", required: true %>
-	<%= t.text_field :points, label: "Pontuação", required: true %>
 	<%= t.submit "Enviar" %>
 	<%= link_to "Cancelar", :back, {:class=>"btn btn-default"} %>
 	<% end %>
