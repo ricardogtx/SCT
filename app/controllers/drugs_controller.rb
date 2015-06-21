@@ -9,15 +9,17 @@ class DrugsController < ApplicationController
 
   def new
     @drug = Drug.new
-  end	
+  end
 
   def create
     @drug = Drug.new(drugs_params)
-    
+
     if @drug.save
 	  redirect_to drugs_path, notice: "Criada com sucesso!"
-	end  	
+    else
+      render 'new'
   end
+end
 
   def edit
     @drug = Drug.find params[:id]
@@ -25,7 +27,7 @@ class DrugsController < ApplicationController
 
   def destroy
     @drug = Drug.find(params[:id]).destroy
-    redirect_to drugs_path, notice: "Droga deletada."	
+    redirect_to drugs_path, notice: "Droga deletada."
   end
 
   def update
@@ -36,10 +38,10 @@ class DrugsController < ApplicationController
     else
       render "edit"
     end
-  end	
+  end
 
   private
     def drugs_params
-      params.require(:drug).permit(:name, :drug_type, :dependence_pysichological, :dependence_phisical, :description, :avatar)
-    end	
+      params.require(:drug).permit(:name, :drug_type, :dependence_psychological, :dependence_phisical, :description, :avatar)
+    end
 end
