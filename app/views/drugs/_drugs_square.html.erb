@@ -17,7 +17,7 @@
                           <%= link_to "Saiba mais!", "/drugs/#{drug.id}",  :class=>"btn btn-info btn-xs"  %>
                       </li>
                       <li>
-                          <%= link_to "Excluir", "/drugs/#{drug.id}", :class=>"btn btn-warning btn-xs",
+                          <%= button_to "Excluir", "/drugs/#{drug.id}", :class=>"btn btn-danger btn-xs drugs-button",
                                                               :method => :delete,
                                                               data: {confirm: "Tem certeza?"}%>
                       </li>
