@@ -10,17 +10,21 @@
                 <div class="retina">
                   <p class="drugs-limited-characters" align="justify"><b><%= drug.name %></b> :<%= drug.description %></p>
                     <ul class="list-inline drugs-inline">
+                    <% if current_user && current_user.level_user %>
                       <li>
                           <%= link_to "Alterar", "/drugs/#{drug.id}/edit", :class=>"btn btn-warning btn-xs"%>
                       </li>
+                    <%end%>
                       <li>
                           <%= link_to "Saiba mais!", "/drugs/#{drug.id}",  :class=>"btn btn-info btn-xs"  %>
                       </li>
+                    <% if current_user && current_user.level_user %>
                       <li>
                           <%= button_to "Excluir", "/drugs/#{drug.id}", :class=>"btn btn-danger btn-xs drugs-button",
                                                               :method => :delete,
                                                               data: {confirm: "Tem certeza?"}%>
                       </li>
+                    <%end%>
                   </ul>
                 </div>
             </div>

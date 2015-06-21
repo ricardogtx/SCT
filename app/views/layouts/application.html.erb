@@ -37,7 +37,9 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">DROGAS<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="/drogas" id="cad_index">TIPOS DE DROGAS</a></li>
+                            <% if current_user && current_user.level_user %>
                                 <li><%= link_to "ADICIONAR INFORMAÇÕES", :new_drug %></li>
+                            <%end%>
                             </ul>
                     </li>
                     <li class="dropdown">
