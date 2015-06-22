@@ -18,8 +18,8 @@ class DrugsController < ApplicationController
 	  redirect_to drugs_path, notice: "Criada com sucesso!"
     else
       render 'new'
+    end
   end
-end
 
   def edit
     @drug = Drug.find params[:id]
@@ -36,12 +36,15 @@ end
     if @drug.update_attributes(drugs_params)
       redirect_to drugs_path, :notice => "Droga foi atualizada"
     else
-      render "edit"
+      render 'edit'
     end
   end
 
   private
     def drugs_params
-      params.require(:drug).permit(:name, :drug_type, :dependence_psychological, :dependence_phisical, :description, :avatar)
+      params.require(:drug).permit(:name, :drug_type, :dependence_psychological, :avatar, 
+                                   :dependence_phisical, :description, :origin, :duration,
+                                   :average_ingest, :ingestion_form, :effect_high,
+                                   :tolerance, :long_effects, :medical_use)
     end
 end
