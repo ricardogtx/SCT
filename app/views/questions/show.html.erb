@@ -3,7 +3,7 @@
 		<h3 class="panel-title">Questão nº <%= @question.id %></h3>
 	</div>
 	<div class="panel-body">
-		<h1><%= @question.content %></h1>
+		<h3><%= @question.content %></h3>
 		<%= bootstrap_form_for (@question) do |t| %>
 			<%= t.form_group :answer, label: { text: "resposta" } do %>
 				<%= t.radio_button :answer, true, label: "SIM" %>

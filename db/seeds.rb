@@ -35,30 +35,60 @@
 
     question = Question.new
 
-    question.content = "Pergunta 1"
+    question.content = "A pessoa em questão anda em companhia de pessoas que usam drogas?"
 
     question.save!
 
     question = Question.new
 
-    question.content = "Pergunta 2"
+    question.content = "A pessoa em questão possui um humor descontrolado, sendo fácilmente irritável?"
 
     question.save!
 
     question = Question.new
 
-    question.content = "Pergunta 3"
+    question.content = "A pessoa em questão parece estar frequentemente com os olhos avermelhados, brilhantes, ou faz uso recorrente de colírios?"
 
     question.save!
 
     question = Question.new
 
-    question.content = "Pergunta 4"
+    question.content = "A pessoa em questão apresentou alguma alteração repentina de peso?"
 
     question.save!
 
     question = Question.new
 
-    question.content = "Pergunta 5"
+    question.content = "A pessoa em questão passa períodos de tempo irregulares fora de casa?"
+
+    question.save!
+
+    question = Question.new
+
+    question.content = "A pessoa em questão tem apresentado falta de motivação, até com atividades que costumava realizar com dedicação?"
+
+    question.save!
+
+    question = Question.new
+
+    question.content = "A pessoa em questão adquiriu o hábito de mentir com frequência?"
+
+    question.save!
+
+    question = Question.new
+
+    question.content = "A pessoa em questão apresentou uma queda repentina de rendimento, seja no trabalho, seja nos estudos?"
+
+    question.save!
+
+    question = Question.new
+
+    question.content = "A pessoa em questão passou por uma mudança repentina do modo de se vestir ou de seu gosto musical?"
+
+    question.save!
+
+    question = Question.new
+
+    question.content = "A pessoa em questão parece ter trocado o dia pela noite?"
 
     question.save!
