@@ -16,7 +16,7 @@
                       </li>
                     <%end%>
                       <li>
-                          <%= link_to "Saiba mais!", "/drugs/#{drug.id}",  :class=>"btn btn-info btn-xs"  %>
+                          <%= link_to "Saiba mais!", "/drugs/#{drug.id}",  :class=>"btn btn-info btn-xs", :id=>drug.id %>
                       </li>
                     <% if current_user && current_user.level_user %>
                       <li>
