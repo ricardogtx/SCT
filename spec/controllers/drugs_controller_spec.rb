@@ -74,4 +74,13 @@ RSpec.describe DrugsController, type: :controller do
     end
   end
 
+  describe "GET /drugs/new => drugs#new" do
+    it "should set @drug with drug new" do 
+      get :new
+
+      expect(assigns(:drug)).to be_a(Drug)
+      expect(response).to render_template(:new)   
+    end  
+  end
+
 end
