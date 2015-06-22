@@ -129,4 +129,46 @@ RSpec.describe DrugsController, type: :controller do
     end
   end
 
+  describe "PATCH /drugs/:id => drugs#update" do
+    it "should update a post if given valid drug params" do
+      last_drug = Drug.last
+
+      patch :update, :id => last_drug.id, :drug => {
+           name: "test drugs", description: "test drugs", medical_use: "test drugs",
+           drug_type: "test drugs", origin: "test drugs", average_ingest: "test drugs",
+           ingestion_form: "test drugs", duration: "test drugs", effect_high: "test drugs",
+           dependence_psychological: "test drugs", long_effects: "test drugs", 
+           tolerance: "test drugs", dependence_phisical: "test drugs"}
+
+      expect(assigns(:drug)).to be_a(Drug)
+      expect(assigns(:drug).name).to eq("test drugs")
+      expect(assigns(:drug).description).to eq("test drugs")
+      expect(assigns(:drug).drug_type).to eq("test drugs")
+      expect(assigns(:drug).origin).to eq("test drugs")
+      expect(assigns(:drug).average_ingest).to eq("test drugs")
+      expect(assigns(:drug).ingestion_form).to eq("test drugs")
+      expect(assigns(:drug).duration).to eq("test drugs")
+      expect(assigns(:drug).effect_high).to eq("test drugs")
+      expect(assigns(:drug).dependence_phisical).to eq("test drugs")
+      expect(assigns(:drug).dependence_psychological).to eq("test drugs")
+      expect(assigns(:drug).tolerance).to eq("test drugs")
+      expect(assigns(:drug).long_effects).to eq("test drugs")
+      expect(assigns(:drug).medical_use).to eq("test drugs")
+      expect(flash[:notice]).not_to be_nil
+    end
+
+    it "should not update a post if given invalid drug params" do 
+      last_drug = Drug.last
+
+      patch :update, :id => last_drug.id, :drug => {
+           name: "test drugs", description: "test drugs", medical_use: "test drugs",
+           drug_type: "test drugs", origin: "test drugs", average_ingest: "test drugs",
+           ingestion_form: "test drugs", duration: "test drugs", effect_high: "test drugs",
+           dependence_psychological: "test drugs", long_effects: "test drugs", 
+           tolerance: "test drugs", dependence_phisical: "test drugs"}
+
+      expect(assigns(:drug)).to be_a(Drug)
+      expect(last_drug.id).not_to eq(1234567)
+    end
+  end  
 end
