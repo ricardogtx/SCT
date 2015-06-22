@@ -9,26 +9,14 @@ RSpec.describe CampaignsController, type: :controller do
 		@campaign.description = "A campaign"
 	end
 
-	describe 'GET #new' do
-		it "must have a description" do
-			@campaign.description = ""
-			expect(@campaign).not_to be_valid
-		end
+	describe "GET #new" do
+      it "should set @campaign with campaign new" do 
+        get :new
 
-		it "must have a url" do
-			@campaign.url = ""
-			expect(@campaign).not_to be_valid
-		end
-
-		it "must have a name" do
-			@campaign.name = ""
-			expect(@campaign).not_to be_valid
-		end
-
-		it "should create a new campaign" do
-			expect(@campaign).to be_a(Campaign)
-		end
-	end
+        expect(assigns(:campaign)).to be_a(Campaign)
+        expect(response).to render_template(:new)   
+      end  
+    end
 
 	describe 'POST #create' do
 		it "should redirect to show with a notice on successfull save" do

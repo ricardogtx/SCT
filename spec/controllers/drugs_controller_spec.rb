@@ -170,5 +170,16 @@ RSpec.describe DrugsController, type: :controller do
       expect(assigns(:drug)).to be_a(Drug)
       expect(last_drug.id).not_to eq(1234567)
     end
-  end  
+  end
+
+  describe "DELETE /drugs/:id => drugs#destroy" do
+    it "should delete a post if given its id" do 
+      last_drug = Drug.last
+
+      delete :destroy, :id => last_drug.id
+
+      expect(last_drug.id).to eq(last_drug.id)
+      expect(flash[:notice]).not_to be_nil   
+    end
+  end    
 end

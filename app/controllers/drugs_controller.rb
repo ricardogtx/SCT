@@ -15,7 +15,7 @@ class DrugsController < ApplicationController
     @drug = Drug.new(drugs_params)
 
     if @drug.save
-	  redirect_to drugs_path, notice: "Criada com sucesso!"
+	    redirect_to drugs_path, notice: "Criada com sucesso!"
     else
       render 'new'
     end
