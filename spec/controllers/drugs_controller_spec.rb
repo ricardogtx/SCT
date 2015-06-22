@@ -106,4 +106,27 @@ RSpec.describe DrugsController, type: :controller do
     end
   end
 
+  describe "GET /drugs/:id => drugs#show" do
+    it "should set @drug if given a valid drug id" do 
+      last_drug = Drug.last
+      get :show, :id => last_drug.id
+
+      expect(assigns(:drug)).to be_a(Drug)
+      expect(assigns(:drug).name).to eq(last_drug.name)
+      expect(assigns(:drug).description).to eq(last_drug.description)
+      expect(assigns(:drug).drug_type).to eq(last_drug.drug_type)
+      expect(assigns(:drug).origin).to eq(last_drug.origin)
+      expect(assigns(:drug).average_ingest).to eq(last_drug.average_ingest)
+      expect(assigns(:drug).ingestion_form).to eq(last_drug.ingestion_form)
+      expect(assigns(:drug).duration).to eq(last_drug.duration)
+      expect(assigns(:drug).effect_high).to eq(last_drug.effect_high)
+      expect(assigns(:drug).dependence_psychological).to eq(last_drug.dependence_psychological)
+      expect(assigns(:drug).dependence_phisical).to eq(last_drug.dependence_phisical)
+      expect(assigns(:drug).tolerance).to eq(last_drug.tolerance)
+      expect(assigns(:drug).long_effects).to eq(last_drug.long_effects)
+      expect(assigns(:drug).medical_use).to eq(last_drug.medical_use)
+      expect(response).to render_template(:show)   
+    end
+  end
+
 end
