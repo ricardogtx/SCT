@@ -14,10 +14,11 @@ class QuestionsController < ApplicationController
 
 	def result
 		@question = Question.last
-		if @question.counter < 0.5 * @question.id 
-		  flash[:notice] = "Constatou-se que o usúario avaliado não é um possível usuário de drogas"
+		if !@question.counter || @question.counter < 0.5 * @question.id
+		  flash[:notice] = "Pontuação final baixa, ou seja, o risco de que a pessoa em questão seja um usuário de drogas não é alto."
 		else
-		  flash[:notice] = "Constatou-se que o usúario avaliado é um possível usuário drogas"
+		  flash[:notice] = "Pontuação final alta, ou seja, existe um risco alto de que a pessoa em questão seja um usuário de drogas."
+		  render :pontuacao_alta
 		end
 	end
 
@@ -58,7 +59,7 @@ class QuestionsController < ApplicationController
 	end
 
     def destroy
-    	@question = Question.find params[:id]
+    	@question = Questionfind params[:id]
     	@question.delete
     	flash[:notice] = "Questão deletada."
     	redirect_to questions_path
