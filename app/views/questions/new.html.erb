@@ -2,6 +2,6 @@
 <p>Tenha em mente que respostas verdadeiras devem indicar o possível uso de drogas pelo usuário que responder o questionário.</p>
 <%= bootstrap_form_for(@question) do |t| %>
 	<%= t.text_field :content, label: "Pergunta", required: true %>
-	<%= t.submit "Enviar" %>
+	<%= t.submit "Enviar", :id =>"btn_submit" %>
 	<%= link_to "Cancelar", :back, {:class=>"btn btn-default"} %>
 	<% end %>
