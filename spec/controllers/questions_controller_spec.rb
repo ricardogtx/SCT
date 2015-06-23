@@ -39,4 +39,21 @@ RSpec.describe QuestionsController, type: :controller do
 			expect(response).to redirect_to(questions_path)
 		end
 	end
+
+	describe 'GET #result' do
+		it "shows a low amount of points due to low counter" do
+			@last_question = Question.last
+			@last_question.counter = 0
+			get :result, :id => @last_question.id
+			expect(flash[:notice]).not_to be_blank
+			expect(response).to render_template("result")
+		end
+
+		it "shows a low amount of points due to nil counter" do
+			@last_question = Question.last
+			get :result, :id => @last_question.id
+			expect(flash[:notice]).not_to be_blank
+			expect(response).to render_template("result")
+		end
+	end
 end
