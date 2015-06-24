@@ -1,72 +1,75 @@
-<div class="row">
-    <div class="col-md-12" style="text-align: center">
-        <h3>Gráfico de uso ao longo da vida</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12" style="text-align: center">
+            <h2 align="center"><b>Gráficos</b></h2>
+            <br>
+            <br>
+            <br>
+        </div>
+
+        <div class="col-md-6">
+        <!--Div that will hold the pie chart-->
+        <div id="chart_div"></div>
+        </div>
+        <div class="col-md-6">
+        <h3 align="center"><b>Gráfico de uso ao longo da vida:</b></h3>
         <br>
         <br>
-        <br>
+            <p align="justify">
+                &nbsp;&nbsp;&nbsp;&nbsp; A pesquisa foi feita em 107 cidades brasilieras em um periodo de 3 mêses em 2001. A idéia era mapear não apenas o consumo, mas a percepção que a comunidade nas grandes cidades brasileiras tem do uso e da venda de drogas, legais ou ilegais. Aos entrevistados foi perguntado também se consideravam fácil adquirir determinados tipos de drogas, se já haviam sido abordados ou mesmo se haviam procurado vendedores.
+            </p>
+        </div>
     </div>
 
-    <div class="col-md-6">
-    <!--Div that will hold the pie chart-->
-    <div id="chart_div"></div>
+    <div class="row">
+        <div class="col-md-12" style="text-align: center">
+            <br>
+            <br>
+            <br>
+        </div>
+        <div class="col-md-6">
+        <h3 align="center"><b>Gráfico de óbitos:</b></h3>
+        <br>
+        <br>
+            <p align="justify">
+                &nbsp;&nbsp;&nbsp;&nbsp; Relação de mortes cuja causa está relacionada ao uso de drogas de acordo com o levantamento domiciliar sobre uso de drogas Psicotrópicas no Brasil no ano de 2005 excluindo-se da análise o Álcool e o Tabaco, cujos indices de mortalidade são os maiores dentre as drogas citadas na pesquisa, que são causados de forma direta e indireta devido ao uso dessas mesmas substancias.
+            </p>
+        </div>
+        <div class="col-md-6">
+        <!--Div that will hold the pie chart-->
+        <div id="chart_div2"></div>
+        </div>
     </div>
-    <div class="col-md-6">
-    <br>
-    <br>
-        <p align="justify">
-            &nbsp;&nbsp;&nbsp;&nbsp; A pesquisa foi feita em 107 cidades brasilieras em um periodo de 3 mêses em 2001. A idéia era mapear não apenas o consumo, mas a percepção que a comunidade nas grandes cidades brasileiras tem do uso e da venda de drogas, legais ou ilegais. Aos entrevistados foi perguntado também se consideravam fácil adquirir determinados tipos de drogas, se já haviam sido abordados ou mesmo se haviam procurado vendedores.
-        </p>
-    </div>
-</div>
 
-<div class="row">
-    <div class="col-md-12" style="text-align: center">
-        <h3>Gráfico de óbitos</h3>
+    <div class="row">
+        <div class="col-md-12" style="text-align: center">
+            <br>
+            <br>
+            <br>
+        </div>
+        <div class="col-md-6">
+        <!--Div that will hold the pie chart-->
+        <div id="chart_div3"></div>
+        </div>
+        <div class="col-md-6">
+        <h3 align="center"><b>Gráfico de dependência:</b></h3>
         <br>
         <br>
-        <br>
+            <p align="justify">
+                &nbsp;&nbsp;&nbsp;&nbsp; Gráfico referente à porcentagem de dependência quanto ao uso de drogas em relação a prevalência de seu uso ao longo da vida. Dados referêntes aos resultados do segundo levantamento domiciliar sobre o uso de drogas psicotrópicas no Brasil, pesquisa esta realizada no ano de 2005 cujo objetvio era estimar, de forma fiel, o número de pessoas clínicamente dependentes destas drogas.
+            </p>
+        </div>
     </div>
-    <div class="col-md-6">
-    <br>
-    <br>
-        <p align="justify">
-            &nbsp;&nbsp;&nbsp;&nbsp; Relação de mortes cuja causa está relacionada ao uso de drogas de acordo com o levantamento domiciliar sobre uso de drogas Psicotrópicas no Brasil no ano de 2005 excluindo-se da análise o Álcool e o Tabaco, cujos indices de mortalidade são os maiores dentre as drogas citadas na pesquisa, que são causados de forma direta e indireta devido ao uso dessas mesmas substancias.
-        </p>
-    </div>
-    <div class="col-md-6">
-    <!--Div that will hold the pie chart-->
-    <div id="chart_div2"></div>
-    </div>
-</div>
 
-<div class="row">
-    <div class="col-md-12" style="text-align: center">
-        <h3>Gráfico de dependência</h3>
-        <br>
-        <br>
-        <br>
-    </div>
-    <div class="col-md-6">
-    <!--Div that will hold the pie chart-->
-    <div id="chart_div3"></div>
-    </div>
-    <div class="col-md-6">
+    <% drugs.each do |drug| %>
+    <%= hidden_field_tag "drugs_usage[]", "#{drug.name}|#{drug.usage_percentage}" %>
+    <%= hidden_field_tag "drugs_death[]", "#{drug.name}|#{drug.death_rate}" %>
+    <%= hidden_field_tag "drugs_dependency[]", "#{drug.name}|#{drug.dependency_rate}" %>
+    <% end %>
+
+    <br>
+    <h6>Fonte: Anti Drogas (http://www.antidrogas.com.br/oquedrogas.php)</h6>
     <br>
     <br>
-        <p align="justify">
-            &nbsp;&nbsp;&nbsp;&nbsp; Gráfico referente à porcentagem de dependência quanto ao uso de drogas em relação a prevalência de seu uso ao longo da vida. Dados referêntes aos resultados do segundo levantamento domiciliar sobre o uso de drogas psicotrópicas no Brasil, pesquisa esta realizada no ano de 2005 cujo objetvio era estimar, de forma fiel, o número de pessoas clínicamente dependentes destas drogas.
-        </p>
+    <br>
     </div>
-</div>
-
-<% drugs.each do |drug| %>
-<%= hidden_field_tag "drugs_usage[]", "#{drug.name}|#{drug.usage_percentage}" %>
-<%= hidden_field_tag "drugs_death[]", "#{drug.name}|#{drug.death_rate}" %>
-<%= hidden_field_tag "drugs_dependency[]", "#{drug.name}|#{drug.dependency_rate}" %>
-<% end %>
-
-<br>
-<h6>Fonte: Anti Drogas (http://www.antidrogas.com.br/oquedrogas.php)</h6>
-<br>
-<br>
-<br>

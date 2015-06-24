@@ -13,7 +13,7 @@ end
   get 'alcool/:id', to: 'drugs#show', as: :alcool
   get 'alucinogeno/:id', to: 'drugs#show', as: :alucinogeno
   get 'anfetamina/:id', to: 'drugs#show', as: :anfetamina
-  get 'antidepressivo"/:id', to: 'drugs#show', as: :antidepressivo
+  get 'antidepressivo/:id', to: 'drugs#show', as: :antidepressivo
   get 'barbiturico/:id', to: 'drugs#show', as: :barbiturico
   get 'cafeina/:id', to: 'drugs#show', as: :cafeina
   get 'cocaina/:id', to: 'drugs#show', as: :cocaina
@@ -37,16 +37,24 @@ end
 
   resources :users
 
-
   get 'saiba_mais' => 'home#about'
+  get 'mapa_geral' => 'clinics#general_maps'
   resources :testimonials
-
+  get 'mapa_geral' => 'clinics#general_maps'
 
   get 'depoimentos'           =>   'testimonials#show'
   get 'depoimentos/novo'      =>   'testimonials#new'
   get 'depoimentos/editar'    =>   'testimonials#edit'
 
 
+  get 'clinics/id_of_city' => 'clinics#id_of_city'
+  post 'clinics/id_of_city' => 'clinics#id_of_city'
+
+  resources :campaigns
+
+
+  get 'campanhas' => 'campaigns#index'
+  get 'campanhas/nova' => 'campaigns#new'
 
   #get "login" => "sessions#new" #, :as => "log_in"
   #post "login" => "sessions#create"

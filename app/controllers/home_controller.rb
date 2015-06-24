@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-  	@testimonial = Testimonial.last(2)
+  	@testimonial = Testimonial.last(3)
   end
 
   def about
