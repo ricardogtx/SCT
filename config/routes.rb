@@ -10,18 +10,6 @@ Rails.application.routes.draw do
   resources :parsers do
   collection {post :import}
 end
-  get 'alcool/:id', to: 'drugs#show', as: :alcool
-  get 'alucinogeno/:id', to: 'drugs#show', as: :alucinogeno
-  get 'anfetamina/:id', to: 'drugs#show', as: :anfetamina
-  get 'antidepressivo/:id', to: 'drugs#show', as: :antidepressivo
-  get 'barbiturico/:id', to: 'drugs#show', as: :barbiturico
-  get 'cafeina/:id', to: 'drugs#show', as: :cafeina
-  get 'cocaina/:id', to: 'drugs#show', as: :cocaina
-  get 'inalantes/:id', to: 'drugs#show', as: :inalantes
-  get 'maconha/:id', to: 'drugs#show', as: :maconha
-  get 'narcotico/:id', to: 'drugs#show', as: :narcotico
-  get 'nicotina/:id', to: 'drugs#show', as: :nicotina
-  get 'tranquilizante/:id', to: 'drugs#show', as: :tranquilizante
 
   get 'drogas' => 'drugs#index'
 
@@ -46,12 +34,10 @@ end
   get 'depoimentos/novo'      =>   'testimonials#new'
   get 'depoimentos/editar'    =>   'testimonials#edit'
 
-
   get 'clinics/id_of_city' => 'clinics#id_of_city'
   post 'clinics/id_of_city' => 'clinics#id_of_city'
 
   resources :campaigns
-
 
   get 'campanhas' => 'campaigns#index'
   get 'campanhas/nova' => 'campaigns#new'
