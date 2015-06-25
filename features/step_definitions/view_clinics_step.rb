@@ -1,7 +1,3 @@
-Given(/^I have accessed the home page$/) do
-  visit '/home'
-end
-
 When(/^I press the button 'SAIBA MAIS!' in 'Comunidades terapêuticas'$/) do
   page.find('#btn_clinics_1').click
 end
