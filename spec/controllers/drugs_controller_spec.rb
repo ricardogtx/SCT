@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe DrugsController, type: :controller do
 	before :all do
+    User.destroy_all
+    User.create! :id=>1, :name=>"vitor", :email=>"vitor.nere@hotmail.com", :password=>"123456", :password_confirmation=>"123456", :user_authenticate=>1
     Drug.create(name: "test drugs", description: "test drugs", drug_type: "test drugs",
       origin: "test drugs", average_ingest: "test drugs", ingestion_form: "test drugs",
       duration: "test drugs", effect_high: "test drugs", medical_use: "test drugs",
@@ -36,6 +38,10 @@ RSpec.describe DrugsController, type: :controller do
 
   describe "Post /posts => posts#create" do
     it "should create a new drug given valid params" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
+
       post :create, :drug => {name: "test drugs", description: "test drugs",
            drug_type: "test drugs", origin: "test drugs", average_ingest: "test drugs",
            ingestion_form: "test drugs", duration: "test drugs", effect_high: "test drugs",
@@ -60,6 +66,10 @@ RSpec.describe DrugsController, type: :controller do
     end
 
     it "should not create a new drug given invalid params" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
+
        post :create, :drug => {name: "test drugs", description: "test drugs",
            drug_type: "test drugs", origin: "test drugs", average_ingest: "test drugs",
            ingestion_form: "test drugs", duration: "test drugs", effect_high: "test drugs",
@@ -76,6 +86,10 @@ RSpec.describe DrugsController, type: :controller do
 
   describe "GET /drugs/new => drugs#new" do
     it "should set @drug with drug new" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
+
       get :new
 
       expect(assigns(:drug)).to be_a(Drug)
@@ -85,6 +99,9 @@ RSpec.describe DrugsController, type: :controller do
 
   describe "GET /drugs/:id/edit => drugs#edit" do
     it "should set @drug if given a valid drug id" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
       last_drug = Drug.last
       get :edit, :id => last_drug.id
 
@@ -131,6 +148,9 @@ RSpec.describe DrugsController, type: :controller do
 
   describe "PATCH /drugs/:id => drugs#update" do
     it "should update a post if given valid drug params" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
       last_drug = Drug.last
 
       patch :update, :id => last_drug.id, :drug => {
@@ -158,6 +178,10 @@ RSpec.describe DrugsController, type: :controller do
     end
 
     it "should not update a post if given invalid drug params" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
+
       last_drug = Drug.last
 
       patch :update, :id => last_drug.id, :drug => {
@@ -174,6 +198,9 @@ RSpec.describe DrugsController, type: :controller do
 
   describe "DELETE /drugs/:id => drugs#destroy" do
     it "should delete a post if given its id" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
       last_drug = Drug.last
 
       delete :destroy, :id => last_drug.id
