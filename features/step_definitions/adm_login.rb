@@ -9,3 +9,8 @@ When(/^I enter my email and password correctly, using an admin account$/) do
   page.find('#Logar').click
 end
 
+Then(/^I am logged as an admin$/) do
+  expect(page).to have_content(@user.email)
+end
+
+

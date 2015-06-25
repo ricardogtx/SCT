@@ -15,7 +15,7 @@ When(/^I fill the new testimony form$/) do
  	fill_in 'testimonial_body', :with => "campo"
 end
 
-Then(/^should create a testimony$/) do
+Then(/^it should create a testimony$/) do
  	have_content('testimonial_title') 
  	have_content('testimonial_body')
 end
