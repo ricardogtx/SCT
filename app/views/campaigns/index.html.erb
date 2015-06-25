@@ -1,29 +1,35 @@
-<html>
-	<body>
-		<center>
-			<h1>CAMPANHAS ANTI DROGAS</h1>
+<div id="container_margin" class="container">
+			<h1 align="center"> <span class="glyphicon glyphicon-info-sign"></span>&nbsp;CAMPANHAS ANTI DROGAS</h1>
 			<br>
-			<p>As campanhas fazem parte da primeira linha de defesa contra as drogas. Sejam programas educacionais ou sistemas de apoio ao dependente, elas tem apresentado excelentes resultados na luta contra as drogas. Abaixo, você encontra uma seleção de diferentes campanhas que fazem parte desta luta. Clique em alguma imagem para ser redirecionado a campanha (caso ouver).</p>
-     </center>
-    <table border="1", style="width:100%">
+			<p id="margin_correction" align="justify">&nbsp;&nbsp;&nbsp;&nbsp;As campanhas fazem parte da primeira linha de defesa contra as drogas. Sejam programas educacionais ou sistemas de apoio ao dependente, elas tem apresentado excelentes resultados na luta contra as drogas. Abaixo, você encontra uma seleção de diferentes campanhas que fazem parte desta luta. Clique em alguma imagem para ser redirecionado a campanha (caso existir).</p>
+      <br>
+      <hr>
+      <br>
+    <table id="margin_correction" border="0" style="width:100%">
       <% @campaigns.each do |campaign| %>
         <tr>
           <td align='center' style='width:30%'><a href="<%= campaign.url %>" target="_blank">
             <%= link_to campaign do %>
             <img id="Thumb" <%= image_tag campaign.avatar.url(:medium) %>
-          <% end %>
-          </td><br>
-          <td><%=campaign.description %></td>
+            <% end %>
+          </td>
+          <td style="color: #FFF">
+            <p align="justify">
+              &nbsp;&nbsp;&nbsp;&nbsp;<%=campaign.description %>
+            </p>
+          </td>
           <% if @user && @user.level_user %>
-            <td>
-              <%= link_to "Alterar", "/campaigns/#{campaign.id}/edit", :class=>"btn btn-primary"%><br>
-              <br><%= button_to "Excluir", "/campaigns/#{campaign.id}", :class=>"btn btn-danger",
-                                                                        :method => :delete,
-                                                                        data: {confirm: "Tem certeza?"}%>
-            </td>
+          <td>
+              <%= link_to "Alterar", "/campaigns/#{campaign.id}/edit", :class=>"btn btn-primary"%>
+              <br>
+              <br>
+              <%= button_to "Excluir", "/campaigns/#{campaign.id}", :class=>"btn btn-danger",
+                                                                                                  :method => :delete,
+                                                                                                  data: {confirm: "Tem certeza?"}%>
+          </td>
           <% end %>
         </tr>
       <% end %>
     </table>
-	</body>
-</html>
+</div>
+

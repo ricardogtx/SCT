@@ -109,7 +109,7 @@
   width :180px;
 }
 #aplication-body {
-    background-image :url("backgroundcampo.jpg");
+    background-image :url("roadbackground.jpg");
     background-size :cover;
     background-attachment :fixed;
     font-family: 'sans-serif';
@@ -204,4 +204,8 @@ caption {
 .color_label label {
     color :#FFF !important;
     margin: 0px 7px;
+}
+
+.font-color {
+    font-color :white;
 }
