@@ -4,6 +4,8 @@ RSpec.describe QuestionsController, type: :controller do
 
 	before :all do
 		@test_question = Question.new
+		@test_question.content = "RSPEC"
+		@test_question.save!	
 	end
 
 	describe 'GET #new' do
@@ -42,16 +44,14 @@ RSpec.describe QuestionsController, type: :controller do
 
 	describe 'GET #result' do
 		it "shows a low amount of points due to low counter" do
-			@last_question = Question.last
-			@last_question.counter = 0
-			get :result, :id => @last_question.id
+			@test_question.counter = 0
+			get :result, :id => @test_question.id
 			expect(flash[:notice]).not_to be_blank
 			expect(response).to render_template("result")
 		end
 
 		it "shows a low amount of points due to nil counter" do
-			@last_question = Question.last
-			get :result, :id => @last_question.id
+			get :result, :id => @test_question.id
 			expect(flash[:notice]).not_to be_blank
 			expect(response).to render_template("result")
 		end
