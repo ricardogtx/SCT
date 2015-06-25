@@ -1,15 +1,23 @@
 <div id="container_margin" class="container">
-	<table border="1", style="width:100%">
-        <tr>
-          <td>
-           <strong><h3><%= @campaign.name %></h3></strong>
-          </td>
-          <td align='center' style='width:30%'><a href="<%= @campaign.url %>" target="_blank">
-            <%= image_tag @campaign.avatar.url(:medium) %></a></td><br>
-          <td><%= @campaign.description %></td>
-        </tr>
-    </table><br>
-    <%= link_to "Prosseguir", campaigns_path, {:class=>"btn btn-primary"} %>
+    <table border="0" style="width:100%">
+      <tr>
+        <td style="color: #FFF">
+         <h3 align="center" style="margin-left: 85px"><b><%= @campaign.name %></b></h3>
+        </td>
+        <td align='center' style='width:30%'>
+          <a href="<%= @campaign.url %>" target="_blank">
+            <%= image_tag @campaign.avatar.url(:medium) %>
+          </a>
+        </td>
+        <br>
+        <td style="color: #FFF">
+          <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;<%= @campaign.description %></p>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <%= link_to "Voltar", campaigns_path,:class=>"btn btn-warning", :id => "margin_correction"%>
+    <br>
 </div>
 
 
