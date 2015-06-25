@@ -28,17 +28,15 @@ class TestimonialsController < ApplicationController
 		@testimonial = Testimonial.find(params[:id])
 
 		if @testimonial.testimonial_authenticate
-      redirect_to :admin, notice: "Esse depoimento já foi aprovado"
-    end
-
-		if @testimonial.update(testimonial_params)
+          redirect_to :admin, notice: "Esse depoimento já foi aprovado"
+        elsif @testimonial.update(testimonial_params)
 			redirect_to :admin, notice: "Atualizado com sucesso."
 		end
 	end
 
 	def destroy
-  	@testimonial = Testimonial.find(params[:id]).destroy
-  	redirect_to admin, notice: "Depoimento excluido."
+  	  @testimonial = Testimonial.find(params[:id]).destroy
+  	  redirect_to admin_path, notice: "Depoimento excluido."
  	end
 
 	private
