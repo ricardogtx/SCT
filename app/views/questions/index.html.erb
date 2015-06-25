@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h1 class="panel-title">Quiz </h1>
+	</div>
+	<% if flash[:notice] %>
+		<div class="alert alert-success" role="alert" ><%= flash[:notice] %></div>
+	<% end %>
+	<div class="panel-body">
+		<center>
+		<h4>Estas perguntas fazem parte de um quiz para ajudar a identificar um possível usuário de drogas. Respostas positivas indicam um possível dependente.</h4><br>
+		<table style="width:75%" class="table table-hover">
+			<% @question.each do |question| %>
+				<tr>
+					<td><%= question.content %><br></td>
+					<td><%= link_to "Editar", {:action => "edit", :id => question.id} %><br></td>
+					<td><%= link_to "Excluir", "/questions/#{question.id}", :method => :delete, data: {confirm: "Tem Certeza?"} %></td>
+				</tr>
+		    <% end %>
+		    <tr>
+		    	<td colspan="3" align="center"><%= link_to "Nova Questão", {:action => "new"} %></td>
+		    </tr>
+		</table>
+		<a href="/home" class="btn btn-danger" role="presentation">Cancelar</a>
+		</button>
+	</center>
+	</div>
+</div>

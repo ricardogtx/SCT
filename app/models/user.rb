@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   validates :name,    :presence   =>  true,
             :length               =>  { :maximum => 50 }
-  
+
   validates :email,   :presence   =>  true,
             :format               =>  { :with => email_regex },
             :uniqueness           =>  { :case_sensitive => false }
@@ -30,11 +30,15 @@ class User < ActiveRecord::Base
     return user if user.has_password?(submitted_password)
   end
 
-  def authenticate_clinic_user (user)
+  def authenticate_user? (user)
+    return user.user_authenticate
+  end
+
+  def authenticate_clinic_user? (user)
     return user.clinic
   end
 
-  def authenticate_admin_user (user)
+  def authenticate_admin_user? (user)
     return user.level_user
   end
 

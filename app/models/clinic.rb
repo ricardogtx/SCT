@@ -1,9 +1,16 @@
 class Clinic < ActiveRecord::Base
   belongs_to :user
+  belongs_to :state
 
-  def self.import(file)
-    CSV.foreach(file.path, headers: true, encoding: "iso-8859-1:UTF-8") do |row|
-      Clinic.create! row.to_hash
+  def estado= nome_estado
+    self.state = State.find_by_name nome_estado
+  end
+
+  def estado
+    if self.state.nil?
+      nil
+    else
+      self.state.name
     end
   end
 end

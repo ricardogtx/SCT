@@ -18,5 +18,6 @@
 
 #My ignored files
 coverage/
-db/schema.rb
-Gemfile.lock
+db/schema.rb/
+Gemfile.lock/
+public/system/

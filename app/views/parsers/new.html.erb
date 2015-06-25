@@ -1,0 +1,22 @@
+<div id="container_margin" class="container">
+<div class="row">
+    <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-body">
+
+          <div class="page-header">
+            <h1>Importar Clinicas</h1>
+          </div>
+          <br>
+          <%= form_tag import_parsers_path, multipart: true do%>
+                  <%= file_field_tag :file%>
+                  <%= submit_tag "Importar CSV"%>
+              <%end%>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<%= link_to 'Back', clinics_path %>
+</div>
