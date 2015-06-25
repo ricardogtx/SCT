@@ -1,9 +1,9 @@
-Feature: Answer questions quiz
-  In order to answer the questions of quiz
+Feature: answer questions quiz
+  In order to obtain an answer from the quiz
   As user
-  I want to answer the questions of quiz
+  I want to answer the questions of the quiz
 
-  Scenario: Answers for negative
+  Scenario: answers for negative
 		Given I visit the first question page
 		When I press the button 'Enviar'
 		And I press the button 'Enviar'
@@ -16,12 +16,13 @@ Feature: Answer questions quiz
 		And I press the button 'Enviar'
 		And I press the button 'Enviar'
 		Then it should display the message 'Pontuação total: 0 de 10'
-  Scenario: Answers for positive
+
+  Scenario: answers for positive
 		Given I visit the first question page
 		When I press 'SIM'
 		And I press the button 'Enviar'
 		And I press 'SIM'
-	    And I press the button 'Enviar'
+	  And I press the button 'Enviar'
 		And I press 'SIM'
 		And I press the button 'Enviar'
 		And I press 'SIM'

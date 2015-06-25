@@ -1,7 +1,7 @@
 Feature: search clinic
-In order to find specific clinics
-As a user
-I want to use the filter in the clinics list
+	In order to find specific clinics
+	As a user
+	I want to use the filter in the clinics list
 
 Scenario: search clinic by name
 	Given I have more than one registered clinic

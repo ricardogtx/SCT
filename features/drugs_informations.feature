@@ -1,14 +1,10 @@
-Feature: Drugs informations page
-In order to view drugs page
-As a user
-I want to access the drugs page.
+Feature: drugs information page
+  In order to view information of a specific drug
+  As a user
+  I want to access the specific drug information page
 
-Scenario: access drugs informations page via Saiba Mais
-	Given I have accessed the home page
-	When I press the button 'SAIBA MAIS!' in 'Drogas'
-	Then I am redirected to the drugs page
-
-Scenario: access drugs informations page via navbar
-	Given I have accessed the home page
-	When I press the button 'Tipos de Drogas' in the navigation bar
-	Then I am redirected to the drugs page
+  Scenario: access a drug information page
+		Given I have a drug in the database
+		And I visit the drugs page
+		When I press the "Saiba mais!" button of any given drug
+		Then I am redirected to that drug information page

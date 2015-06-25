@@ -1,8 +1,9 @@
-Feature: Testimonial approval
-As an admin
-I want to approve the testimonials sent by the users
+Feature: testimonial approval
+	In order to avoid malicious testimonials in the site
+	As an admin
+	I want to approve the testimonials sent by the users
 
-Scenario: accept testimonial
+Scenario: access testimonial specific page
 	Given there is a testimonial waiting for my approval
 	And I'm logged with an admin account
 	When I click on the testimonial name
