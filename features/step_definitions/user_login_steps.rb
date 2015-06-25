@@ -30,7 +30,7 @@ When(/^I enter my email and password correctly, but don't have an associated cli
 end
 
 Then(/^I am redirected to the login page$/) do
-  page.should have_content('Bem vindo a página de login/cadastro do SCT')
+  expect(page).to have_content('Bem vindo a página de login/cadastro do SCT')
 end   
 
 When(/^I enter my email and password correctly, and have an associated clinic$/) do
@@ -41,7 +41,7 @@ When(/^I enter my email and password correctly, and have an associated clinic$/)
 end
 
 Then(/^I am logged in the site$/) do
-  page.should have_content('Você está logado com o email ' + @user.email)
+  expect(page).to have_content('Você está logado com o email ' + @user.email)
 end
 
 

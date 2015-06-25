@@ -14,5 +14,5 @@ When(/^I edit information in the form$/) do
 end
 
 Then(/^I am redirected to the users page$/) do
-  page.should have_content('Você está logado com o email ' + @user.email)
+  expect(page).to have_content('Você está logado com o email ' + @user.email)
 end

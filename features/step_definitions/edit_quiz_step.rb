@@ -7,6 +7,6 @@ When(/^I press 'Cancelar'$/) do
 end
 
 Then(/^it should display the message 'Questão atualizada\.'$/) do
-  page.should have_content('Questão atualizada.')
+  expect(page).to have_content('Questão atualizada.')
 end
 

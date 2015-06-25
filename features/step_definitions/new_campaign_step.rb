@@ -3,7 +3,7 @@ When(/^I click on the 'NOVA CAMPANHA' button$/) do
 end
 
 Then(/^I see 'campaigns\/new'$/) do
-  current_path.should == campanhas_nova_path
+  expect(current_path).to eq(campanhas_nova_path)
 end
 
 Given(/^I have accessed the campaign\/new page$/) do
