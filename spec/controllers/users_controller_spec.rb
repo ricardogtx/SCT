@@ -70,10 +70,16 @@ RSpec.describe UsersController, type: :controller do
 
       expect(response).to render_template(:index)
     end
-  end
 
-  describe "GET #login" do
+    it "Should render admin if user logged is admin" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
 
+      get :index
+
+      expect(response).to redirect_to(:admin)
+    end
   end
 
   describe "POST #index - login" do
@@ -91,6 +97,12 @@ RSpec.describe UsersController, type: :controller do
 
     it "Should render login and show flash if user input a wrong password" do
       post :index, :do_login => { :email => "vitor.nere@hotmail.com", :password => "1234569283" }
+      expect(response).to render_template(:index)
+      expect(flash[:error]).to be_present
+    end
+
+    it "Should be show flash if params nil" do
+      post :index, :do_login => { :email => "", :password => "" }
       expect(response).to render_template(:index)
       expect(flash[:error]).to be_present
     end
@@ -172,6 +184,27 @@ RSpec.describe UsersController, type: :controller do
 
       expect(response).to redirect_to(:logout)
     end
+
+    it "Should redirect to user user admin applying if email exist" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
+
+      post :admin, :user_email => { :email => "vitor.nere@hotmail.com" }
+
+      expect(response).to redirect_to("http://test.host/users/admin/user_admin_applying?id=1")
+    end
+
+    it "Should redirect to user admin if email not exist" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
+
+      post :admin, :user_email => { :email => "vitor2.nere@hotmail.com" }
+
+      expect(response).to redirect_to(:admin)
+      expect(flash[:notice]).to be_present
+    end
   end
 
   describe "Get #users_approval" do
@@ -193,6 +226,17 @@ RSpec.describe UsersController, type: :controller do
       session[:user_id] = User.last.id
 
       get :users_approval_confirm, :id => 1
+
+      expect(response).to redirect_to(:admin)
+    end
+
+    it "Should be redirect to admin if put wrong email" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
+      User.create! :id=>2, :name=>"vitor", :email=>"vitor.nere2@hotmail.com", :password=>"123456", :password_confirmation=>"123456", :user_authenticate=>1
+
+      get :users_approval_confirm, :id => 2
 
       expect(response).to redirect_to(:admin)
     end
