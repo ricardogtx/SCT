@@ -259,6 +259,7 @@ RSpec.describe UsersController, type: :controller do
       user = User.last
       user.update_attributes(:level_user => 1)
       session[:user_id] = User.last.id
+      Testimonial.destroy_all
       Testimonial.create! :id=>1, :title=>"abc", :body=>"abc"
 
       get :testimonials_approval_edit, id: 1
@@ -270,6 +271,7 @@ RSpec.describe UsersController, type: :controller do
       user = User.last
       user.update_attributes(:level_user => 1)
       session[:user_id] = User.last.id
+      Testimonial.destroy_all
       Testimonial.create! :id=>1, :title=>"abc", :body=>"abc", :testimonial_authenticate=>1
 
       get :testimonials_approval_edit, id: 1
@@ -283,6 +285,7 @@ RSpec.describe UsersController, type: :controller do
       user = User.last
       user.update_attributes(:level_user => 1)
       session[:user_id] = User.last.id
+      Testimonial.destroy_all
       testimonial = Testimonial.create! :id=>1, :title=>"abc", :body=>"abc"
 
       get :testimonial_approval, testimonial_id: 1
@@ -296,6 +299,7 @@ RSpec.describe UsersController, type: :controller do
       user = User.last
       user.update_attributes(:level_user => 1)
       session[:user_id] = User.last.id
+      Testimonial.destroy_all
       testimonial = Testimonial.create! :id=>1, :title=>"abc", :body=>"abc"
 
       get :testimonials_approval_confirm, :id=>1
@@ -309,6 +313,7 @@ RSpec.describe UsersController, type: :controller do
       user = User.last
       user.update_attributes(:level_user => 1)
       session[:user_id] = User.last.id
+      Testimonial.destroy_all
       testimonial = Testimonial.create! :id=>1, :title=>"abc", :body=>"abc"
 
       get :testimonials_approval_decline, :id=>1
