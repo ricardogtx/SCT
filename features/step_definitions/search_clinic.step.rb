@@ -1,7 +1,10 @@
-Clinic.create!(:nome => "Clinica A", :estado => "Estado A", :modalidade => "Modalidade A")
-Clinic.create!(:nome => "Clinica B", :estado => "Estado B", :modalidade => "Modalidade B")
-Clinic.create!(:nome => "Clinica C", :estado => "Estado C", :modalidade => "Modalidade F")
-
+Given(/^I have more than one registered clinic$/) do
+  Clinic.create!(:nome => "Clinica A", :estado => "Estado A", :modalidade => "Modalidade A")
+  Clinic.create!(:nome => "Clinica B", :estado => "Estado A", :modalidade => "Modalidade B")
+  Clinic.create!(:nome => "Clinica C", :estado => "Estado B", :modalidade => "Modalidade F")
+  State.create!(:name => "Estado A", :uf => "A")
+  State.create!(:name => "Estado B", :uf => "B")
+end
 
 Given(/^I have accessed the clinic page$/) do
   visit '/clinics'
@@ -20,13 +23,13 @@ Then(/^the list shows only the clinics that contains that string in the name$/) 
   expect(page).not_to have_content('Clinica C')
 end
 
-When(/^I fill in a string in the estate filter$/) do
-  fill_in('Estado', :with => 'Estado A')
+When(/^I select a specific estate$/) do
+  select('Estado A', :from => 'q_state_id_eq')
 end
 
-Then(/^the list shows only the clinics that contains that string in the estate$/) do
-	expect(page).not_to have_content('Estado B')
-  expect(page).not_to have_content('Estado C')
+Then(/^the list shows only the clinics that belongs to that specific estate$/) do
+	expect(page).not_to have_content('Clinica C')
+  
 end
 
 When(/^I fill in a string in the modality filter$/) do

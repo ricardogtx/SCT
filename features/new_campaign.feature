@@ -10,7 +10,8 @@ Feature: create new campaign
 		Then I see 'campaigns/new'
 
 	Scenario: Create new campaign
-		Given I have accessed the campaign/new page
+		Given I'm logged with an admin account
+		And I have accessed the campaign/new page
 		When I fill the new campaign form
 		And click on the 'Enviar' button 
 		Then should create a campaign
