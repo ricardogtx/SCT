@@ -1,11 +1,11 @@
-Feature: Clinic map
-  In order to view clinic map
+Feature: clinic map
+  In order to discover a clinic location
   As a user
-  I want to view clinic map
+  I want to view the clinic's position in the map
   
-  Scenario: To view clinic map
+  Scenario: view the clinic's position
     
     Given I visit the home page
-	  When click in 'SAIBA MAIS!'' in 'Mapas'
-    And I to press a clinic
-	  Then should localization of clinic
+	  When click in 'SAIBA MAIS!'' under 'Mapas'
+    And I click in a clinic
+	  Then I should see the localization of that clinic in the map

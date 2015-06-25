@@ -1,9 +1,9 @@
-Feature: Edit quiz
-  In order to edit a question of quiz
-  As admin 
-  I want to edit a question
+Feature: edit quiz
+  In order to keep the quiz up to date
+  As an admin 
+  I want to edit a question from the quiz
 
-  Scenario: To edit a question 
+  Scenario: edit a question 
 		Given I visit the questions page
 		When I go to "/questions/1/edit"
 		And I fill the text field

@@ -3,5 +3,5 @@ When(/^I click on the 'VISUALIZAR CAMPANHAS' button$/) do
 end
 
 Then(/^I see 'campaigns'$/) do
-  current_path.should == campanhas_path
+  expect(current_path).to eq(campanhas_path)
 end

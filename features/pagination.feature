@@ -1,9 +1,9 @@
-Feature: Paginations clinics page
-In order to acess pagination clinics
-As a user
-I want to acess all pagination clinics
+Feature: pagination in the clinic page
+	In order to organize the clinics listed to me
+	As a user
+	I want to paginate the clinics list
 
-Scenario: Access to pagination clinic page
+Scenario: paginate the clinics page
 	Given I have accessed the clinics page
-	When I press any number pagination
-	Then should show 20 clinics per page
+	When I press any number of pagination
+	Then it should show 20 clinics per page

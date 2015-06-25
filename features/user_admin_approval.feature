@@ -1,6 +1,7 @@
 Feature: create admin account
-As an admin
-I want to control the admin access level from the users accounts
+  In order to limit admin access 
+  As an admin
+  I want to control the admin access level from the users accounts
 
 Scenario: acces user admin approval page
    Given there's an user account already approved in the database

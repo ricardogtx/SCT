@@ -1,11 +1,16 @@
-When(/^I press the button 'SAIBA MAIS!' in 'Drogas'$/) do
-  page.find('#btn_drugs').click
+Given(/^I visit the drugs page$/) do
+	visit '/drogas' 
 end
 
-Then(/^I am redirected to the drugs page$/) do
-  page.should have_title("SCT - Sistemas de Comunidades Terapeuticas")
-end 
-
-When(/^I press the button 'Tipos de Drogas' in the navigation bar$/) do
-  page.find('#drug_index').click
+Given(/^I have a drug in the database$/) do
+   @drug = Drug.create! :name => "cucumber drug", :description => "cucumber drug", :drug_type => "cucumber drug", :origin => "cucumber drug", :average_ingest => "cucumber drug", :ingestion_form => "cucumber drug", :duration => "cucumber drug", :effect_high => "cucumber drug", :dependence_psychological => "cucumber drug", :dependence_phisical => "cucumber drug", :tolerance => "cucumber drug", :long_effects => "cucumber drug", :medical_use => "cucumber drug"      
 end
+
+When(/^I press the "(.*?)" button of any given drug$/) do |link|
+  click_link(@drug.id)
+end
+
+Then(/^I am redirected to that drug information page$/) do
+  expect(current_path).to eq("/drugs/#{@drug.id}")
+end
+

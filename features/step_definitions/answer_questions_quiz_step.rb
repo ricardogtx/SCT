@@ -3,8 +3,8 @@ Given(/^I visit the first question page$/) do
 end
 
 Then(/^it should display the message 'Pontuação total: (\d+) de (\d+)'$/) do |counter, id|
-  page.should have_content(counter)
-  page.should have_content(id)
+  expect(page).to have_content(counter)
+  expect(page).to have_content(id)
 end
 
 When(/^I press 'SIM'$/) do

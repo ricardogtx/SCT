@@ -15,5 +15,5 @@ When(/^I press the button 'Enviar'$/) do
 end
 
 Then(/^it should display the message 'Criado com sucesso!'$/) do
-  page.should have_content('Criado com sucesso!')
+  expect(page).to have_content('Criado com sucesso!')
 end

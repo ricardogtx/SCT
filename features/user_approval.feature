@@ -1,13 +1,13 @@
 Feature: user approval
-As an admin
-I want to approve the new users
+  In order to avoid fake users
+  As an admin
+  I want to approve the new users
 
 Scenario: user approval
   Given there is a user waiting for my approval
   And I'm logged with an admin account
   When I click on the user's email
   Then I'm redirected to that user's specific page
-
 
 Scenario: accept new user
   Given there is a user waiting for my approval

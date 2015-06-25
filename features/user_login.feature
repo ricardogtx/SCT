@@ -1,7 +1,7 @@
-Feature: User Login
-In order to access some specific contents
-As a user
-I want to login in with my account
+Feature: user login
+	In order to access some specific contents
+	As a user
+	I want to login with my account
 
 Scenario: login with wrong email
 	Given I have accessed the login page

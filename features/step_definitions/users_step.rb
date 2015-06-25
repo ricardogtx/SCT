@@ -9,6 +9,6 @@ When(/^I fill the new user form$/) do
   fill_in "Senha", :with => @passworld_confirmation
 end
 
-Then(/^I should me register$/) do
+Then(/^I should be registered$/) do
 	have_content(@nome)
 end

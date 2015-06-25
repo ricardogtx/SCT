@@ -1,7 +1,7 @@
-Feature: Clinics page
-In order to view clinics page
-As a user
-I want to access the clinics page
+Feature: clinics page
+	In order to view all the clinics registered
+	As a user
+	I want to access the clinics page
 
 Scenario: access clinics page
 	Given I have accessed the home page

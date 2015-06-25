@@ -1,9 +1,9 @@
-Feature: Delete quiz
-  In order to delete a question of quiz
-  As admin 
-  I want to delete a question
+Feature: delete quiz
+  In order to keep the quiz up to date
+  As an admin 
+  I want to delete a question from the quiz
 
-  Scenario: To delete a question 
+  Scenario: delete a question 
 		Given I visit the questions page
 		When I go to "/questions/1"
-		Then it not should display "/questions/1"
+		Then it should not display "/questions/1"
