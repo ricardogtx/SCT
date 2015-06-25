@@ -123,7 +123,7 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     user_email = user.email
     clinic = Clinic.find_by_e_mail(user_email)
-    if clinic.e_mail == user.email
+    if clinic && clinic.e_mail == user.email
       user.update_attributes(:clinic => clinic)
       user.update_attributes(:user_authenticate => 1)
       redirect_to :admin, notice: "Usuário associado e aprovado"

@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ClinicsController, type: :controller do
+
   describe "GET / => clinics#index" do
     it "should set @clinics with attributes of clinics parser" do
       all_data = Clinic.all
@@ -41,5 +42,14 @@ RSpec.describe ClinicsController, type: :controller do
       }.to change(@clinic, :nome).to("outra clinica")
       expect(response).to redirect_to(:users)
     end
-   end
+  end
+
+   describe "Get #New" do
+    it "Should be create a new Clinic and render new" do
+      get :new
+
+      expect(response).to have_http_status(:success)
+      expect(response).to render_template(:new)
+    end
+  end
 end
