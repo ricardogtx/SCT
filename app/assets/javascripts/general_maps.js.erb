@@ -22,7 +22,7 @@
 
       google.visualization.events.addListener(chart, 'regionClick', function (event) {
         var state = (event.region.split("-")[1]);
-        $.post("/clinics/id_of_city", { uf: state }, function(response) {
+          $.post("/clinics/id_of_city", { uf: state }, function(response) {
           if(response.city_id) {
             window.location.href = "http://localhost:3000/clinics?utf8=%E2%9C%93&q%5Bnome_cont%5D=&q%5Bstate_id_eq%5D=" + response.city_id + "&q%5Bmodalidade_cont%5D=&commit=Buscar";
           }
