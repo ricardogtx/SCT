@@ -1,28 +1,31 @@
-<div>
-	<a href="<%= users_profile_edit_path %>" class="btn btn-default" role="button">Editar Informações</a>
-	<a href="<%= users_path %>" class="btn btn-warning" role="button">Voltar</a>
-</div>
-<div class="area-total-abas">
-	<div class="lista-abas amimacao-flip">
-		<input type="radio" name="lista-abas" checked id="aba-1" class="aba-1">
-		<label for="aba-1"><span><span>Informações Pessoais</span></span></label>
-		<ul>
-			<li class="aba-1">
-				<div class="conteudo">
-					<table width="300px">
-						<tr>
-							<th>Nome:</th>
-							<td><%= @user.name %></td>
-						</tr>
-						<tr>
-							<th>Email:</th>
-							<td><%= @user.email %></td>
-						</tr>
-				</table>
-				</div>
-			</li>
-		</ul>
+<section  id="container_margin" class="container">
+	<div class="area-total-abas">
+		<div class="lista-abas amimacao-flip">
+			<input type="radio" name="lista-abas" checked id="aba-1" class="aba-1">
+			<label for="aba-1"><span><span>Informações Pessoais</span></span></label>
+			<ul>
+				<li class="aba-1">
+					<div class="conteudo">
+						<table width="300px">
+							<tr>
+								<th>Nome:</th>
+								<td><%= @user.name %></td>
+							</tr>
+							<tr>
+								<th>Email:</th>
+								<td><%= @user.email %></td>
+							</tr>
+					</table>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div >
+		<br>
+		<a href="<%= users_profile_edit_path %>" class="btn btn-warning" role="button">Editar Informações</a>
+		<a href="<%= users_path %>" class="btn btn-warning" role="button">Voltar </a>
 	</div>
+</section>
 	</br>
 	<% flash.each do |name, msg| %>
 	  <%= content_tag :div, msg, :id => "flash_#{name}" %>
