@@ -28,6 +28,7 @@ class UsersController < ApplicationController
 
   def index
     @user = current_user
+
     if request.post? && !params[:do_login][:email].blank? && !params[:do_login][:password].blank?
       user = User.find_by_email(params[:do_login][:email])
 
@@ -46,6 +47,10 @@ class UsersController < ApplicationController
     if @user && @user.level_user
       redirect_to :admin
     end
+  end
+
+  def show
+    authenticate
   end
 
   def logout
@@ -93,7 +98,11 @@ class UsersController < ApplicationController
   end
 
   def user_admin_applying
-    @user = User.find(params[:id])
+    @user = User.find_by_id(params[:id])
+
+    unless @user
+      redirect_to :admin, notice: "Usuário não encontrado"
+    end
   end
 
   def user_admin_applying_confirm
@@ -115,8 +124,12 @@ class UsersController < ApplicationController
   end
 
   def users_approval
-    @user = User.find(params[:user_id])
+    @user = User.find_by_id(params[:user_id])
     @clinic = Clinic.find_by_e_mail(params[:user_email])
+
+    unless @user
+      redirect_to :admin, notice: "Usuário não encontrado"
+    end
   end
 
   def users_approval_confirm
@@ -157,7 +170,11 @@ class UsersController < ApplicationController
   end
 
   def testimonial_approval
-    @testimonial = Testimonial.find(params[:testimonial_id])
+    @testimonial = Testimonial.find_by_id(params[:testimonial_id])
+
+    unless @testimonial
+      redirect_to :admin, notice: "Depoimento não encontrado"
+    end
   end
 
   def clinic_edit
@@ -213,7 +230,7 @@ class UsersController < ApplicationController
   def need_be_admin
     user = current_user
 
-    unless user and user.level_user
+    unless user || user.level_user
       redirect_to :logout, notice: 'Área não permitida!'
     end
   end
