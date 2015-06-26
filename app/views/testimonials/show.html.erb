@@ -1,23 +1,26 @@
-<% flash.each do |name, msg| %>
-<%= content_tag :div, msg, :id => "flash_#{name}" %>
-<% end %>
-<div>
-	<h1>Depoimentos</h1>
-</div>
-<div>
-	<p>Incentive os outros a buscarem tratamento, relate sua experiência de superação. Deixe um depoimento clicando <%= link_to 'aqui.', depoimentos_novo_path %></p>
-</div>
-<% @testimonial.each do |t| %>
-	<div>
-		<h2><%= t.title %></h2>
-		Enviado em: <%=t.created_at%>
-	</div>
-	<br>
-	<div>
-		<%= t.body %>
-	</div>
-	<%= link_to 'Editar', {:action => "edit", :id => t.id} %>
-	<br>
-	<br>
+<div id="container_margin" class="container">
+	<% flash.each do |name, msg| %>
+	<%= content_tag :div, msg, :id => "flash_#{name}" %>
 	<% end %>
-	
+
+	<h2 align="center"><span class="glyphicon glyphicon-thumbs-up"></span><b>&nbsp;Depoimentos</b></h2>
+	<hr>
+	<div class="row">
+	<% @testimonial.each do |t| %>
+		<% if t.testimonial_authenticate %>
+			<div class="col-md-6">
+				<h2 id="margin_correction"><b><%= t.title %></b></h2>
+				<h5 id="margin_correction"><b>Enviado em: <%=t.created_at%></b></h5>
+				<br>
+				<h5 id="margin_correction"><%= t.body %></h5>
+				<br>
+				 <%= link_to "Editar", {:action => "edit", :id => t.id}, :class=>"btn btn-info"%>
+				<hr>
+			</div>
+		<% end %>
+	<% end %>
+	</div>
+	<br>
+		<h3 id="margin_correction"><i>Incentive os outros a buscarem tratamento, relate sua experiência de superação. Deixe um depoimento clicando em novo.</i></h3>
+		<a id="margin_correction_new" href="/depoimentos/novo" class="btn btn-warning" role="button">Novo</a>
+	</div>

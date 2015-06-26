@@ -10,18 +10,6 @@ Rails.application.routes.draw do
   resources :parsers do
   collection {post :import}
 end
-  get 'alcool/:id', to: 'drugs#show', as: :alcool
-  get 'alucinogeno/:id', to: 'drugs#show', as: :alucinogeno
-  get 'anfetamina/:id', to: 'drugs#show', as: :anfetamina
-  get 'antidepressivo"/:id', to: 'drugs#show', as: :antidepressivo
-  get 'barbiturico/:id', to: 'drugs#show', as: :barbiturico
-  get 'cafeina/:id', to: 'drugs#show', as: :cafeina
-  get 'cocaina/:id', to: 'drugs#show', as: :cocaina
-  get 'inalantes/:id', to: 'drugs#show', as: :inalantes
-  get 'maconha/:id', to: 'drugs#show', as: :maconha
-  get 'narcotico/:id', to: 'drugs#show', as: :narcotico
-  get 'nicotina/:id', to: 'drugs#show', as: :nicotina
-  get 'tranquilizante/:id', to: 'drugs#show', as: :tranquilizante
 
   get 'drogas' => 'drugs#index'
 
@@ -33,20 +21,42 @@ end
   get 'users/profile/edit', to: 'users#edit', as: 'users_profile_edit'
   post 'index', to: 'users#index',  as: 'do_login'
   get 'users/admin', to: 'users#admin', as: 'admin'
+  post 'users/admin', to: 'users#admin',  as: 'post_admin'
+  get 'users/admin/testimonial_approval', to: 'users#testimonial_approval', as: 'testimonial_approval'
+  get 'users/admin/users_approval', to: 'users#users_approval', as: 'users_approval'
+  get 'users/admin/users_approval_confirm', to: 'users#users_approval_confirm', as: 'users_approval_confirm'
+  get 'users/admin/users_approval_decline', to: 'users#users_approval_decline', as: 'users_approval_decline'
   get 'users/clinic/edit', to: 'users#clinic_edit', as: 'users_clinic_edit'
+  get "users/admin/user_admin_applying", to: "users#user_admin_applying", as: "user_admin_applying"
+  get "users/admin/user_admin_applying_confirm", to: "users#user_admin_applying_confirm", as: "user_admin_applying_confirm"
+  get "users/admin/user_admin_applying_decline", to: "users#user_admin_applying_decline", as: "user_admin_applying_decline"
+
+  get 'users/admin/testimonials_approval_confirm', to: 'users#testimonials_approval_confirm', as: 'testimonials_approval_confirm'
+  get 'users/admin/testimonials_approval_decline', to: 'users#testimonials_approval_decline', as: 'testimonials_approval_decline'
+  get 'users/admin/testimonials_approval_edit', to: 'users#testimonials_approval_edit', as: 'testimonials_approval_edit'
 
   resources :users
 
-
   get 'saiba_mais' => 'home#about'
+  get 'mapa_geral' => 'clinics#general_maps'
   resources :testimonials
-
 
   get 'depoimentos'           =>   'testimonials#show'
   get 'depoimentos/novo'      =>   'testimonials#new'
   get 'depoimentos/editar'    =>   'testimonials#edit'
 
 
+  get 'clinics/id_of_city' => 'clinics#id_of_city'
+  post 'clinics/id_of_city' => 'clinics#id_of_city'
+
+  resources :campaigns
+
+  get 'campanhas' => 'campaigns#index'
+  get 'campanhas/nova' => 'campaigns#new'
+
+  resources :questions
+
+  get '/resultados'      =>   'questions#result'
 
   #get "login" => "sessions#new" #, :as => "log_in"
   #post "login" => "sessions#create"

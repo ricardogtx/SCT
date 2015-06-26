@@ -1,8 +1,11 @@
 class Drug < ActiveRecord::Base
-      validates :drug_type, :origin, :average_ingest, :ingestion_form, :effect_average, :duration, :effect_high,
-            :dependence_psychological, :dependence_phisical, :tolerance, :medical_use,
+      validates :drug_type,:dependence_psychological, :dependence_phisical, :description,
             :presence => true
+
       validates :name,
       		:presence => true,
-            :uniqueness => true
+             :uniqueness => true
+
+      has_attached_file :avatar, :styles => { :medium => "180x180>", :thumb => "100x100>" }
+      validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 end

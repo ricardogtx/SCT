@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
 <head>
   <title>SCT - <%= @page_title %></title>
 
@@ -7,12 +5,15 @@
 <%= javascript_include_tag 'application' %>
 
 </head>
-<body background='<%=image_path "black.jpg"%>'>
-    <nav id= "main_menu" class="navbar navbar-inverse">
-        <div class="container">
-            <div class="navbar-header">
+
+<body>
+  <body id="aplication-body" background="lightblue.jpg">
+  <nav class="navbar navbar-warning navbar-fixed-top">
+      <div class="navbar-inner">
+      <div class="container">
+          <div class="navbar-header">
                 <a class="navbar-brand" href="/home">
-                    <img id="logo" alt="SCT">
+                  <img id="brand_aplication" src="<%=image_path "SCT.png"%>">
                 </a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder">
                     <span class="sr-only">Toggle navigation</span>
@@ -25,44 +26,53 @@
                 <ul id= "main_menu_list" class="nav navbar-nav navbar-right">
                     <li><a href="/home">HOME</a>
                     </li>
-                    <li><a href="#">CAD</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">CAD<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/campanhas" id="cad_index">VISUALIZAR CAMPANHA</a></li>
+                                <% if current_user && current_user.level_user %>
+                                    <li><a href="/campanhas/nova" id="cad_new">NOVA CAMPANHA</a></li>
+                                <% end %>
+                            </ul>
                     </li>
-                    <li><a href="/drogas">DROGAS</a>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">DROGAS<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/drogas" id="drug_index">TIPOS DE DROGAS</a></li>
+                            <% if current_user && current_user.level_user %>
+                                <li><%= link_to "ADICIONAR INFORMAÇÕES", :new_drug %></li>
+                            <%end%>
+                            </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">CLINICAS<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="/clinics">PROCURAR CLINICAS</a></li>
+                                <li><a href="/mapa_geral">MAPA GERAL DE CLINICAS</a></li>
                                 <li><a href="/users">CADASTRO DE CLINICAS</a></li>
+                              </ul>
+
+
+                <li><a href="/depoimentos">DEPOIMENTOS</a>
+                </li>
+                <% if current_user %>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <span class="mdi-action-account-circle" aria-hiden="true">
+                            <font  size="4"><%= current_user.name %></font>
+                            </span>
+                        </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="<%= users_profile_path %>">Perfil</a></li>
+                                <li><a href="<%= logout_path %>">Logout</a></li>
                             </ul>
                     </li>
-                    <li><a href="/depoimentos">DEPOIMENTOS</a>
-                    </li>
-                    <form class="navbar-form navbar-left" role="search">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Procure no site">
-                        </div>
-                            <button type="text" class="btn btn-default">BUSCAR</button>
-                    </form>
-
-                    <% if current_user %>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"> <span class="glyphicon glyphicon-user" aria-hiden="true"> </span> </a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="<%= users_profile_path %>">Perfil</a></li>
-                                    <li><a  href="<%= logout_path %>">Logout</a></li>
-                                </ul>
-                        </li>
-                    <% end %>
-                </ul>
-            </div>
+                <% end %>
+            </ul>
         </div>
-    </nav>
-<div id="jumbotron_margin" class="jumbotron">
-          <div class="container">
-            <%= yield %>
-            </div>
-        </div>
+    </div>
+</nav>
+<!--       <div id="container_margin" class="container"> -->
+        <%= yield %>
+<!--     </div> -->
 </body>
-</html>
-

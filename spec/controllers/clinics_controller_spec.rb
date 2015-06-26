@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ClinicsController, type: :controller do
+
   describe "GET / => clinics#index" do
     it "should set @clinics with attributes of clinics parser" do
       all_data = Clinic.all
@@ -14,7 +15,7 @@ RSpec.describe ClinicsController, type: :controller do
    describe "GET show" do
     it 'should show clinic' do
       @clinic = Clinic.create!(:nome => "clinica", :tipo_logradouro => "quadra", :nome_logradouro => "quadra", :numero_logradouro => "numero",
-                          	   :complemento => "complemento", :bairro => "bairro", :cep => "cep", :estado => "estado", :municipio => "municipio",
+                          	   :complemento => "complemento", :bairro => "bairro", :cep => "cep", :municipio => "municipio",
                                :latitude => "latitude", :longitude => "longitude", :telefone_1 => "tel1", :telefone_2 => "tel2", :e_mail => "email",
                                :publico_atendido => "publico_atendido", :grupo_especifico => "grupo_especifico", :qual_grupo_especifico	=> "qual_grupo_especifico",
                                :sexo_do_publico => "sexo_do_publico", :modalidade => "modalidade")
@@ -25,11 +26,12 @@ RSpec.describe ClinicsController, type: :controller do
 
    describe "PATCH/PUT #update" do
     it "Should update clinic and redirect to users" do
+      State.create!(:name => "Distrito", :uf => "DF")
       @clinic = Clinic.create!(:nome => "clinica", :tipo_logradouro => "quadra", :nome_logradouro => "quadra", :numero_logradouro => "numero",
-                               :complemento => "complemento", :bairro => "bairro", :cep => "cep", :estado => "estado", :municipio => "municipio",
+                               :complemento => "complemento", :bairro => "bairro", :cep => "cep", :municipio => "municipio",
                                :latitude => "latitude", :longitude => "longitude", :telefone_1 => "tel1", :telefone_2 => "tel2", :e_mail => "email",
                                :publico_atendido => "publico_atendido", :grupo_especifico => "grupo_especifico", :qual_grupo_especifico => "qual_grupo_especifico",
-                               :sexo_do_publico => "sexo_do_publico", :modalidade => "modalidade")
+                               :sexo_do_publico => "sexo_do_publico", :modalidade => "modalidade", :state_id => 1)
       User.destroy_all
       User.create! :name=>"vitor", :email=>"vitor.nere@hotmail.com", :password=>"123456", :password_confirmation=>"123456"
       User.last.clinic = @clinic
@@ -40,5 +42,14 @@ RSpec.describe ClinicsController, type: :controller do
       }.to change(@clinic, :nome).to("outra clinica")
       expect(response).to redirect_to(:users)
     end
-   end
+  end
+
+   describe "Get #New" do
+    it "Should be create a new Clinic and render new" do
+      get :new
+
+      expect(response).to have_http_status(:success)
+      expect(response).to render_template(:new)
+    end
+  end
 end
