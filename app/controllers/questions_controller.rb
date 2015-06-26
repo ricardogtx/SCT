@@ -59,7 +59,7 @@ class QuestionsController < ApplicationController
 	end
 
     def destroy
-    	@question = Questionfind params[:id]
+    	@question = Question.find params[:id]
     	@question.delete
     	flash[:notice] = "Questão deletada."
     	redirect_to questions_path
