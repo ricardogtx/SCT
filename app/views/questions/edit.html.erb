@@ -1,10 +1,10 @@
-<div class="panel panel-default">
-	<div class="panel-heading">
+<div id="container_margin" class="container">
+	<div class = "conteiner">
 		<h1 class="panel-title">Editar questão nº <%= @question.id %></h1>
 		<br>
 		<p>Tenha em mente que respostas verdadeiras devem indicar o possível uso de drogas pelo usuário que responder o questionário.</p>
 	</div>
-	<div class="panel-body">
+	<div class = "conteiner">
 		<%= form_for(@question) do |q| %>
 			<div>
 			<%= q.label :Questão %><br>
