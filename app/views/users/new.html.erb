@@ -17,15 +17,15 @@
                      </div>
                     <div class="panel-body">
           						<%= bootstrap_form_for(@user) do |f| %>
-          						  <%= f.text_field :name, :id => "Nome", :class=>"form-control", :placeholder=>"Nome" %>
+          						  <%= f.text_field :name, :id => "Nome", :class=>"form-control", :placeholder=>"Nome", :label=> "Nome"%>
           						  <%= f.email_field :email, :class=>"form-control", :placeholder=>"Email" %>
-          						  <%= f.password_field :password, :class=>"form-control", :placeholder=>"Senha" %>
-          						  <%= f.password_field :password_confirmation,:class=>"form-control", :placeholder=>"Confirma a Senha" %>
-                        <%= f.text_area :solicit_association, :class=>"form-control", :placeholder=>"Dê informações sobre a clínica . Para facilitar a criação de sua conta, informe também dados que comprove a autenticidade da posse da clínica." %>
+          						  <%= f.password_field :password, :class=>"form-control", :placeholder=>"Senha", :label=> "Senha" %>
+          						  <%= f.password_field :password_confirmation,:class=>"form-control", :label=>"Confirmação de Senha", :placeholder=>"Confirma a Senha" %>
+                        <%= f.text_area :solicit_association, :class=>"form-control", :label=>"Solicitar Associação", :placeholder=>"Dê informações sobre a clínica . Para facilitar a criação de sua conta, informe também dados que comprove a autenticidade da posse da clínica." %>
           						  <br>
-          						    <%= f.submit "Enviar", :class=>"btn btn-lg btn-primary btn-block" %>
+          						    <%= f.submit "Enviar", :class=>"btn btn-lg btn-warning btn-block" %>
           						  <br>
-            						<a href="/users" class="btn btn-lg btn-danger btn-block" role="button">Voltar</a>
+            						<a href="/users" class="btn btn-lg btn-warning btn-block" role="button">Voltar</a>
           						<% end %>
                     </div>
                 </div>
