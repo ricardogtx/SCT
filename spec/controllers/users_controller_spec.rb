@@ -4,6 +4,7 @@ RSpec.describe UsersController, type: :controller do
 
   before :all do
     User.destroy_all
+    Clinic.destroy_all
     User.create! :id=>1, :name=>"vitor", :email=>"vitor.nere@hotmail.com", :password=>"123456", :password_confirmation=>"123456", :user_authenticate=>1
     Clinic.create! :nome=>"rspec", :tipo_logradouro=>"rspec", :nome_logradouro=>"rspec", :numero_logradouro=>"rspec",
                    :complemento=>"rspec", :bairro=>"rspec", :cep=>"rspec", :estado=>"rspec", :municipio=>"rspec", :latitude=>"rspec",
@@ -93,6 +94,13 @@ RSpec.describe UsersController, type: :controller do
       User.last.clinic = Clinic.last
       post :index, :do_login => { :email => "vitor.nere@hotmail.com", :password => "123456" }
       expect(response).to redirect_to(:users)
+    end
+
+    it "Should redirect to admin if user gets login" do
+      user = User.last
+      user.update_attributes(:level_user=>1)
+      post :index, :do_login => { :email => "vitor.nere@hotmail.com", :password => "123456" }
+      expect(response).to redirect_to(:admin)
     end
 
     it "Should render login and show flash if user input a wrong password" do
@@ -217,6 +225,17 @@ RSpec.describe UsersController, type: :controller do
 
       expect(response).to render_template(:users_approval)
     end
+
+    it "Should be redirect to admin if user nil" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
+
+      get :users_approval, :user_id => 2
+
+      expect(response).to redirect_to(:admin)
+      expect(flash[:notice]).to be_present
+    end
   end
 
   describe "Get #users_approval_confirm" do
@@ -292,6 +311,19 @@ RSpec.describe UsersController, type: :controller do
 
       expect(response).to render_template(:testimonial_approval)
     end
+
+    it "Should be redirect to admin if Testimonial nil" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
+      Testimonial.destroy_all
+      testimonial = Testimonial.create! :id=>1, :title=>"abc", :body=>"abc"
+
+      get :testimonial_approval, testimonial_id: 2
+
+      expect(response).to redirect_to(:admin)
+      expect(flash[:notice]).to be_present
+    end
   end
 
   describe "Get #testimonials_approval_confirm" do
@@ -331,6 +363,17 @@ RSpec.describe UsersController, type: :controller do
       get :user_admin_applying, :id=>1
 
       expect(response).to render_template(:user_admin_applying)
+    end
+
+    it "Should be redirect to admin if user nil" do
+      user = User.last
+      user.update_attributes(:level_user => 1)
+      session[:user_id] = User.last.id
+
+      get :user_admin_applying, :id=>2
+
+      expect(response).to redirect_to(:admin)
+      expect(flash[:notice]).to be_present
     end
   end
 
