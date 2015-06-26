@@ -10,8 +10,8 @@
 			<%= t.form_group :answer do %>
 				<%= t.radio_button :answer, true, :id => "SIM" %>
 				<%= t.radio_button :answer, false, :class => "active", :id => "NÃO" %>
-				<label for="SIM" class="btn btn-default" > SIM</label>
-				<label for="NÃO" class="btn btn-default"> NÃO</label>
+				<label for="SIM" class="btn btn-default btn-raised" > SIM</label>
+				<label for="NÃO" class="btn btn-default btn-raised"> NÃO</label>
 			<% end %>
 			<%= t.submit "Enviar", :id => "btn_submit", :class => "btn btn-success"  %>
 		<% end %>
