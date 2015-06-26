@@ -1,20 +1,21 @@
+<br>
+<br>
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h3 class="panel-title">Questão nº <%= @question.id %></h3>
+		<h3>Questão nº <%= @question.id %></h3>
 	</div>
-	<div class="panel-body">
+	<div class="btn-group">
 		<h3><%= @question.content %></h3>
-		<%= bootstrap_form_for (@question) do |t| %>
-			<%= t.form_group :answer, label: { text: "resposta" } do %>
-				<%= t.radio_button :answer, true, label: "SIM" %>
-				<%= t.radio_button :answer, false, checked: true, label: "NÃO" %>
+		<%= bootstrap_form_for @question, html: {class: "form-group", role: "form"} do |t| %>
+			<%= t.form_group :answer do %>
+				<%= t.radio_button :answer, true, :id => "SIM" %>
+				<%= t.radio_button :answer, false, :class => "active", :id => "NÃO" %>
+				<label for="SIM" class="btn btn-default btn-raised" > SIM</label>
+				<label for="NÃO" class="btn btn-default btn-raised"> NÃO</label>
 			<% end %>
-		<%= t.submit "Enviar", :id => "btn_submit", :class => "btn btn-success"  %>
-		<% end %> 
+			<%= t.submit "Enviar", :id => "btn_submit", :class => "btn btn-success"  %>
+		<% end %>
 		<br>
-			
 		<a href="/questions" class="btn btn-danger" id = "btn_cancel" role="presentation">Cancelar</a>
-		</button>
-		
 	</div>
 </div>

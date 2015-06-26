@@ -1,15 +1,15 @@
-<div id="user_nav">
-  <div class="conteiner">
+<div id="container_margin" class="container">
+  <div>
     <div class="row vertical-offset-100">
-      <div class="panel panel-default">
-        <div class="panel-body">
+      <div>
+        <div>
           <% if current_user and current_user.level_user %>
             <center>
             <% if flash[:notice] %>
               <div class="notice"><%= flash[:notice] %></div>
             <% end %>
             <h2>Olá <%= current_user.name %> </h2>
-              Você está logado em uma conta de administrador <%= current_user.email %>, abaixo ficam os usuários pendentes de aprovação e associação com as clínicas, junto aos depoimentos pendentes, clique nas abas abaixo para visualizar. Caso queira alterar as informações da sua conta ou deslogar, clique no botão de usuário no topo da página.<br />
+              <h4>Você está logado em uma conta de administrador <%= current_user.email %>, abaixo ficam os usuários pendentes de aprovação e associação com as clínicas, junto aos depoimentos pendentes, clique nas abas abaixo para visualizar. Caso queira alterar as informações da sua conta ou deslogar, clique no botão de usuário no topo da página.</h4><br>
             </center>
             <div class="area-total-abas">
               <div class="lista-abas amimacao-flip">

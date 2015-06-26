@@ -1,20 +1,14 @@
-<div class="panel panel-default">
-	<div class="panel-heading">
+<div id="container_margin" class="container">
+	<div class="panel panel-default" style="margin: 100px;">
 		<h1 class="panel-title">Editar questão nº <%= @question.id %></h1>
 		<br>
-		<p>Tenha em mente que respostas verdadeiras devem indicar o possível uso de drogas pelo usuário que responder o questionário.</p>
-	</div>
-	<div class="panel-body">
+		<p align="center" style="color: black">Tenha em mente que respostas verdadeiras devem indicar o possível uso de drogas pelo usuário que responder o questionário.</p>
 		<%= form_for(@question) do |q| %>
-			<div>
 			<%= q.label :Questão %><br>
 			<%= q.text_field :content %>
-			</div>
 			<br>
-			<div>
 			<button type="submit" id ="btn_submit">Enviar</button>
-			<%=link_to "Cancelar", question_path(@question), :class => "btn btn-default"%>
-			</div>
+			<%=link_to "Cancelar", question_path(@question), :class => "btn btn-default "%>
 		<% end %>
 	</div>
 </div>
